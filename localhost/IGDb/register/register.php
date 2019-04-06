@@ -45,6 +45,9 @@
           $_SESSION['user_id'] = $row['id'];
 
           $redirect = 1;
+		  
+		  // sleep to show success msg before redirect
+		  sleep(2);
         }
         else{
           $error = "There was an error! ".pg_last_error(); 

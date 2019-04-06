@@ -41,6 +41,9 @@
         // redirect to USER interface if user
         $location = "http://localhost/IGDb/store/store.php";
       }
+	  
+	  // sleep to show success msg before redirect
+	  sleep(2);
     }
       // login fail
     else 
