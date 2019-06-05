@@ -23,5 +23,5 @@ function checkValidate()
 }
 
 document.getElementById("register").onclick = function () {
-    location.href = "http://localhost/IGDb/register/register.php";
+    location.href = "../register/register.php";
 };

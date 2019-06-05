@@ -38,3 +38,7 @@ function checkValidate()
    
     return true; 
 }
+
+// document.getElementById("login").onclick = function () {
+//     location.href = "../login/login.php";
+// };

@@ -46,7 +46,7 @@ SET default_with_oids = false;
 --
 
 CREATE TABLE igdb.ban_list (
-    "UserID" integer NOT NULL
+    user_id integer NOT NULL
 );
 
 
@@ -57,13 +57,13 @@ ALTER TABLE igdb.ban_list OWNER TO postgres;
 --
 
 CREATE TABLE igdb.games (
-    "ID" integer NOT NULL,
-    "Title" character varying(30),
-    "Genre" character varying(30),
-    "Publisher" character varying(30),
-    "Release date" date,
-    "Game cover" character varying,
-    "img-url" character varying
+    id serial,
+    title character varying(30),
+    genre character varying(30),
+    publisher character varying(30),
+    release_date date,
+    game_cover character varying,
+    img_url character varying
 );
 
 
@@ -74,8 +74,8 @@ ALTER TABLE igdb.games OWNER TO postgres;
 --
 
 CREATE TABLE igdb.library (
-    "UserID" integer NOT NULL,
-    "GameID" integer NOT NULL
+    user_id integer NOT NULL,
+    game_id integer NOT NULL
 );
 
 
@@ -86,11 +86,11 @@ ALTER TABLE igdb.library OWNER TO postgres;
 --
 
 CREATE TABLE igdb.reviews (
-    "UserID" integer NOT NULL,
-    "GameID" integer NOT NULL,
-    "GameReview" character varying,
-    "GameScore" integer,
-    "ReviewDate" date
+    user_id integer NOT NULL,
+    game_id integer NOT NULL,
+    game_review character varying,
+    game_score integer,
+    review_date date
 );
 
 
@@ -101,10 +101,10 @@ ALTER TABLE igdb.reviews OWNER TO postgres;
 --
 
 CREATE TABLE igdb.users (
-    "Name" character varying(30),
-    "Email" character varying(30),
-    "Password" character varying(30),
-    "ID" integer NOT NULL
+    name character varying(30),
+    email character varying(30),
+    password character varying(30),
+    id serial
 );
 
 
@@ -128,21 +128,21 @@ ALTER TABLE igdb."users_ID_seq" OWNER TO postgres;
 -- Name: users_ID_seq; Type: SEQUENCE OWNED BY; Schema: igdb; Owner: postgres
 --
 
-ALTER SEQUENCE igdb."users_ID_seq" OWNED BY igdb.users."ID";
+ALTER SEQUENCE igdb."users_ID_seq" OWNED BY igdb.users.id;
 
 
 --
--- Name: ID; Type: DEFAULT; Schema: igdb; Owner: postgres
+-- Name: id; Type: DEFAULT; Schema: igdb; Owner: postgres
 --
 
-ALTER TABLE ONLY igdb.users ALTER COLUMN "ID" SET DEFAULT nextval('igdb."users_ID_seq"'::regclass);
+ALTER TABLE ONLY igdb.users ALTER COLUMN id SET DEFAULT nextval('igdb."users_ID_seq"'::regclass);
 
 
 --
 -- Data for Name: ban_list; Type: TABLE DATA; Schema: igdb; Owner: postgres
 --
 
-COPY igdb.ban_list ("UserID") FROM stdin;
+COPY igdb.ban_list (user_id) FROM stdin;
 \.
 
 
@@ -150,7 +150,7 @@ COPY igdb.ban_list ("UserID") FROM stdin;
 -- Data for Name: games; Type: TABLE DATA; Schema: igdb; Owner: postgres
 --
 
-COPY igdb.games ("ID", "Title", "Genre", "Publisher", "Release date", "Game cover", "img-url") FROM stdin;
+COPY igdb.games (id, title, genre, publisher, release_date, game_cover, img_url) FROM stdin;
 \.
 
 
@@ -158,7 +158,7 @@ COPY igdb.games ("ID", "Title", "Genre", "Publisher", "Release date", "Game cove
 -- Data for Name: library; Type: TABLE DATA; Schema: igdb; Owner: postgres
 --
 
-COPY igdb.library ("UserID", "GameID") FROM stdin;
+COPY igdb.library (user_id, game_id) FROM stdin;
 \.
 
 
@@ -166,7 +166,7 @@ COPY igdb.library ("UserID", "GameID") FROM stdin;
 -- Data for Name: reviews; Type: TABLE DATA; Schema: igdb; Owner: postgres
 --
 
-COPY igdb.reviews ("UserID", "GameID", "GameReview", "GameScore", "ReviewDate") FROM stdin;
+COPY igdb.reviews (user_id, game_id, game_review, game_score, review_date) FROM stdin;
 \.
 
 
@@ -174,7 +174,20 @@ COPY igdb.reviews ("UserID", "GameID", "GameReview", "GameScore", "ReviewDate") 
 -- Data for Name: users; Type: TABLE DATA; Schema: igdb; Owner: postgres
 --
 
-COPY igdb.users ("Name", "Email", "Password", "ID") FROM stdin;
+COPY igdb.users (name, email, password) FROM stdin;
+Admin	admin@gmail.com	fl4g_1s_H3Re
+User1	user1@gmail.com	User1P4SS
+User2	user2@gmail.com	User2P4SS
+User3	user3@gmail.com	User3P4SS
+User4	user4@gmail.com	User4P4SS
+User5	user5@gmail.com	User5P4SS
+User6	user6@gmail.com	User6P4SS
+User7	user7@gmail.com	User7P4SS
+User8	user8@gmail.com	User8P4SS
+User9	user9@gmail.com	User9P4SS
+User10	user10@gmail.com	User10P4SS
+User11	user11@gmail.com	user11
+User12	user12@gmail.com	User12P4SS
 \.
 
 
@@ -182,7 +195,7 @@ COPY igdb.users ("Name", "Email", "Password", "ID") FROM stdin;
 -- Name: users_ID_seq; Type: SEQUENCE SET; Schema: igdb; Owner: postgres
 --
 
-SELECT pg_catalog.setval('igdb."users_ID_seq"', 1, false);
+SELECT pg_catalog.setval('igdb."users_ID_seq"', 17, true);
 
 
 --
@@ -190,7 +203,7 @@ SELECT pg_catalog.setval('igdb."users_ID_seq"', 1, false);
 --
 
 ALTER TABLE ONLY igdb.games
-    ADD CONSTRAINT games_pkey PRIMARY KEY ("ID");
+    ADD CONSTRAINT games_pkey PRIMARY KEY (id);
 
 
 --
@@ -198,7 +211,7 @@ ALTER TABLE ONLY igdb.games
 --
 
 ALTER TABLE ONLY igdb.users
-    ADD CONSTRAINT users_pkey PRIMARY KEY ("ID");
+    ADD CONSTRAINT users_pkey PRIMARY KEY (id);
 
 
 --
@@ -206,7 +219,7 @@ ALTER TABLE ONLY igdb.users
 --
 
 ALTER TABLE ONLY igdb.ban_list
-    ADD CONSTRAINT "banList_userID_fkey" FOREIGN KEY ("UserID") REFERENCES igdb.users("ID");
+    ADD CONSTRAINT "banList_userID_fkey" FOREIGN KEY (user_id) REFERENCES igdb.users(id);
 
 
 --
@@ -214,7 +227,7 @@ ALTER TABLE ONLY igdb.ban_list
 --
 
 ALTER TABLE ONLY igdb.library
-    ADD CONSTRAINT "gameid-fkey" FOREIGN KEY ("GameID") REFERENCES igdb.games("ID");
+    ADD CONSTRAINT "gameid-fkey" FOREIGN KEY (game_id) REFERENCES igdb.games(id);
 
 
 --
@@ -222,7 +235,7 @@ ALTER TABLE ONLY igdb.library
 --
 
 ALTER TABLE ONLY igdb.reviews
-    ADD CONSTRAINT "gameid-fkey" FOREIGN KEY ("GameID") REFERENCES igdb.games("ID");
+    ADD CONSTRAINT "gameid-fkey" FOREIGN KEY (game_id) REFERENCES igdb.games(id);
 
 
 --
@@ -230,7 +243,7 @@ ALTER TABLE ONLY igdb.reviews
 --
 
 ALTER TABLE ONLY igdb.library
-    ADD CONSTRAINT "library_UserID_fkey" FOREIGN KEY ("UserID") REFERENCES igdb.users("ID");
+    ADD CONSTRAINT "library_UserID_fkey" FOREIGN KEY (user_id) REFERENCES igdb.users(id);
 
 
 --
@@ -238,7 +251,7 @@ ALTER TABLE ONLY igdb.library
 --
 
 ALTER TABLE ONLY igdb.reviews
-    ADD CONSTRAINT "reviews_userID_fkey" FOREIGN KEY ("UserID") REFERENCES igdb.users("ID");
+    ADD CONSTRAINT "reviews_userID_fkey" FOREIGN KEY (user_id) REFERENCES igdb.users(id);
 
 
 --

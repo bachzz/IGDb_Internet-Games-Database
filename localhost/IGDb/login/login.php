@@ -2,11 +2,7 @@
 
   session_start();
 
-  $host= 'localhost';
-  $port= '5432';
-  $user= 'giang';
-  $pass= 'abcdef090';
-  $dbname= 'igdb_db';  
+  include '../shared.php';
 
   // connect to database
   $db_conn = pg_connect("host=$host port=$port user=$user password=$pass dbname=$dbname") or die('Could not connect: ' . pg_last_error());
@@ -35,11 +31,11 @@
 
       $redirect = 1;
       if ($name == 'Admin'){
-        $location = "http://localhost/IGDb/admin/admin.php";
+        $location = "../admin/admin.php";
       }
       else{
         // redirect to USER interface if user
-        $location = "http://localhost/IGDb/store/store.php";
+        $location = "../store/store.php";
       }
 	  
 	  // sleep to show success msg before redirect

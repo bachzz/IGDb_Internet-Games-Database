@@ -1,11 +1,7 @@
 <?php
   session_start();
-  
-  $host= 'localhost';
-  $port= '5432';
-  $user= 'giang';
-  $pass= 'abcdef090';
-  $dbname= 'igdb_db';  
+
+  include '../shared.php';
 
   // connect to database
   $db_conn = pg_connect("host=$host port=$port user=$user password=$pass dbname=$dbname") or die('Could not connect: ' . pg_last_error());
@@ -61,7 +57,7 @@
   pg_close($db_conn);
 
   if ($redirect){
-    header("Location: http://localhost/IGDb/store/store.php");
+    header("Location: ../store/store.php");
     exit(0);
   }
 ?>
@@ -80,89 +76,96 @@
           <div class="login">
           <div class = "createAccTitleContainer">
                 <div class = "logTitle">Create your account</div>
-            </div>
-              <div class="info">
-                  <table class="logtable" style="table-layout:fixed;">
+          </div>
+          <div class="info">
+              <table class="logtable" style="table-layout:fixed;">
 
-                      <form method="post" name = "register" onsubmit = "return checkValidate()">
-                      <tr></tr>
-                      <tr> </tr>
-                      <tr></tr>
-                      <tr></tr>
-                      <tr></tr>
-                      <tr>
-                            <label id="emailtag"></label>
-                                <td>
-                                    <div class = "inputLabel">
-                                        <div class = "inputContainer">
-                                            <div class = "inputTitle">Email</div>
-                                            <div class="emailBoxContainer"><input type="email" id="emailbox" name = "inputEmail" style="height:30px;width:480px;"/></div>
-                                        </div>
-                                    </div>
-                                </td>
-                            </label>
-                            <td id="alert2"></td>
-
-                        </tr>
-                        <tr>
-                            <label id="usertag"></label>
-                                <td>
-                                    <div class = "inputLabel">
-                                        <div class = "inputContainer">
-                                            <div class = "inputTitle">Username</div>
-                                            <div class="userBoxContainer"><input type="name" id="userbox" name = "inputName" style="height:30px;width:480px;"/></div>
-                                        </div>
-                                    </div>
-                                </td>
-                            </label>
-                            <td id="alert1"></td>
-                        </tr>
-                        <tr>
-                            <label id="pwtag">
+                  <form method="post" name = "register" onsubmit = "return checkValidate()">
+                    <tr></tr>
+                    <tr> </tr>
+                    <tr></tr>
+                    <tr></tr>
+                    <tr></tr>
+                    <tr>
+                        <label id="emailtag"></label>
                             <td>
                                 <div class = "inputLabel">
-                                        <div class = "inputContainer">
-                                            <div class = "inputTitle">Password</div>
-                                            <div class="pwBoxContainer"><input type="password" id="pwbox"name = "inputPW" style="height:30px;width:480px;" /></div>
-                                        </div>
+                                    <div class = "inputContainer">
+                                        <div class = "inputTitle">Email</div>
+                                        <div class="emailBoxContainer"><input type="email" id="emailbox" name = "inputEmail" style="height:30px;width:480px;"/></div>
+                                    </div>
                                 </div>
-                                </td>
-                            </label>
-                            <td id="alert3"></td>
-                        </tr>
-                        <tr>
-                            <label id="buttonTag">
+                            </td>
+                        </label>
+                        <td id="alert2"></td>
+
+                    </tr>
+                    <tr>
+                        <label id="usertag"></label>
                             <td>
-                                <div>
-                                        <div class = "buttonContainer">
-                                        <button type="submit" id="button">Sign up</button>
-                                        </div>
+                                <div class = "inputLabel">
+                                    <div class = "inputContainer">
+                                        <div class = "inputTitle">Username</div>
+                                        <div class="userBoxContainer"><input type="name" id="userbox" name = "inputName" style="height:30px;width:480px;"/></div>
+                                    </div>
                                 </div>
-                                </td>
-                            </label>
-                            <td id="alert3"></td>
-                        </tr>
-                      </form>
-                      <tr></tr>
-                      <tr> </tr>
-                      <tr></tr>
-                      <tr></tr>
-                      <tr></tr>
-                      <tr>
-                          <td></td>
-                          
-                      </tr>
-                      <tr>
-                      </tr>
-                  </table>
-              </div>
+                            </td>
+                        </label>
+                        <td id="alert1"></td>
+                    </tr>
+                    <tr>
+                        <label id="pwtag">
+                        <td>
+                            <div class = "inputLabel">
+                                    <div class = "inputContainer">
+                                        <div class = "inputTitle">Password</div>
+                                        <div class="pwBoxContainer"><input type="password" id="pwbox"name = "inputPW" style="height:30px;width:480px;" /></div>
+                                    </div>
+                            </div>
+                            </td>
+                        </label>
+                        <td id="alert3"></td>
+                    </tr>
+                    <tr>
+                        <label id="buttonTag">
+                        <td>
+                            <div>
+                                    <div class = "buttonContainer">
+                                    <button type="submit" id="button">Sign up</button>
+                                    </div>
+                            </div>
+                            </td>
+                        </label>
+                        <td id="alert3"></td>
+                    </tr>
+                  </form>
+                  <!-- <tr>
+                      <td class="login">
+                      <p id = "switch-login" style="float: left;">Already have account?</p>
+                      <p id = "login">Login</p>
+                      </td>
+                      <td></td>
+                  </tr> -->
+                  <tr></tr>
+                  <tr> </tr>
+                  <tr></tr>
+                  <tr></tr>
+                  <tr></tr>
+                  <tr>
+                      <td></td>
+                      
+                  </tr>
+                  <tr>
+                  </tr>
+              </table>
+          <!-- </div> -->
 
           </div>
       </div>
       <div class="footer"></div>
     </div>
-    <script src="Javascript/jquery-3.3.1.js"></script>
-    <script src="Javascript/register.js"></script>
+    <script src="javascript/jquery-3.3.1.js"></script>
+    <script src="javascript/register.js"></script>
 
 </body>
 </html>

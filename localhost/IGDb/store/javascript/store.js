@@ -57,5 +57,16 @@
     
   };
   
-  slider.init();
-  
+slider.init();
+
+document.getElementById("game1").onclick = function () {
+    location.href = "../game_page/game_page.php";
+};
+
+document.getElementById("store").onclick = function () {
+    location.href = "./store.php";
+};
+
+document.getElementById("logout").onclick = function () {
+    location.href = "../login/logout.php";
+};

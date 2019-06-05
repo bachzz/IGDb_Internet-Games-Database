@@ -1,0 +1,440 @@
+﻿* {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.bg {
+    position: absolute;
+    background-image: url(../pictures/bg.png);
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0;
+    background-size: cover;
+    overflow: auto;
+    z-index: ;}
+
+.bodyContainer{
+    position: absolute;
+    width: 1280px;
+    left: 50%;
+    margin-left: -640px;
+    margin-top: 50px;
+    background-color: white;
+
+}
+.header{
+    width: 1280px;
+    height: 50px;
+    top:0;
+    position: fixed;
+    background-color: black;
+    display: inline-block;
+    z-index: 9999;
+}
+
+
+.leftHeader{
+    float: left;
+}
+.logo{
+    cursor: pointer;
+    height:50px;
+    width:80px;
+    margin-left:20px;
+    float: left;
+    text-align: center;
+    color: #000;
+    font-weight: bold;
+    margin-right: 20px;
+}
+.Store{
+    cursor: pointer;
+    width:150px;
+    text-align: center;
+    height:50px;
+    float: left;
+}
+.Library{
+    cursor: pointer;
+    width:150px;
+    height:50px;
+    float: left;
+    text-align: center;
+
+}
+.storeText{
+    color: #fff;
+    font-size:30px;
+    line-height: 50px;
+    border-left:1px solid white;
+    border-right:1px solid white;
+}
+.logoText{
+    color: #fff;
+    font-size:30px;
+    line-height: 50px;
+}
+.libText{
+    color: #fff;
+    text-align: center;
+    line-height: 50px;
+    font-size:30px;
+    border-right:1px solid white;
+}
+.Search{
+    cursor: pointer;
+    width:150px;
+    height:50px;
+    float: left;
+    text-align: center;
+
+}
+.searchText{
+    color: #fff;
+    text-align: center;
+    line-height: 50px;
+    font-size:30px;
+    border-right:1px solid white;
+}
+.rightHeader{
+    float:right;
+}
+
+.User{
+    cursor: pointer;
+    width:150px;
+    height:50px;
+    float: left;
+    text-align: center;
+    border-left:1px solid white;
+    border-right:1px solid white;
+}
+.userText{
+    color: #fff;
+    text-align: center;
+    line-height: 50px;
+    font-size:30px;
+    border-right:1px solid white;
+}
+
+.user-menu {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    width: 150px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+.profile{
+    cursor: pointer;
+    width:150px;
+    height:50px;
+    line-height: 50px;
+    text-align: center;
+    margin:0px;
+}
+.logout{
+    cursor: pointer;
+    width:150px;
+    height:50px;
+    line-height: 50px;
+    text-align: center;
+    margin:0px;
+}
+.profile:hover{
+    background-color:black;
+    color:white;
+}
+.logout:hover{
+    background-color:black;
+    color:white;
+}
+.User:hover .user-menu {
+    display: block;
+  }
+
+.content{
+
+    width:1280px;
+    background-color: white;
+
+}
+
+.gameTitle{
+  font-weight:bold;
+  text-transform: uppercase;
+  font-size: 50px;
+  margin-top: 35px;
+  margin-left:20px;
+}
+.gameInfo{
+  display: inline-block;
+  width: 1220px;
+  height: 450px;
+  margin:30px;
+  border:1px solid black;
+
+  
+}
+.screenshot{
+  width:800px;
+  height:450px;
+  float:left;
+  text-align: center;
+  margin-right:20px;
+}
+.rightInfo{
+  width:375px;
+  height: 450px;
+  float:right;
+  margin-right:22px;
+  margin-top:10px;
+}
+.gameDescription{
+  text-align: center;
+  word-break: break-all;
+  margin:20px 0px;
+}
+
+.addContainer{
+  margin:30px;
+  border:1px solid black;
+  height:50px;
+  padding: 0px 35px;
+  margin-bottom:60px;
+}
+.addText{
+    float: left;
+    line-height: 50px;
+    font-size:22px;
+    
+}
+.addButtonContainer{
+    float:right;
+
+}
+.addButton{
+    height:50px;
+    width:100px;
+    background-color: black;
+    color:white;
+    border:none;
+    margin-top:25px;
+    cursor: pointer;
+}
+.formContainer{
+    margin:30px;
+    border:1px solid black;
+    padding:35px;
+}
+.review{
+    font-size:22px;
+}
+.reviewScore{
+    font-size:22px;
+}
+.checkboxContainer {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    margin-top: 12px;
+    cursor: pointer;
+    font-size: 16px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  
+  /* Hide the browser's default radio button */
+  .checkboxContainer input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+  }
+  
+  /* Create a custom radio button */
+  .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+    border-radius: 50%;
+  }
+  
+  /* On mouse-over, add a grey background color */
+  .checkboxContainer:hover input ~ .checkmark {
+    background-color: #ccc;
+  }
+  
+  /* When the radio button is checked, add a blue background */
+  .checkboxContainer input:checked ~ .checkmark {
+    background-color: black;
+  }
+  
+  /* Create the indicator (the dot/circle - hidden when not checked) */
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+  /* Show the indicator (dot/circle) when checked */
+  .checkboxContainer input:checked ~ .checkmark:after {
+    display: block;
+  }
+  
+  /* Style the indicator (dot/circle) */
+  .checkboxContainer .checkmark:after {
+       top: 9px;
+      left: 9px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: white;
+  }
+  .submitButtonContainer{
+    float:right;
+
+}
+  #submitButton{
+    height:50px;
+    width:100px;
+    background-color: black;
+    color:white;
+    border:none;
+    cursor: pointer;
+    margin-top:10px;
+  }
+  .reviewContainer{
+    margin:30px;
+    margin-top:40px;
+  }
+  .reviewMenu{
+    display: inline-block;
+    width:1210px;
+    height:50px;
+  }
+  .allReview{
+    height:50px;
+    line-height: 50px;
+    font-size:30px;
+    margin-left:35px;
+    margin-bottom:20px;
+    float:left;
+  }
+  .reviewSortButton{
+    float: left;
+    margin-left:35px;
+    margin-bottom:20px;
+    font-size:30px;
+    border-left:1px solid black;
+
+  }
+  .sortButton{
+    height:50px;
+    width:100px;
+    border:none;
+    cursor: pointer;
+    line-height: 50px;
+    text-align: center;
+  }
+  .sort-menu {
+    display: none;
+    position: absolute;
+    font-size:20px;
+    background-color: #f9f9f9;
+    color:black;
+    width: 150px;
+    margin-left:-30px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+.sortbyDate{
+    cursor: pointer;
+    width:150px;
+    height:50px;
+    line-height: 50px;
+    text-align: center;
+    margin:0px;
+}
+.sortbyNeg{
+    cursor: pointer;
+    width:150px;
+    height:50px;
+    line-height: 50px;
+    text-align: center;
+    margin:0px;
+}
+.sortbyPos{
+  cursor: pointer;
+  width:150px;
+  height:50px;
+  line-height: 50px;
+  text-align: center;
+  margin:0px;
+}
+.sortbyDate:hover{
+    background-color:black;
+    color:white;
+}
+.sortbyPos:hover{
+    background-color:black;
+    color:white;
+}
+.sortbyNeg:hover{
+  background-color:black;
+  color:white;
+}
+.reviewSortButton:hover .sort-menu {
+    display: block;
+  }
+  .grid-container {
+    display: grid;
+    grid-template-columns: 1200px;
+    padding: 10px;
+    align-items: center;
+    justify-content: center;
+    grid-gap: 5px;
+  }
+  .grid-item {
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    height:100px;
+    font-size: 30px;
+    margin:5px 0px;
+  }
+  .userAva{
+    cursor: pointer;
+    width: 100px;
+    height:100px;
+    float:left;
+    overflow: hidden;
+}
+.reviewInfo{
+    float:left;
+    margin-left:30px;
+}
+.reviewTop{
+  display: inline-block;
+}
+.userName{
+    cursor: pointer;
+    float:left;
+    font-size: 18px;
+    font-weight: bold;
+    padding-right:10px;
+    border-right:1px solid black;
+}
+.reviewText{
+  font-size: 20px;
+}
+.reviewDate{
+  font-size:18px;
+  float:left;
+  margin-left:10px;
+}

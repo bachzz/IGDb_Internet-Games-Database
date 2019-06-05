@@ -172,6 +172,17 @@ button:focus {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+/*#switch-login{
+
+    margin-right: 10px;
+}
+#login {
+    cursor: pointer;
+    float:left;
+    color: #0072bc;
+    margin-left: 10px;
+}*/
+
 .footer {
     position: absolute;
     bottom: 0;
