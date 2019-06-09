@@ -1,0 +1,192 @@
+﻿* {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.bg {
+    position: absolute;
+    /*background-image: url(../pictures/bgLogin.png);*/
+    background-image: url(../pictures/bg.png);
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0;
+    background-size: cover;
+    background-image: 
+    z-index: 99;
+}
+.header {
+    position: absolute;
+    height: 83px;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color:transparent;
+    height: 83px;
+    width: 100%;
+    z-index: 2;
+}
+
+
+.body {
+    position: absolute;
+    top: 83px;
+    left: 0;
+    bottom: 136px;
+    width: 100%;
+    background-color: transparent;
+    display: flex;
+}
+
+.login {
+    position: absolute;
+    width: 650px;
+    height: 350px;
+    top: 50%;
+    left: 50%;
+    margin-top: -175px;
+    margin-left: -325px;
+    overflow: hidden;
+    border: 0px;
+    border-radius: 20px;
+    z-index: 1;
+    -webkit-box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.4);
+    -moz-box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.4);
+    box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.4);
+    background-color: white;
+    -webkit-backdrop-filter: blur(200px);
+    backdrop-filter: blur(200px);
+}   
+
+.loginbg {
+    background-image: url(../pictures/bgLogin.png);
+    background-repeat: no-repeat;
+    background-position: bottom left;
+    height: 350px;
+    float: left;
+    display: block;
+    width: 100px;
+}
+
+.info {
+    position: relative;
+    width: 300px;
+    height: 200px;
+    margin-top: -150px;
+    top: 50%;
+    float: left;
+    margin-left: 20px;
+    
+
+
+}
+
+.logTitle {
+    color: #000;
+    font-family: 'Segoe UI';
+    font-weight: bold;
+    float: left;
+    font-size: 20px;
+}
+.logtable {
+    text-align: center;
+    margin: auto auto;
+    overflow: hidden;
+
+}
+#noti{
+    color:red;
+    font-size:12px;
+    text-align:left;
+}
+#alert1{
+    color:red;
+}
+#alert2{
+    color:red;
+}
+
+input:required {
+    box-shadow:none;
+}
+
+
+input:invalid {
+    box-shadow:none;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+
+.inputContainer{
+    height:50px;
+    margin: 10px 0px;
+}
+.inputTitle{
+    float: left;
+    font-size: 12px;
+    color: gray;
+    margin-left: 10px;
+    margin-top: 5px;
+    font-weight: bold;
+}
+
+.userBoxContainer, .emailBoxContainer, .pwBoxContainer{
+    border: 1px gray solid;
+    border-radius: 3px;
+}
+
+#pwbox,#userbox,#emailbox {
+    border: none;
+    padding: 2px 14px; 
+    margin: 2px;
+}
+
+
+#pwtag, #usertag, #emailtag {
+    text-align: right;
+    font-family: Tahoma;
+    font-size: 12px;
+}
+.buttonContainer{
+    float:left;
+    bottom:0px;
+}
+#button {
+    cursor: pointer;
+    padding: 10px 0;
+    background-color: #0072bc;
+    color: #fff;
+    font-size: 12px;
+    font-weight: bold;
+    border: 0;
+    border-radius: 5px;
+    width: 100px;
+    margin-top: 20px;
+    text-transform: uppercase;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#newtosite{
+
+    margin-right: 10px;
+}
+#register {
+    cursor: pointer;
+    float:left;
+    color: #0072bc;
+    margin-left: 10px;
+}
+.footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #f2f2f2;
+    color: #666;
+    z-index: 2;
+}
+

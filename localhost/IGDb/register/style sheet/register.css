@@ -1,0 +1,195 @@
+﻿* {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.bg {
+    position: absolute;
+    background-image: url(../pictures/bg.png);
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0;
+    background-size: cover;
+    z-index: 99;
+}
+.header {
+    position: absolute;
+    height: 83px;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color:transparent;
+    height: 83px;
+    width: 100%;
+    z-index: 2;
+}
+
+
+.body {
+    position: absolute;
+    top: 83px;
+    left: 0;
+    bottom: 136px;
+    width: 100%;
+    background-color: transparent;
+    display: flex;
+}
+
+.login {
+    position: absolute;
+    width: 600px;
+    height: 500px;
+    top: 50%;
+    left: 50%;
+    margin-top: -250px;
+    margin-left: -300px;
+    overflow: hidden;
+    border: 0px;
+    border-radius: 20px;
+    z-index: 1;
+    -webkit-box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.4);
+    -moz-box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.4);
+    box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.4);
+    background-color: white;
+
+}   
+
+
+.info {
+    border: 0px solid black;
+    position: absolute;
+    width: 522px;
+    height: 300px;
+    margin-top: 100px;
+    margin-left: -261px;
+    left: 50%;
+    text-align: center;
+    
+
+
+}
+.createAccTitleContainer{
+    position: absolute;
+    width: 510px;
+    height: 100px;
+    left:50%;
+    margin-left: -255px;
+    margin-top: 40px;
+
+}
+.logTitle {
+    position: absolute;
+    width: 500px;
+    height: 60px;
+    color: #000;
+    font-family: 'Segoe UI';
+    font-weight: bold;
+    font-size: 30px;
+    top:50%;
+    margin-top: -40px;
+
+}
+.logtable {
+    overflow: hidden;
+    text-align: center;
+    margin: auto auto;
+
+}
+#noti{
+    color:red;
+    font-size:12px;
+    text-align:left;
+}
+#alert1{
+    color:red;
+}
+#alert2{
+    color:red;
+}
+
+
+input:required {
+    box-shadow:none;
+}
+
+
+input:invalid {
+    box-shadow:none;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+
+.inputContainer{
+    height:50px;
+    margin: 20px 0px;
+}
+.inputTitle{
+    float: left;
+    font-size: 12px;
+    color: gray;
+    margin-left: 10px;
+    margin-top: 5px;
+    font-weight: bold;
+}
+.userBoxContainer, .emailBoxContainer, .pwBoxContainer{
+    border: 1px gray solid;
+    border-radius: 3px;
+}
+
+#pwbox,#userbox,#emailbox {
+    border: none;
+    padding: 2px 14px; 
+    margin: 2px;
+}
+
+
+#pwtag, #usertag, #emailtag {
+    text-align: right;
+    font-family: Tahoma;
+    font-size: 12px;
+}
+.buttonContainer{
+    margin-top:35px;
+    float:right;
+    bottom:0px;
+}
+#button {
+    cursor: pointer;
+    padding: 10px 0;
+    background-color: #0072bc;
+    color: #fff;
+    font-size: 12px;
+    font-weight: bold;
+    border: 0;
+    border-radius: 5px;
+    width: 100px;
+    text-transform: uppercase;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/*#switch-login{
+
+    margin-right: 10px;
+}
+#login {
+    cursor: pointer;
+    float:left;
+    color: #0072bc;
+    margin-left: 10px;
+}*/
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #f2f2f2;
+    color: #666;
+    z-index: 2;
+}
+
