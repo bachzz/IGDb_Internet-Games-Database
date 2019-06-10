@@ -11,7 +11,7 @@
 - psql -h localhost -U giang igdb_db -f igdb_db.sql
 
 ### NOTES
-- ALWAYS put `<?php ?>` before <html> (otherwise some functions like "header(), exit()" won't work)
+- ALWAYS put `<?php ?>` before `<html>` (otherwise some functions like "header(), exit()" won't work)
 - ALL TABLE or COLUMN names:
 				- AVOID uppercase!!
 				- if accidentally named with uppercase, must query with `" "` (e.g: igdb."banList")
