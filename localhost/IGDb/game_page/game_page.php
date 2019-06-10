@@ -43,7 +43,7 @@
                         <div class="storeText" id="store">Store</div>
                     </div>
                     <div class="Library">
-                        <div class="libText">Library</div>
+                        <div class="libText" id="library">Library</div>
                     </div>
                     <div class="Search">
                         <div class="searchText">Search</div>
@@ -52,7 +52,7 @@
                     <div class="User">
                         <div class="userText">User</div>
                         <span class="user-menu">
-                            <p class="profile">Profile</p>
+                            <p class="profile" id="user_profile">Profile</p>
                             <p class="logout" id="logout">Logout</p>
                         </span>
                     </div>
@@ -64,16 +64,16 @@
                 <div class="slider-wrap">
                         <div class="slider" id="slider">
                             <div class="holder">
-                                <div class="slide" id="slide-0" style="background-image:  url(Pictures/game1.jpg);
+                                <div class="slide" id="slide-0" style="background-image:  url(pictures/game1.jpg);
                                 background-size: 1280px 720px;">
                                 </div>
-                                <div class="slide" id="slide-1" style="background-image:  url(Pictures/game1.jpg);
+                                <div class="slide" id="slide-1" style="background-image:  url(pictures/game1.jpg);
                                 background-size: 1280px 720px;">
                                 </div>
-                                <div class="slide" id="slide-2" style="background-image:  url(Pictures/game1.jpg);
+                                <div class="slide" id="slide-2" style="background-image:  url(pictures/game1.jpg);
                                 background-size: 1280px 720px;">
                                 </div>
-                                <div class="slide" id="slide-3" style="background-image:  url(Pictures/game1.jpg);
+                                <div class="slide" id="slide-3" style="background-image:  url(pictures/game1.jpg);
                                 background-size: 1280px 720px;">
                                 </div>
     
@@ -102,9 +102,9 @@
                                 <tr>
                                     <td width="150px">Recommends:</td>
                                     <td><?php 
-                                        $result = pg_query("SELECT count(*) from igdb.reviews where recommend = TRUE");
+                                        $result = pg_query("SELECT count(*) from igdb.reviews where recommend = TRUE and game_id = ".$item['game_id']."");
                                         $recommend = pg_fetch_array($result, 0);
-                                        $result = pg_query("SELECT count(*) from igdb.reviews");
+                                        $result = pg_query("SELECT count(*) from igdb.reviews where game_id = ".$item['game_id']."");
                                         $reviews_num = pg_fetch_array($result, 0);
                                         echo $recommend['count']." / ".$reviews_num['count']; 
                                     ?></td>
@@ -170,12 +170,12 @@
                             </div>
                         </div>
                         <?php 
-                            $result = pg_query($db_conn, "SELECT * FROM igdb.reviews ORDER BY review_id ASC;");
+                            $result = pg_query($db_conn, "SELECT * FROM igdb.reviews where game_id = ".$item['game_id']." ORDER BY review_id ASC;");
                             $arr = pg_fetch_all($result);
                             foreach($arr as $array)
                             {
                                 $user_id = $array['user_id'];
-                                $result = pg_query($db_conn, "SELECT * FROM igdb.users where user_id = '$user_id';");
+                                $result = pg_query($db_conn, "SELECT * FROM igdb.users where user_id = '$user_id'");
                                 $user = pg_fetch_array($result, 0);
                                 echo '<div class="grid-item">
                                         <span class="userAva">

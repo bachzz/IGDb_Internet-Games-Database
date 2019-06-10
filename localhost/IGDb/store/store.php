@@ -67,16 +67,16 @@
                 <div class="slider-wrap">
                     <div class="slider" id="slider">
                         <div class="holder">
-                        <div class="slide" id="slide-0" style="background-image:  url(Pictures/game1.jpg);
+                        <div class="slide" id="slide-0" style="background-image:  url(pictures/game1.jpg);
                             background-size: 1280px 720px;">
                             </div>
-                            <div class="slide" id="slide-1" style="background-image:  url(Pictures/game1.jpg);
+                            <div class="slide" id="slide-1" style="background-image:  url(pictures/game1.jpg);
                             background-size: 1280px 720px;">
                             </div>
-                            <div class="slide" id="slide-2" style="background-image:  url(Pictures/game1.jpg);
+                            <div class="slide" id="slide-2" style="background-image:  url(pictures/game1.jpg);
                             background-size: 1280px 720px;">
                             </div>
-                            <div class="slide" id="slide-3" style="background-image:  url(Pictures/game1.jpg);
+                            <div class="slide" id="slide-3" style="background-image:  url(pictures/game1.jpg);
                             background-size: 1280px 720px;">
                             </div>
                         </div>

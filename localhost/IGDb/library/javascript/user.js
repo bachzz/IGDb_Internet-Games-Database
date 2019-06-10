@@ -1,4 +1,4 @@
-var slider = {
+﻿var slider = {
   
     // Not sure if keeping element collections like this
     // together is useful or not.
@@ -10,7 +10,7 @@ var slider = {
     },
     
     timing: 800,
-    slideWidth: 800, // could measure this
+    slideWidth: 1280, // could measure this
    
     // In this simple example, might just move the
     // binding here to the init function
@@ -59,22 +59,15 @@ var slider = {
   
 slider.init();
 
+
 document.getElementById("store").onclick = function () {
-    location.href = "../store/store.php";
-};
-
-document.getElementById("library").onclick = function () {
-    location.href = "../library/library.php";
-};
-
-document.getElementById("user_profile").onclick = function () {
-    location.href = "../user/user.php";
+    location.href = "./store.php";
 };
 
 document.getElementById("logout").onclick = function () {
     location.href = "../login/logout.php";
 };
 
-
-
-  
+function game_onclick(game_id){
+  location.href = "../game_page/game_page.php?game_id="+game_id;
+}
