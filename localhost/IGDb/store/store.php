@@ -67,10 +67,18 @@
                 <div class="slider-wrap">
                     <div class="slider" id="slider">
                         <div class="holder">
-                            <div class="slide" id="slide-0"></div>
-                            <div class="slide" id="slide-1"></div>
-                            <div class="slide" id="slide-2"></div>
-                            <div class="slide" id="slide-3"></div>
+                        <div class="slide" id="slide-0" style="background-image:  url(Pictures/game1.jpg);
+                            background-size: 1280px 720px;">
+                            </div>
+                            <div class="slide" id="slide-1" style="background-image:  url(Pictures/game1.jpg);
+                            background-size: 1280px 720px;">
+                            </div>
+                            <div class="slide" id="slide-2" style="background-image:  url(Pictures/game1.jpg);
+                            background-size: 1280px 720px;">
+                            </div>
+                            <div class="slide" id="slide-3" style="background-image:  url(Pictures/game1.jpg);
+                            background-size: 1280px 720px;">
+                            </div>
                         </div>
                     </div>
                     <nav class="slider-nav">
@@ -82,7 +90,16 @@
                 </div>
                 <div class="gamesDisplay">
                     <div class=gameText>
-                        <div id="allGames">All games</div>
+                    <div id="allGames">All games</div>
+                        <div class="storeSortButton">
+                            <div class="sortButton">Filter
+                                <span class="sort-menu">
+                                    <p class="sortbyDate">Newest first</p>
+                                    <p class="sortbyPop">Most popular first</p>
+                                    <p class="sortbyScore">Highest rated first</p>
+                                </span>
+                            </div>
+                        </div>
                     </div>
                     <div class=gamesContainer>
                         <div class="grid-container">

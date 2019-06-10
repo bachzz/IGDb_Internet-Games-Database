@@ -61,8 +61,30 @@
             <div class="content">
                 <div class="gameTitle"><?php echo $item['title']; ?></div>
                 <div class="gameInfo">
-                    <div class="screenshot">
-                        <img src=pictures/game2.png width="800px" height="450px">
+                <div class="slider-wrap">
+                        <div class="slider" id="slider">
+                            <div class="holder">
+                                <div class="slide" id="slide-0" style="background-image:  url(Pictures/game1.jpg);
+                                background-size: 1280px 720px;">
+                                </div>
+                                <div class="slide" id="slide-1" style="background-image:  url(Pictures/game1.jpg);
+                                background-size: 1280px 720px;">
+                                </div>
+                                <div class="slide" id="slide-2" style="background-image:  url(Pictures/game1.jpg);
+                                background-size: 1280px 720px;">
+                                </div>
+                                <div class="slide" id="slide-3" style="background-image:  url(Pictures/game1.jpg);
+                                background-size: 1280px 720px;">
+                                </div>
+    
+                            </div>
+                        </div>
+                        <nav class="slider-nav">
+                            <a href="#slide-0" class="active">Slide 0</a>
+                            <a href="#slide-1">Slide 1</a>
+                            <a href="#slide-2">Slide 2</a>
+                            <a href="#slide-3">Slide 3</a>
+                        </nav>
                     </div>
                     <div class="rightInfo">
                         <div class="gameCover">
@@ -162,7 +184,12 @@
                                         <div class="reviewInfo">
                                             <div class=reviewTop>
                                                 <div class="userName">'.$user['name'].'</div>
+                                                <div class="reviewRec">'.$array['recommend'].'</div>
                                                 <div class="reviewDate">'.$array['review_date'].'</div>
+                                                <div class="reviewRating">
+                                                <div class="upvote">up</div>
+                                                <div class="downvote">down</div>
+                                            </div>
                                             </div>
                                             <div class="reviewText">'.$array['game_review'].'</div>
                                         </div>

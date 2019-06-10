@@ -1,270 +1,353 @@
 ﻿* {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 .bg {
-    position: absolute;
-    background-image: url(../pictures/bg.png);
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin: 0;
-    background-size: cover;
-    overflow: auto;
-    z-index: ;}
+  position: absolute;
+  background-image: url(../Pictures/bg.png);
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0;
+  background-size: cover;
+  overflow: auto;
+}
 
 .bodyContainer{
-    position: absolute;
-    width: 1280px;
-    left: 50%;
-    margin-left: -640px;
-    margin-top: 50px;
-    background-color: white;
+  position: absolute;
+  width: 1280px;
+  left: 50%;
+  margin-left: -640px;
+  margin-top: 50px;
+  background-color: white;
 
 }
 .header{
-    width: 1280px;
-    height: 50px;
-    top:0;
-    position: fixed;
-    background-color: black;
-    display: inline-block;
-    z-index: 9999;
+  width: 1280px;
+  height: 50px;
+  top:0;
+  position: fixed;
+  background-color: black;
+  display: inline-block;
+  z-index: 9999;
 }
 
 
 .leftHeader{
-    float: left;
+  float: left;
 }
 .logo{
-    cursor: pointer;
-    height:50px;
-    width:80px;
-    margin-left:20px;
-    float: left;
-    text-align: center;
-    color: #000;
-    font-weight: bold;
-    margin-right: 20px;
+  cursor: pointer;
+  height:50px;
+  width:80px;
+  margin-left:20px;
+  float: left;
+  text-align: center;
+  color: #000;
+  font-weight: bold;
+  margin-right: 20px;
 }
 .Store{
-    cursor: pointer;
-    width:150px;
-    text-align: center;
-    height:50px;
-    float: left;
+  cursor: pointer;
+  width:150px;
+  text-align: center;
+  height:50px;
+  float: left;
 }
 .Library{
-    cursor: pointer;
-    width:150px;
-    height:50px;
-    float: left;
-    text-align: center;
+  cursor: pointer;
+  width:150px;
+  height:50px;
+  float: left;
+  text-align: center;
 
 }
 .storeText{
-    color: #fff;
-    font-size:30px;
-    line-height: 50px;
-    border-left:1px solid white;
-    border-right:1px solid white;
+  color: #fff;
+  font-size:30px;
+  line-height: 50px;
+  border-left:1px solid white;
+  border-right:1px solid white;
 }
 .logoText{
-    color: #fff;
-    font-size:30px;
-    line-height: 50px;
+  color: #fff;
+  font-size:30px;
+  line-height: 50px;
 }
 .libText{
-    color: #fff;
-    text-align: center;
-    line-height: 50px;
-    font-size:30px;
-    border-right:1px solid white;
+  color: #fff;
+  text-align: center;
+  line-height: 50px;
+  font-size:30px;
+  border-right:1px solid white;
 }
 .Search{
-    cursor: pointer;
-    width:150px;
-    height:50px;
-    float: left;
-    text-align: center;
+  cursor: pointer;
+  width:150px;
+  height:50px;
+  float: left;
+  text-align: center;
 
 }
 .searchText{
-    color: #fff;
-    text-align: center;
-    line-height: 50px;
-    font-size:30px;
-    border-right:1px solid white;
+  color: #fff;
+  text-align: center;
+  line-height: 50px;
+  font-size:30px;
+  border-right:1px solid white;
 }
 .rightHeader{
-    float:right;
+  float:right;
 }
 
 .User{
-    cursor: pointer;
-    width:150px;
-    height:50px;
-    float: left;
-    text-align: center;
-    border-left:1px solid white;
-    border-right:1px solid white;
+  cursor: pointer;
+  width:150px;
+  height:50px;
+  float: left;
+  text-align: center;
+  border-left:1px solid white;
+  border-right:1px solid white;
 }
 .userText{
-    color: #fff;
-    text-align: center;
-    line-height: 50px;
-    font-size:30px;
-    border-right:1px solid white;
+  color: #fff;
+  text-align: center;
+  line-height: 50px;
+  font-size:30px;
+  border-right:1px solid white;
 }
 
 .user-menu {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    width: 150px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-  }
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  width: 150px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
 .profile{
-    cursor: pointer;
-    width:150px;
-    height:50px;
-    line-height: 50px;
-    text-align: center;
-    margin:0px;
+  cursor: pointer;
+  width:150px;
+  height:50px;
+  line-height: 50px;
+  text-align: center;
+  margin:0px;
 }
 .logout{
-    cursor: pointer;
-    width:150px;
-    height:50px;
-    line-height: 50px;
-    text-align: center;
-    margin:0px;
+  cursor: pointer;
+  width:150px;
+  height:50px;
+  line-height: 50px;
+  text-align: center;
+  margin:0px;
 }
 .profile:hover{
-    background-color:black;
-    color:white;
+  background-color:black;
+  color:white;
 }
 .logout:hover{
-    background-color:black;
-    color:white;
+  background-color:black;
+  color:white;
 }
 .User:hover .user-menu {
-    display: block;
-  }
+  display: block;
+}
 
 .content{
 
-    width:1280px;
-    overflow: auto;
-    background-color: white;
+  width:1280px;
+  overflow: auto;
+  background-color: white;
 }
 
 
 .slider-wrap {
-  width: 1280px;
-  height: 720px;
-  margin: 0px auto;
+width: 1280px;
+height: 720px;
+margin: 0px auto;
 }
 .slider {
-  overflow-x: scroll;
+overflow-x: scroll;
 }
 .holder {
-  width: 400%;
+width: 400%;
 }
 .slide {
-  float: left;
-  width: 1280px;
-  height: 720px;
-  position: relative;
-  background-position: -100px 0;
+float: left;
+width: 1280px;
+height: 720px;
+position: relative;
+background-position: -100px 0;
 }
 
 #slide-0 {
-  background-image: url(../pictures/game1.jpg);
-  background-size: 1280px 720px;
+/* background-image: url(../Pictures/game1.jpg);
+background-size: 1280px 720px; */
 }
 #slide-1 {
-  background-image: url(../pictures/game2.png);
-  background-size: 1280px 720px;
+/* background-image: url(../Pictures/game2.png);
+background-size: 1280px 720px; */
 }
 #slide-2 {
-  background-image: url(../pictures/game3.jpg);
-  background-size: 1280px 720px;
+/* background-image: url(../Pictures/game3.jpg);
+background-size: 1280px 720px; */
 }
 #slide-3 {
-    background-image: url(../pictures/game4.jpg);
-    background-size: 1280px 720px;
-  }
+  /* background-image: url(../Pictures/game4.jpg);
+  background-size: 1280px 720px; */
+}
 
 .slide:before {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 40%;
-  background: linear-gradient(transparent, black);
+content: "";
+position: absolute;
+bottom: 0;
+left: 0;
+width: 100%;
+height: 40%;
+background: linear-gradient(transparent, black);
 }
 .slider-nav {
-  text-align: center;
-  margin: 10px 0 0 0;
+text-align: center;
+margin: 10px 0 0 0;
 }
 .slider-nav a {
-  width: 10px;
-  height: 10px;
-  display: inline-block;
-  background: #ddd;
-  overflow: hidden;
-  text-indent: -9999px;
-  border-radius: 50%;
+width: 10px;
+height: 10px;
+display: inline-block;
+background: #ddd;
+overflow: hidden;
+text-indent: -9999px;
+border-radius: 50%;
 }
 .slider-nav a.active {
-  background: #999;
+background: #999;
 }
 .gamesDisplay{
-    height:100%;
-    min-height:80vh;
+  height:100%;
+  min-height:80vh;
 }
+.storeSortButton {
+float: left;
+margin-left: 35px;
+margin-bottom: 20px;
+font-size: 30px;
+border-left: 1px solid black;
+
+}
+
+.sortButton {
+height: 50px;
+width: 100px;
+border: none;
+cursor: pointer;
+line-height: 50px;
+text-align: center;
+}
+
+.sort-menu {
+display: none;
+position: absolute;
+font-size: 20px;
+background-color: #f9f9f9;
+color: black;
+width: 250px;
+margin-left: -30px;
+box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+z-index: 1;
+}
+
+.sortbyDate {
+cursor: pointer;
+width: 250px;
+height: 50px;
+line-height: 50px;
+text-align: center;
+margin: 0px;
+}
+
+.sortbyPop {
+cursor: pointer;
+width: 250px;
+height: 50px;
+line-height: 50px;
+text-align: center;
+margin: 0px;
+}
+
+.sortbyScore {
+cursor: pointer;
+width: 250px;
+height: 50px;
+line-height: 50px;
+text-align: center;
+margin: 0px;
+}
+
+.sortbyDate:hover {
+background-color: black;
+color: white;
+}
+
+.sortbyPop:hover {
+background-color: black;
+color: white;
+}
+
+.sortbyScore:hover {
+background-color: black;
+color: white;
+}
+
+.storeSortButton:hover .sort-menu {
+display: block;
+}
+
 .grid-container {
-    display: grid;
-    grid-template-columns: 1200px;
-    padding: 10px;
-    align-items: center;
-    justify-content: center;
-    grid-gap: 5px;
-  }
-  .grid-item {
-    background-color: rgba(255, 255, 255, 0.8);
-    border: 1px solid rgba(0, 0, 0, 0.8);
-    padding: 20px;
+  display: grid;
+  grid-template-columns: 1200px;
+  padding: 10px;
+  align-items: center;
+  justify-content: center;
+  grid-gap: 5px;
+}
+.grid-item {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  height:100px;
+  font-size: 30px;
+}
+.gameText{
+  display: inline-block;
+  width: 1210px;
+  height: 50px;
+  margin: 70px 0px 20px 0px;
+}
+#allGames{
+  height: 50px;
+  line-height: 50px;
+  font-size: 40px;
+  margin-left: 35px;
+  margin-bottom: 20px;
+  float: left;
+  font-weight: bold;
+}
+.gameCover{
+    cursor: pointer;
+    width: 200px;
     height:100px;
+    float:left;
+    overflow: hidden;
+}
+.gameInfo{
+    float:left;
+    margin-left:30px;
+}
+.gameName{
+    cursor: pointer;
     font-size: 30px;
-  }
-  .gameText{
-      margin:70px 0px;
-  }
-  #allGames{
-      font-size: 50px;
-      font-weight: bold;
-      text-align: center;
-  }
-  .gameCover{
-      cursor: pointer;
-      width: 200px;
-      height:100px;
-      float:left;
-      overflow: hidden;
-  }
-  .gameInfo{
-      float:left;
-      margin-left:30px;
-  }
-  .gameName{
-      cursor: pointer;
-      font-size: 30px;
-      font-weight: bold;
-  }
-  .gameDescription{
-    font-size: 20px;
+    font-weight: bold;
+}
+.gameDescription{
+  font-size: 20px;
 }
