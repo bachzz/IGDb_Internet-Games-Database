@@ -1,0 +1,470 @@
+﻿* {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.bg {
+  position: absolute;
+  background-image: url(../Pictures/bg.png);
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0;
+  background-size: cover;
+  overflow: auto;
+}
+
+.bodyContainer {
+  position: absolute;
+  width: 1280px;
+  left: 50%;
+  margin-left: -640px;
+  margin-top: 50px;
+  background-color: white;
+
+}
+
+.header {
+  width: 1280px;
+  height: 50px;
+  top: 0;
+  position: fixed;
+  background-color: black;
+  display: inline-block;
+  z-index: 9999;
+}
+
+
+.leftHeader {
+  float: left;
+}
+
+.logo {
+  cursor: pointer;
+  height: 50px;
+  width: 80px;
+  margin-left: 20px;
+  float: left;
+  text-align: center;
+  color: #000;
+  font-weight: bold;
+  margin-right: 20px;
+}
+
+.Store {
+  cursor: pointer;
+  width: 150px;
+  text-align: center;
+  height: 50px;
+  float: left;
+}
+
+.Library {
+  cursor: pointer;
+  width: 150px;
+  height: 50px;
+  float: left;
+  text-align: center;
+
+}
+
+.storeText {
+  color: #fff;
+  font-size: 30px;
+  line-height: 50px;
+  border-left: 1px solid white;
+  border-right: 1px solid white;
+}
+
+.logoText {
+  color: #fff;
+  font-size: 30px;
+  line-height: 50px;
+}
+
+.libText {
+  color: #fff;
+  text-align: center;
+  line-height: 50px;
+  font-size: 30px;
+  border-right: 1px solid white;
+}
+
+.Search {
+  cursor: pointer;
+  width: 150px;
+  height: 50px;
+  float: left;
+  text-align: center;
+
+}
+
+.searchText {
+  color: #fff;
+  text-align: center;
+  line-height: 50px;
+  font-size: 30px;
+  border-right: 1px solid white;
+}
+
+.rightHeader {
+  float: right;
+}
+
+.User {
+  cursor: pointer;
+  width: 150px;
+  height: 50px;
+  float: left;
+  text-align: center;
+  border-left: 1px solid white;
+  border-right: 1px solid white;
+}
+
+.userText {
+  color: #fff;
+  text-align: center;
+  line-height: 50px;
+  font-size: 30px;
+  border-right: 1px solid white;
+}
+
+.user-menu {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  width: 150px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.profile {
+  cursor: pointer;
+  width: 150px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  margin: 0px;
+}
+
+.logout {
+  cursor: pointer;
+  width: 150px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  margin: 0px;
+}
+
+.profile:hover {
+  background-color: black;
+  color: white;
+}
+
+.logout:hover {
+  background-color: black;
+  color: white;
+}
+
+.User:hover .user-menu {
+  display: block;
+}
+
+.content {
+
+  width: 1280px;
+  overflow: auto;
+  background-color: white;
+}
+
+.userInfoContainer {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  height: 300px;
+  font-size: 30px;
+  margin: 5px 40px;
+  width:1160px;
+  background-image:  url(../Pictures/game2.png);
+  background-size: 1280px 720px;
+
+}
+
+
+
+.userAva {
+
+  cursor: pointer;
+  width: 200px;
+  height: 200px;
+  float: left;
+  overflow: hidden;
+  margin-top: 200px;
+}
+.userInfo{
+  float: left;
+  margin-left: 30px;
+  margin-top: 220px;
+  color: white;
+text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+.userStatistic{
+  padding: 15px;
+  font-size: 18px;
+  float:left;
+  margin-left:10px;
+
+}
+.numGamesContainer{
+  margin-bottom: 10px;
+}
+.numGames{
+  float:left;
+  margin-left:5px;
+
+}
+.numGamesText{
+  float:left;
+  font-weight: bold;
+
+}
+
+.numReviews{
+  float:left;
+  margin-left:5px;
+
+}
+.numReviewsText{
+  float:left;
+  font-weight: bold;
+}
+.userName {
+  cursor: pointer;
+  float: left;
+  font-size: 40px;
+  font-weight: bold;
+  padding-right: 10px;
+}
+
+.userEmail {
+  font-size: 20px;
+}
+
+
+.gamesDisplay {
+  height: 100%;
+  min-height: 80vh;
+}
+
+.storeSortButton {
+  float: left;
+  margin-left: 35px;
+  margin-bottom: 20px;
+  font-size: 30px;
+  border-left: 1px solid black;
+
+}
+
+.sortButton {
+  height: 50px;
+  width: 100px;
+  border: none;
+  cursor: pointer;
+  line-height: 50px;
+  text-align: center;
+}
+
+.sort-menu {
+  display: none;
+  position: absolute;
+  font-size: 20px;
+  background-color: #f9f9f9;
+  color: black;
+  width: 250px;
+  margin-left: -30px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.sortbyPlaying {
+  cursor: pointer;
+  width: 250px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  margin: 0px;
+}
+
+.sortbyPlayed {
+  cursor: pointer;
+  width: 250px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  margin: 0px;
+}
+
+.sortbyWait{
+  cursor: pointer;
+  width: 250px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  margin: 0px;
+}
+
+.sortbyDropped{
+  cursor: pointer;
+  width: 250px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  margin: 0px;
+}
+
+
+.sortbyPlaying:hover {
+  background-color: black;
+  color: white;
+}
+
+.sortbyPlayed:hover {
+  background-color: black;
+  color: white;
+}
+
+.sortbyWait:hover {
+  background-color: black;
+  color: white;
+}
+
+.sortbyDropped:hover {
+  background-color: black;
+  color: white;
+}
+
+.storeSortButton:hover .sort-menu {
+  display: block;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1200px;
+  padding: 10px;
+  align-items: center;
+  justify-content: center;
+  grid-gap: 5px;
+}
+
+.grid-item {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  height: 100px;
+  font-size: 30px;
+}
+
+.gameText {
+  display: inline-block;
+  width: 1210px;
+  height: 50px;
+  margin: 70px 0px 20px 0px;
+}
+
+#allGames {
+  height: 50px;
+  line-height: 50px;
+  font-size: 40px;
+  margin-left: 35px;
+  margin-bottom: 20px;
+  float: left;
+  font-weight: bold;
+}
+
+.gameCover {
+  cursor: pointer;
+  width: 200px;
+  height: 100px;
+  float: left;
+  overflow: hidden;
+}
+
+.gameInfo {
+  float: left;
+  margin-left: 30px;
+}
+
+.gameName {
+  cursor: pointer;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.gameOption {
+  margin-top:15px;
+  font-size: 20px;
+}
+.container {
+  display: block;
+  float:left;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  margin-right:12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default radio button */
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Create a custom radio button */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+  border-radius: 50%;
+}
+
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* When the radio button is checked, add a blue background */
+.container input:checked ~ .checkmark {
+  background-color: #2196F3;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.container .checkmark:after {
+ 	top: 9px;
+	left: 9px;
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	background: white;
+}
