@@ -207,9 +207,7 @@
 .storeSortButton {
   float: left;
   margin-left: 35px;
-  margin-bottom: 20px;
-  font-size: 30px;
-
+  margin-top:20px;
 }
 
 .sortby {

@@ -171,7 +171,6 @@
 }
 
 .content {
-
   width: 1280px;
   overflow: auto;
   background-color: white;
@@ -183,37 +182,16 @@
   min-height: 80vh;
 }
 
+
 .storeSortButton {
   float: left;
   margin-left: 35px;
-  margin-bottom: 20px;
-  font-size: 30px;
-  border-left: 1px solid black;
-
+  margin-top:20px;
+  
 }
 
-.sortButton {
-  height: 50px;
-  width: 100px;
-  border: none;
-  cursor: pointer;
-  line-height: 50px;
-  text-align: center;
-}
 
-.sort-menu {
-  display: none;
-  position: absolute;
-  font-size: 20px;
-  background-color: #f9f9f9;
-  color: black;
-  width: 250px;
-  margin-left: -30px;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  z-index: 1;
-}
-
-.sortbyDate {
+.sortby {
   cursor: pointer;
   width: 250px;
   height: 50px;
@@ -222,40 +200,10 @@
   margin: 0px;
 }
 
-.sortbyPop{
-  cursor: pointer;
-  width: 250px;
-  height: 50px;
-  line-height: 50px;
-  text-align: center;
-  margin: 0px;
-}
-
-.sortbyScore{
-  cursor: pointer;
-  width: 250px;
-  height: 50px;
-  line-height: 50px;
-  text-align: center;
-  margin: 0px;
-}
-
-
-.sortbyScore:hover {
+.sortby:hover {
   background-color: black;
   color: white;
 }
-
-.sortbyDate:hover {
-  background-color: black;
-  color: white;
-}
-
-.sortbyPop:hover {
-  background-color: black;
-  color: white;
-}
-
 
 .storeSortButton:hover .sort-menu {
   display: block;
@@ -328,6 +276,7 @@
   width: 1210px;
   height: 50px;
   margin: 30px 0px 20px 0px;
+  
 }
 
 #allGamesName {
