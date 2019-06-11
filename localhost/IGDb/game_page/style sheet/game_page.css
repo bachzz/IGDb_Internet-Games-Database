@@ -193,6 +193,28 @@
   border: 1px solid black;
 }
 
+.item {
+  overflow: hidden;
+}
+
+.carousel-inner {
+  width: 800px;
+  height: 450px;
+  margin: 0px auto;
+}
+
+.carousel-slide {
+  width: 800px;
+  height: 450px;
+  margin: 0px auto;
+}
+
+#myCarousel {
+  width: 800px;
+  height: 450px;
+  margin: 0px auto;
+}
+
 .slider-wrap {
   width: 800px;
   height: 432px;
@@ -205,9 +227,11 @@
 .slider {
   overflow-x: scroll;
 }
+
 .holder {
   width: 400%;
 }
+
 .slide {
   float: left;
   width: 800px;
@@ -220,18 +244,21 @@
   /* background-image: url(../Pictures/game1.jpg);
   background-size: 1280px 720px; */
 }
+
 #slide-1 {
   /* background-image: url(../Pictures/game2.png);
   background-size: 1280px 720px; */
 }
+
 #slide-2 {
   /* background-image: url(../Pictures/game3.jpg);
   background-size: 1280px 720px; */
 }
+
 #slide-3 {
-    /* background-image: url(../Pictures/game4.jpg);
+  /* background-image: url(../Pictures/game4.jpg);
     background-size: 1280px 720px; */
-  }
+}
 
 .slide:before {
   content: "";
@@ -242,10 +269,12 @@
   height: 40%;
   background: linear-gradient(transparent, black);
 }
+
 .slider-nav {
   text-align: center;
   margin: 10px 0 0 0;
 }
+
 .slider-nav a {
   width: 10px;
   height: 10px;
@@ -255,6 +284,7 @@
   text-indent: -9999px;
   border-radius: 50%;
 }
+
 .slider-nav a.active {
   background: #999;
 }
@@ -293,12 +323,12 @@
   float: left;
   line-height: 50px;
   font-size: 22px;
-
 }
 
 .addButtonContainer {
   float: right;
-
+  width:1280px;
+  
 }
 
 .addButton {
@@ -307,8 +337,9 @@
   background-color: black;
   color: white;
   border: none;
-  margin-top: 25px;
   cursor: pointer;
+  float:right;
+  margin-top:-25px;
 }
 
 .formContainer {
@@ -390,18 +421,18 @@
 }
 
 .submitButtonContainer {
-  float: right;
-
+  width:1280px;
+  float:right;
 }
 
 #submitButton {
   height: 50px;
   width: 100px;
+  float:right;
   background-color: black;
   color: white;
   border: none;
   cursor: pointer;
-  margin-top: 10px;
 }
 
 .reviewContainer {
@@ -424,6 +455,13 @@
   float: left;
   font-weight: bold;
 
+}
+
+.reviewInput{
+  height:150px;
+  width:1150px;
+  overflow: auto;
+  padding:20px;
 }
 
 .reviewSortButton {
@@ -509,15 +547,16 @@
   align-items: center;
   justify-content: center;
   grid-gap: 5px;
+  
 }
 
 .grid-item {
   background-color: rgba(255, 255, 255, 0.8);
   border: 1px solid rgba(0, 0, 0, 0.8);
   padding: 20px;
-  height: 100px;
   font-size: 30px;
   margin: 5px 0px;
+  height:140px;
 }
 
 .userAva {
@@ -535,7 +574,7 @@
 
 .reviewTop {
   display: inline-block;
-  width:1040px;
+  width: 1040px;
 }
 
 .userName {
@@ -550,10 +589,11 @@
 .reviewText {
   font-size: 20px;
 }
+
 .reviewRec {
   float: left;
   font-size: 18px;
-  padding:0px 10px;
+  padding: 0px 10px;
   border-right: 1px solid black;
 }
 
@@ -562,20 +602,23 @@
   float: left;
   margin-left: 10px;
 }
-.reviewRating{
-  float:right;
+
+.reviewRating {
+  float: right;
   font-size: 18px;
 }
-.upvote{
+
+.upvote {
   cursor: pointer;
   font-size: 18px;
-  float:left;
-  padding:0px 10px;
+  float: left;
+  padding: 0px 10px;
   border-right: 1px solid black;
 }
-.downvote{
+
+.downvote {
   cursor: pointer;
   font-size: 18px;
-  float:left;
-  padding:0px 10px;
+  float: left;
+  padding: 0px 10px;
 }

@@ -7,34 +7,11 @@
 </head>
 
 <body>
-    <div class="bg">
+    <div class="bg" style="background-image: url(../resources/test/bg.png);">
         <div class="bodyContainer">
-            <div class="header">
-                <div class="leftHeader">
-                    <div class="logo">
-                        <div class="logoText">IGDb</div>
-                    </div>
-                    <div class="Store">
-                        <div class="storeText">Store</div>
-                    </div>
-                    <div class="Library">
-                        <div class="libText">Library</div>
-                    </div>
-                    <div class="Search">
-                        <div class="searchText">Search</div>
-                    </div>
-
-                    <div class="User">
-                        <div class="userText">User</div>
-                        <span class="user-menu">
-                            <p class="profile">Profile</p>
-                            <p class="logout">Logout</p>
-                        </span>
-                    </div>
-                </div>
-            </div>
+            <?php include '../nav/navigation.php' ?>
             <div class="content">
-                <div class="userInfoContainer">
+                <div class="userInfoContainer" style="background-image: url(../resources/test/game2.png);">
                     <span class="userAva">
                         <img src=pictures/game4.jpg width="200px" height="200px">
                     </span>
@@ -72,59 +49,16 @@
                     </div>
                     <div class=gamesContainer>
                         <div class="grid-container">
-                            <div class="grid-item">
-                                <span class="gameCover">
-                                    <img src=pictures/game4.jpg width="200px" height="100px">
-                                </span>
-                                <span class="gameInfo">
-                                    <div class="gameName">Game name #1</div>
-                                    <div class="gameOption">
-                                        <label class="container">Playing
-                                            <input type="radio" name="Game name #1">
-                                            <span class="checkmark"></span>
-                                        </label>
-                                        <label class="container">Played
-                                            <input type="radio" name="Game name #1">
-                                            <span class="checkmark"></span>
-                                        </label>
-                                        <label class="container">Waiting to play
-                                            <input type="radio" name="Game name #1">
-                                            <span class="checkmark"></span>
-                                        </label>
-                                        <label class="container">Dropped
-                                            <input type="radio" name="Game name #1">
-                                            <span class="checkmark"></span>
-                                        </label>
+                                    <div class="grid-item">
+                                        <span class="gameCover">
+                                            <img src=pictures/game4.jpg width="200px" height="100px">
+                                        </span>
+                                        <span class="gameInfo">
+                                            <div class="gameName">Game name #2</div>
+                                            <div class="gameDescription">This is game1,
+                                                ạdhskljfosdajflkasjfklsajfklsjfklasjfasjldf</div>
+                                        </span>
                                     </div>
-                                </span>
-                            </div>
-                            <div class="grid-item">
-                                <span class="gameCover">
-                                    <img src=pictures/game4.jpg width="200px" height="100px">
-                                </span>
-                                <span class="gameInfo">
-                                    <div class="gameName">Game name #2</div>
-                                    <div class="gameOption">
-                                        <label class="container">Playing
-                                            <input type="radio"name="Game name #2">
-                                            <span class="checkmark"></span>
-                                        </label>
-                                        <label class="container">Played
-                                            <input type="radio" name="Game name #2">
-                                            <span class="checkmark"></span>
-                                        </label>
-                                        <label class="container">Waiting to play
-                                            <input type="radio" name="Game name #2">
-                                            <span class="checkmark"></span>
-                                        </label>
-                                        <label class="container">Dropped
-                                            <input type="radio" name="Game name #2">
-                                            <span class="checkmark"></span>
-                                        </label>
-                                    </div>
-                                </span>
-                            </div>
-
                         </div>
                     </div>
                 </div>

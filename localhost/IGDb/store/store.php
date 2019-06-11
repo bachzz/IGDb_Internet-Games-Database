@@ -36,58 +36,48 @@
 
         <div class="bodyContainer">
 
-            <div class="header">
-                <div class="leftHeader">
-                    <div class="logo">
-                        <div class="logoText">IGDb</div>
-                    </div>
-                    <div class="Store">
-                        <div class="storeText" id="store">Store</div>
-                    </div>
-                    <div class="Library">
-                        <div class="libText">Library</div>
-                    </div>
-                    <div class="Search">
-                        <div class="searchText">Search</div>
-                    </div>
-
-                    <div class="User">
-                        <div class="userText">User</div>
-                        <span class="user-menu">
-                            <p class="profile">Profile</p>
-                            <p class="logout" id="logout">Logout</p>
-                        </span>
-                    </div>
-                </div>
-            </div>
+            <?php include '../nav/navigation.php' ?>
 
 
             <div class="content">
 
-                <div class="slider-wrap">
-                    <div class="slider" id="slider">
-                        <div class="holder">
-                        <div class="slide" id="slide-0" style="background-image:  url(pictures/game1.jpg);
-                            background-size: 1280px 720px;">
-                            </div>
-                            <div class="slide" id="slide-1" style="background-image:  url(pictures/game1.jpg);
-                            background-size: 1280px 720px;">
-                            </div>
-                            <div class="slide" id="slide-2" style="background-image:  url(pictures/game1.jpg);
-                            background-size: 1280px 720px;">
-                            </div>
-                            <div class="slide" id="slide-3" style="background-image:  url(pictures/game1.jpg);
-                            background-size: 1280px 720px;">
-                            </div>
-                        </div>
+            <div id="myCarousel" class="carousel slide" data-ride="carousel">
+
+
+                <!-- Wrapper for slides -->
+                <div class="carousel-inner">
+                    <div class="item active">
+                    <img src="../resources/test/game1.jpg">
                     </div>
-                    <nav class="slider-nav">
-                        <a href="#slide-0" class="active">Slide 0</a>
-                        <a href="#slide-1">Slide 1</a>
-                        <a href="#slide-2">Slide 2</a>
-                        <a href="#slide-3">Slide 3</a>
-                    </nav>
+
+                    <div class="item">
+                    <img src="../resources/test/game2.png">
+                    </div>
+
+                    <div class="item">
+                    <img src="../resources/test/bg.png">
+                    </div>
+                    <div class="item">
+                    <img src="../resources/test/game2.png">
+                    </div>
+                    <div class="item">
+                    <img src="../resources/test/game3.jpg">
+                    </div>
+                    <div class="item">
+                    <img src="../resources/test/game2.png">
+                    </div>
                 </div>
+
+                <!-- Left and right controls -->
+                <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
                 <div class="gamesDisplay">
                     <div class=gameText>
                     <div id="allGames">All games</div>
@@ -141,6 +131,10 @@
     </div>
     <script src="javascript/jquery-3.3.1.js"></script>
     <script src="javascript/store.js"></script>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 </body>
 
 </html>
