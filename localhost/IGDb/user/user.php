@@ -40,21 +40,75 @@
                         <img src=pictures/game4.jpg width="200px" height="200px">
                     </span>
                     <div class="userInfo">
-                        <div class=userNameContainer>
-                            <div class="userName">John Doe</div>
-                        </div>
-                        <div class="userEmail">johndoe@gmail.com</div>
+					<?php 
+								$result = pg_query($db_conn, "SELECT * FROM igdb.users WHERE user_id = '".$_SESSION['user_id']."';");
+                                $numrows = pg_num_rows($result);
+
+                                if ($numrows == 0) {
+                                    echo 'No users found!';
+                                }
+                                else {
+                                    $arr = pg_fetch_all($result);
+                                    foreach($arr as $array) {
+                                        $userName = $array['name'];
+                                        $userEmail = $array['email'];
+										echo ' <div class=userNameContainer>
+										<div class="userName">'.$userName.'</div>
+									</div>
+									<div class="userEmail">'.$userEmail.'</div>';
+                                    }
+                                }
+
+                            ?>
                     </div>
                 </div>
                 <div class="userStatistic">
-                    <div class="numLeftContainer">
-                        <div class="numReviewsText">Number of games:</div>
-                        <div class="numReviews">5</div>
-                    </div>
-                    <div class="numLeftContainer">
-                        <div class="numReviewsText">Number of reviews:</div>
-                        <div class="numReviews">4</div>
-                    </div>
+					<?php 
+						$result = pg_query($db_conn, "SELECT count(game_id) as number_of_games FROM igdb.library WHERE user_id = '".$_SESSION['user_id']."' GROUP BY user_id;");
+						$numrows = pg_num_rows($result);
+
+						if ($numrows == 0) {
+							echo'<div class="numLeftContainer">
+								<div class="numReviewsText">Number of games:</div>
+								<div class="numReviews">0</div>
+							</div>';
+						}
+
+						else {
+							$arr = pg_fetch_all($result);
+                            foreach($arr as $array) {
+								$num = $array['number_of_games'];
+								echo'<div class="numLeftContainer">
+								<div class="numReviewsText">Number of games:</div>
+								<div class="numReviews">'.$num.'</div>
+							</div>';
+							}
+						}
+					?>
+                    
+					<?php 
+						$result = pg_query($db_conn, "SELECT count(review_id) as number_of_reviews FROM igdb.reviews WHERE user_id = '".$_SESSION['user_id']."' GROUP BY user_id;");
+						$numrows = pg_num_rows($result);
+
+						if ($numrows == 0) {
+							echo' <div class="numLeftContainer">
+								<div class="numReviewsText">Number of reviews:</div>
+								<div class="numReviews">0</div>
+							</div>';
+						}
+
+						else {
+							$arr = pg_fetch_all($result);
+                            foreach($arr as $array) {
+								$num = $array['number_of_reviews'];
+								echo' <div class="numLeftContainer">
+								<div class="numReviewsText">Number of reviews:</div>
+								<div class="numReviews">'.$num.'</div>
+							</div>';
+							}
+						}
+					?>
+
                     <div class="numRightContainer">
                         <div class="numReviewsText">Currently playing:</div>
                         <div class="numReviews">4</div>
@@ -73,7 +127,7 @@
                     </div>
                 </div>
 
-                <div class="gamesDisplay">
+				<div class="gamesDisplay">
                     <div class="gameText">
                         <div id="allGames">Library</div>
                         <div class="storeSortButton">
@@ -102,13 +156,15 @@
                                         $img_url = $array['img_url'];
                                         $cover = strtok($img_url, ";");
 										$title = $array['title'];
-                                        $description = $array['description'];
+										$description = $array['description'];
+										$game_id = $array['game_id'];
+
 										echo ' <div class="grid-item">
                                         <span class="gameCover">
                                             <img src='.$cover.' width="200px" height="100px">
                                         </span>
                                         <span class="gameInfo">
-                                            <div class="gameName">'.$title.'</div>
+                                            <div class="gameName" onclick="game_onclick(\''.$game_id.'\')">'.$title.'</div>
                                             <div class="gameDescription">'.$description.'</div>
                                         </span>
                                     </div>';
@@ -140,6 +196,7 @@
                                         <div class="reviewInfo">
                                             <div class=reviewTop>
                                                 <div class="gameNameReview">Game reviewed name</div>
+												<div class="gameStatus">Dropped</div>
                                                 <div class="reviewRec">Recommended</div>
                                                 <div class="reviewDate">1/1/2019</div>
                                                 <div class="reviewRating">
