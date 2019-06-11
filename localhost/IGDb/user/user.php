@@ -109,22 +109,97 @@
 						}
 					?>
 
-                    <div class="numRightContainer">
-                        <div class="numReviewsText">Currently playing:</div>
-                        <div class="numReviews">4</div>
-                    </div>
-                    <div class="numRightContainer">
-                        <div class="numReviewsText">Completed:</div>
-                        <div class="numReviews">4</div>
-                    </div>
-                    <div class="numRightContainer">
-                        <div class="numReviewsText">Plan to play:</div>
-                        <div class="numReviews">4</div>
-                    </div>
-                    <div class="numRightContainer">
-                        <div class="numReviewsText">Dropped:</div>
-                        <div class="numReviews">4</div>
-                    </div>
+					<?php 
+						$result = pg_query($db_conn, "SELECT count(game_id) as number_of_playing FROM igdb.library WHERE user_id = '".$_SESSION['user_id']."' AND category = 1 GROUP BY user_id;");
+						$numrows = pg_num_rows($result);
+
+						if ($numrows == 0) {
+							echo'<div class="numRightContainer">
+								<div class="numReviewsText">Currently playing:</div>
+								<div class="numReviews">0</div>
+							</div>';
+						}
+
+						else {
+							$arr = pg_fetch_all($result);
+                            foreach($arr as $array) {
+								$num = $array['number_of_playing'];
+								echo'<div class="numRightContainer">
+								<div class="numReviewsText">Currently playing:</div>
+								<div class="numReviews">'.$num.'</div>
+							</div>';
+							}
+						}
+					?>
+
+					<?php 
+						$result = pg_query($db_conn, "SELECT count(game_id) as number_of_completed FROM igdb.library WHERE user_id = '".$_SESSION['user_id']."' AND category = 2 GROUP BY user_id;");
+						$numrows = pg_num_rows($result);
+
+						if ($numrows == 0) {
+							echo'<div class="numRightContainer">
+							<div class="numReviewsText">Completed:</div>
+							<div class="numReviews">0</div>
+						</div>';
+						}
+
+						else {
+							$arr = pg_fetch_all($result);
+                            foreach($arr as $array) {
+								$num = $array['number_of_completed'];
+								echo'<div class="numRightContainer">
+								<div class="numReviewsText">Completed:</div>
+								<div class="numReviews">'.$num.'</div>
+							</div>';
+							}
+						}
+					?>
+                    
+					<?php 
+						$result = pg_query($db_conn, "SELECT count(game_id) as number_of_hold FROM igdb.library WHERE user_id = '".$_SESSION['user_id']."' AND category = 3 GROUP BY user_id;");
+						$numrows = pg_num_rows($result);
+
+						if ($numrows == 0) {
+							echo'<div class="numRightContainer">
+							<div class="numReviewsText">Plan to play:</div>
+							<div class="numReviews">0</div>
+						</div>';
+						}
+
+						else {
+							$arr = pg_fetch_all($result);
+                            foreach($arr as $array) {
+								$num = $array['number_of_hold'];
+								echo'<div class="numRightContainer">
+								<div class="numReviewsText">Plan to play:</div>
+								<div class="numReviews">'.$num.'</div>
+							</div>';
+							}
+						}
+					?>
+                    
+					<?php 
+						$result = pg_query($db_conn, "SELECT count(game_id) as number_of_dropped FROM igdb.library WHERE user_id = '".$_SESSION['user_id']."' AND category = 4 GROUP BY user_id;");
+						$numrows = pg_num_rows($result);
+
+						if ($numrows == 0) {
+							echo'<div class="numRightContainer">
+							<div class="numReviewsText">Dropped:</div>
+							<div class="numReviews">0</div>
+						</div>';
+						}
+
+						else {
+							$arr = pg_fetch_all($result);
+                            foreach($arr as $array) {
+								$num = $array['number_of_dropped'];
+								echo'<div class="numRightContainer">
+								<div class="numReviewsText">Dropped:</div>
+								<div class="numReviews">'.$num.'</div>
+							</div>';
+							}
+						}
+					?>
                 </div>
 
 				<div class="gamesDisplay">
@@ -189,24 +264,41 @@
                         </div>
 
                     <div class=reviewContainer>
-                            <div class="grid-item">
-                                        <span class="userAvaReview">
-                                            <img src="../resources/test/game1.jpg" width="100%" height="100%">
-                                        </span>
-                                        <div class="reviewInfo">
-                                            <div class=reviewTop>
-                                                <div class="gameNameReview">Game reviewed name</div>
-												<div class="gameStatus">Dropped</div>
-                                                <div class="reviewRec">Recommended</div>
-                                                <div class="reviewDate">1/1/2019</div>
-                                                <div class="reviewRating">
-                                                <div class="upvote">up</div>
-                                                <div class="downvote">down</div>
-                                            </div>
-                                            </div>
-                                            <div class="reviewText">good game</div>
-                                        </div>
-                                    </div>        
+							<?php 
+								$result = pg_query($db_conn, "SELECT 
+								r.review_id, r.game_id, r.user_id, r.game_review FROM igdb.reviews WHERE user_id = '".$_SESSION['user_id']."';");
+                                $numrows = pg_num_rows($result);
+
+                                if ($numrows == 0) {
+                                    echo 'User has no reviews!';
+								}
+								
+								else {
+									$arr = pg_fetch_all($result);
+									foreach($arr as $array) 
+									{
+										$
+										echo '<div class="grid-item">
+								<span class="userAvaReview">
+									<img src="../resources/test/game1.jpg" width="100%" height="100%">
+								</span>
+								<div class="reviewInfo">
+									<div class=reviewTop>
+										<div class="gameNameReview">Game reviewed name</div>
+										<div class="gameStatus">Dropped</div>
+										<div class="reviewRec">Recommended</div>
+										<div class="reviewDate">1/1/2019</div>
+										<div class="reviewRating">
+										<div class="upvote">up</div>
+										<div class="downvote">down</div>
+									</div>
+									</div>
+									<div class="reviewText">good game</div>
+								</div>
+							</div>';
+									}
+								}
+							?>  
 
                     </div>
                     
