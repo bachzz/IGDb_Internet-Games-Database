@@ -89,20 +89,17 @@
                 <div class="gamesDisplay">
                     <div class=gameText>
                     <div id="allGames">All games</div>
-                        <div class="storeSortButton">
-                            <div class="sortButton">Filter
-                                <span class="sort-menu">
-                                    <form method="post" id="filter-form">
-                                        <select name=filter onchange="this.form.submit()">
-                                            <option class="sortby">None</option>
-                                            <option class="sortby">Newest first</option>
-                                            <option class="sortby">Most popular first</option>
-                                            <option class="sortby">Highest rated first</option>
-                                        </select>
-                                    </form>
-                                </span>
-                            </div>
-                        </div>
+                        <form method="post" id="filter-form" class="storeSortButton">
+                            <select name=filter onchange="this.form.submit()">
+                                    <option value="" disabled selected>Filter</option>
+                                    <option class="sortby">None</option>
+                                    <option class="sortby">Newest first</option>
+                                    <option class="sortby">Most popular first</option>
+                                    <option class="sortby">Highest rated first</option>
+                            </select>
+                        </form>
+
+
                     </div>
                     <div class=gamesContainer>
                         <div class="grid-container">
