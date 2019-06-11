@@ -35,7 +35,7 @@
         <div class="bodyContainer">
             <?php include '../nav/navigation.php' ?>
             <div class="content">
-                <div class="userInfoContainer" style="background-image: url(../resources/test/game2.png);">
+                <div class="userInfoContainer" style="background-image: url(../resources/test/game2.png); background-size: 1280px 720px;">
                     <span class="userAva">
                         <img src=pictures/game4.jpg width="200px" height="200px">
                     </span>
@@ -47,12 +47,28 @@
                     </div>
                 </div>
                 <div class="userStatistic">
-                    <div class="numGamesContainer">
-                        <div class="numGamesText">Number of games:</div>
-                        <div class="numGames">5</div>
+                    <div class="numLeftContainer">
+                        <div class="numReviewsText">Number of games:</div>
+                        <div class="numReviews">5</div>
                     </div>
-                    <div class="numReviewsContainer">
+                    <div class="numLeftContainer">
                         <div class="numReviewsText">Number of reviews:</div>
+                        <div class="numReviews">4</div>
+                    </div>
+                    <div class="numRightContainer">
+                        <div class="numReviewsText">Currently playing:</div>
+                        <div class="numReviews">4</div>
+                    </div>
+                    <div class="numRightContainer">
+                        <div class="numReviewsText">Completed:</div>
+                        <div class="numReviews">4</div>
+                    </div>
+                    <div class="numRightContainer">
+                        <div class="numReviewsText">Plan to play:</div>
+                        <div class="numReviews">4</div>
+                    </div>
+                    <div class="numRightContainer">
+                        <div class="numReviewsText">Dropped:</div>
                         <div class="numReviews">4</div>
                     </div>
                 </div>
@@ -64,8 +80,8 @@
                             <div class="sortButton">Filter
                                 <span class="sort-menu">
                                     <p class="sortbyPlaying">Currently playing</p>
-                                    <p class="sortbyPlayed">Played</p>
-                                    <p class="sortbyWait">Waiting to play</p>
+                                    <p class="sortbyPlayed">Completed</p>
+                                    <p class="sortbyWait">Plan to play</p>
                                     <p class="sortbyDropped">Dropped</p>
                                 </span>
                             </div>
@@ -102,6 +118,9 @@
                             ?>
                         </div>
                     </div>
+
+
+                    
                 </div>
             </div>
         </div>

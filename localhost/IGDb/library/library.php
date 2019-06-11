@@ -64,11 +64,11 @@
                                             <input type="radio" name="Game name #1">
                                             <span class="checkmark"></span>
                                         </label>
-                                        <label class="container">Played
+                                        <label class="container">Completed
                                             <input type="radio" name="Game name #1">
                                             <span class="checkmark"></span>
                                         </label>
-                                        <label class="container">Waiting to play
+                                        <label class="container">Plan to play
                                             <input type="radio" name="Game name #1">
                                             <span class="checkmark"></span>
                                         </label>

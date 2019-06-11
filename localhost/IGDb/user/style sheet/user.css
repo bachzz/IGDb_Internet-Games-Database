@@ -184,7 +184,6 @@
   font-size: 30px;
   margin: 5px 40px;
   width:1160px;
-  background-size: 1280px 720px;
 
 }
 
@@ -207,14 +206,25 @@
 text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
 }
 .userStatistic{
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  border-top:none;
   padding: 15px;
   font-size: 18px;
   float:left;
-  margin-left:10px;
+  margin-left:40px;
+  width:1170px;
+  margin-top:-80px;
+  padding-top:85px;
 
 }
-.numGamesContainer{
+.numLeftContainer{
   margin-bottom: 10px;
+  float:left;
+}
+
+.numRightContainer{
+  margin-bottom: 10px;
+  float:right;
 }
 .numGames{
   float:left;
@@ -230,6 +240,7 @@ text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
 .numReviews{
   float:left;
   margin-left:5px;
+  margin-right:20px;
 
 }
 .numReviewsText{
@@ -399,3 +410,4 @@ text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
   font-size: 30px;
   font-weight: bold;
 }
+
