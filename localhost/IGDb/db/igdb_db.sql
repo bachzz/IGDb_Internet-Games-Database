@@ -76,7 +76,8 @@ ALTER TABLE igdb.games OWNER TO postgres;
 
 CREATE TABLE igdb.library (
     user_id integer NOT NULL,
-    game_id integer NOT NULL
+    game_id integer NOT NULL,
+    category integer NOT NULL
 );
 
 
@@ -166,7 +167,9 @@ minecraft3	adventure	xzy	1-1-2000	creative game for kids	../resources/test/game3
 -- Data for Name: library; Type: TABLE DATA; Schema: igdb; Owner: postgres
 --
 
-COPY igdb.library (user_id, game_id) FROM stdin;
+COPY igdb.library (user_id, game_id, category) FROM stdin;
+14	1	1
+14	2	3
 \.
 
 
@@ -175,7 +178,7 @@ COPY igdb.library (user_id, game_id) FROM stdin;
 --
 
 COPY igdb.reviews (user_id, game_id, game_review, recommend, review_date) FROM stdin;
-2	1	this game is so addictive!!	TRUE	1-1-2019
+2   1	this game is so addictive!!	TRUE	1-1-2019
 4	1	I know right?	TRUE	1-15-2019
 5	1	No this game sucks. Boring. Waste my time.	FALSE	1-16-2019
 \.
@@ -285,3 +288,4 @@ GRANT ALL ON SCHEMA public TO PUBLIC;
 --
 -- PostgreSQL database dump complete
 --
+
