@@ -25,46 +25,33 @@
                                     </div>
                                 </div>
                             </div>
+
+                        <div class=gamesContainer id="normalLib">
                             <div>
-                                    <div class="editButtonContainer">
-                                        <button id="editButton">Edit</button>
-                                    </div>
+                                <div class="submitButtonContainer">
+                                    <button id="submitButton" onclick="showEdit()" >Edit</button>
+                                </div>
                             </div>
-                            <div class=gamesContainer>
- 
                             <div class="grid-container">
-                            <div class="grid-item">
-                                <span class="gameCover">
-                                    <img src=pictures/game4.jpg width="200px" height="100px">
-                                </span>
-                                <span class="gameInfo">
-                                    <div class="gameName">Game name #1</div>
-                                    <div class="gameOption">
-                                        <label class="container">Playing
-                                            <input type="radio" name="Game name #1">
-                                            <span class="checkmark"></span>
-                                        </label>
-                                        <label class="container">Played
-                                            <input type="radio" name="Game name #1">
-                                            <span class="checkmark"></span>
-                                        </label>
-                                        <label class="container">Waiting to play
-                                            <input type="radio" name="Game name #1">
-                                            <span class="checkmark"></span>
-                                        </label>
-                                        <label class="container">Dropped
-                                            <input type="radio" name="Game name #1">
-                                            <span class="checkmark"></span>
-                                        </label>
+                                    <div class="grid-item">
+                                        <span class="gameCover">
+                                            <img src=pictures/game4.jpg width="200px" height="100px">
+                                        </span>
+                                        <span class="gameInfo">
+                                            <div class="gameName">Game name #2</div>
+                                            <div class="gameDescription">This is game1,
+                                                ạdhskljfosdajflkasjfklsajfklsjfklasjfasjldf</div>
+                                        </span>
                                     </div>
-                                </span>
                             </div>
-
-
                         </div>
-                            </div>
                         <!-- edit -->
-                            <form method="post" class=gamesContainerEdit>
+                            <form method="post" class="gamesContainerEdit" id="normalLibEdit">
+                            <div>
+                                    <div class="submitButtonContainer">
+                                        <button id="submitButton">Submit</button>
+                                    </div>
+                            </div>
                             <div class="grid-container">
                             <div class="grid-item">
                                 <span class="gameCover">

@@ -262,21 +262,19 @@
 }
 
 .gamesContainer{
-  visibility: hidden;
+  visibility: visible;
 }
 
 
 .editButtonContainer {
-  width:100px;
-  float:right;
-  margin-right:40px;
-  margin-top:-70px;
+  height: 50px;
+  width: 100px;
+  margin-left:40px;
 }
 
 #editButton {
   height: 50px;
   width: 100px;
-  float:right;
   background-color: black;
   color: white;
   border: none;
@@ -285,26 +283,26 @@
 
 
 .gamesContainerEdit{
-  visibility: visible;
-  margin-top:-156px;
+  visibility: hidden;
+  margin-top:-212px;
   
 }
  .submitButtonContainer {
-  width:100px;
-  float:right;
-  margin-right:40px;
-  margin-top:-70px;
+  height: 50px;
+  width: 100px;
+  margin-left:40px;
 }
 
 #submitButton {
   height: 50px;
   width: 100px;
-  float:right;
   background-color: black;
   color: white;
   border: none;
   cursor: pointer;
 }
+
+
 
 
 .grid-container {
