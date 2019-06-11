@@ -205,7 +205,7 @@
 				<div class="gamesDisplay">
                     <div class="gameText">
                         <div id="allGames">Library</div>
-                        <div class="storeSortButton">
+                        <!-- <div class="storeSortButton">
                             <div class="sortButton">Filter
                                 <span class="sort-menu">
                                     <p id="sortbyPlaying" class="sort-item">Currently playing</p>
@@ -214,7 +214,16 @@
                                     <p id="sortbyDropped" class="sort-item">Dropped</p>
                                 </span>
                             </div>
-                        </div>
+                        </div> -->
+						<form method="post" id="filter-form" class="sortButton">
+                            <select name=filter onchange="this.form.submit()">
+                                    <option value="" disabled selected>Filter</option>
+                                    <option class="sortby" id="sortbyPlaying">Currently playing</option>
+                                    <option class="sortby" id="sortbyPlayed">Completed</option>
+                                    <option class="sortby" id="sortbyWait">PLan to play</option>
+                                    <option class="sortby" id="sortbyDropped">Dropped</option>
+                            </select>
+                        </form>
                     </div>
                     <div class=gamesContainer>
                         <div class="grid-container">
@@ -252,16 +261,22 @@
 
                     <div class="reviewMenu">
                             <div class="allReview">All reviews</div>
-                            <div class="reviewSortButton">
-                                <div class="sortButton">Filter
+                                <!-- <div class="sortButton">Filter
                                     <span class="sort-menu">
                                         <p class="sort-item" id="sort-review-by-date">Date</p>
                                         <p class="sort-item" id="sort-review-by-pos">Negative first</p>
                                         <p class="sort-item" id="sort-review-by-neg">Positive first</p>
                                     </span>
-                                </div>
+                                </div> -->
+								<form method="post" id="filter-form" class="sortButton">
+                            		<select name=filter onchange="this.form.submit()">
+										<option value="" disabled selected>Filter</option>
+										<option class="sortby" id="sort-review-by-date">Date</option>
+										<option class="sortby" id="sort-review-by-pos">Negative first</option>
+										<option class="sortby" id="sort-review-by-neg">Positive first</option>
+                            		</select>
+                        		</form>
                             </div>
-                        </div>
 
                     <div class=reviewContainer>
 							<?php 

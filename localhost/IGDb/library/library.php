@@ -15,15 +15,15 @@
                             <div class="gameText">
                                 <div id="allGamesName">User#1</div>
                                 <div id="allGames">'s Library</div>
-                                <div class="storeSortButton">
-                                    <div class="sortButton">Filter
-                                        <span class="sort-menu">
-                                            <p class="sortbyDate">Newest first</p>
-                                            <p class="sortbyPop">Most popular first</p>
-                                            <p class="sortbyScore">Highest rated first</p>
-                                        </span>
-                                    </div>
-                                </div>
+                                <form method="post" id="filter-form" class="storeSortButton" >
+                                    <select name=filter onchange="this.form.submit()">
+                                        <option value="" disabled selected>Filter</option>
+                                        <option class="sortby">None</option>
+                                        <option class="sortby">Newest first</option>
+                                        <option class="sortby">Most popular first</option>
+                                        <option class="sortby">Highest rated first</option>
+                                    </select>
+                                </form>
                             </div>
 
                         <div class=gamesContainer id="normalLib">
