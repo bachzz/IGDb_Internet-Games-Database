@@ -40,7 +40,7 @@
                         <img src=pictures/game4.jpg width="200px" height="200px">
                     </span>
                     <div class="userInfo">
-                        <div class=userName>
+                        <div class=userNameContainer>
                             <div class="userName">John Doe</div>
                         </div>
                         <div class="userEmail">johndoe@gmail.com</div>
@@ -79,10 +79,10 @@
                         <div class="storeSortButton">
                             <div class="sortButton">Filter
                                 <span class="sort-menu">
-                                    <p class="sortbyPlaying">Currently playing</p>
-                                    <p class="sortbyPlayed">Completed</p>
-                                    <p class="sortbyWait">Plan to play</p>
-                                    <p class="sortbyDropped">Dropped</p>
+                                    <p id="sortbyPlaying" class="sort-item">Currently playing</p>
+                                    <p id="sortbyPlayed" class="sort-item">Completed</p>
+                                    <p id="sortbyWait" class="sort-item">Plan to play</p>
+                                    <p id="sortbyDropped" class="sort-item">Dropped</p>
                                 </span>
                             </div>
                         </div>
@@ -119,7 +119,39 @@
                         </div>
                     </div>
 
+                    <div class="reviewMenu">
+                            <div class="allReview">All reviews</div>
+                            <div class="reviewSortButton">
+                                <div class="sortButton">Filter
+                                    <span class="sort-menu">
+                                        <p class="sort-item" id="sort-review-by-date">Date</p>
+                                        <p class="sort-item" id="sort-review-by-pos">Negative first</p>
+                                        <p class="sort-item" id="sort-review-by-neg">Positive first</p>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
 
+                    <div class=reviewContainer>
+                            <div class="grid-item">
+                                        <span class="userAvaReview">
+                                            <img src="../resources/test/game1.jpg" width="100%" height="100%">
+                                        </span>
+                                        <div class="reviewInfo">
+                                            <div class=reviewTop>
+                                                <div class="gameNameReview">Game reviewed name</div>
+                                                <div class="reviewRec">Recommended</div>
+                                                <div class="reviewDate">1/1/2019</div>
+                                                <div class="reviewRating">
+                                                <div class="upvote">up</div>
+                                                <div class="downvote">down</div>
+                                            </div>
+                                            </div>
+                                            <div class="reviewText">good game</div>
+                                        </div>
+                                    </div>        
+
+                    </div>
                     
                 </div>
             </div>

@@ -295,7 +295,7 @@ text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
   z-index: 1;
 }
 
-.sortbyPlaying {
+.sort-item {
   cursor: pointer;
   width: 250px;
   height: 50px;
@@ -304,50 +304,7 @@ text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
   margin: 0px;
 }
 
-.sortbyPlayed {
-  cursor: pointer;
-  width: 250px;
-  height: 50px;
-  line-height: 50px;
-  text-align: center;
-  margin: 0px;
-}
-
-.sortbyWait{
-  cursor: pointer;
-  width: 250px;
-  height: 50px;
-  line-height: 50px;
-  text-align: center;
-  margin: 0px;
-}
-
-.sortbyDropped{
-  cursor: pointer;
-  width: 250px;
-  height: 50px;
-  line-height: 50px;
-  text-align: center;
-  margin: 0px;
-}
-
-
-.sortbyPlaying:hover {
-  background-color: black;
-  color: white;
-}
-
-.sortbyPlayed:hover {
-  background-color: black;
-  color: white;
-}
-
-.sortbyWait:hover {
-  background-color: black;
-  color: white;
-}
-
-.sortbyDropped:hover {
+.sort-item:hover {
   background-color: black;
   color: white;
 }
@@ -355,8 +312,6 @@ text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
 .storeSortButton:hover .sort-menu {
   display: block;
 }
-
-
 
 .grid-container {
   display: grid;
@@ -411,3 +366,110 @@ text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
   font-weight: bold;
 }
 
+.userAvaReview {
+  cursor: pointer;
+  width: 100px;
+  height: 100px;
+  float: left;
+  overflow: hidden;
+}
+
+.reviewInfo {
+  float: left;
+  margin-left: 30px;
+}
+
+.reviewTop {
+  display: inline-block;
+  width: 1040px;
+}
+
+.gameNameReview {
+  cursor: pointer;
+  float: left;
+  font-size: 18px;
+  font-weight: bold;
+  padding-right: 10px;
+  border-right: 1px solid black;
+}
+
+.reviewText {
+  font-size: 20px;
+}
+
+.reviewRec {
+  float: left;
+  font-size: 18px;
+  padding: 0px 10px;
+  border-right: 1px solid black;
+}
+
+.reviewDate {
+  font-size: 18px;
+  float: left;
+  margin-left: 10px;
+}
+
+.reviewRating {
+  float: right;
+  font-size: 18px;
+}
+
+.upvote {
+  cursor: pointer;
+  font-size: 18px;
+  float: left;
+  padding: 0px 10px;
+  border-right: 1px solid black;
+}
+
+.downvote {
+  cursor: pointer;
+  font-size: 18px;
+  float: left;
+  padding: 0px 10px;
+}
+
+
+.reviewContainer {
+  margin: 30px;
+  margin-top: 40px;
+}
+
+.reviewMenu {
+  display: inline-block;
+  width: 1210px;
+  height: 50px;
+  margin: 70px 0px 20px 0px;
+}
+
+.allReview {
+  height: 50px;
+  line-height: 50px;
+  font-size: 40px;
+  margin-left: 35px;
+  margin-bottom: 20px;
+  float: left;
+  font-weight: bold;
+
+}
+
+.reviewInput{
+  height:150px;
+  width:1150px;
+  overflow: auto;
+  padding:20px;
+}
+
+.reviewSortButton {
+  float: left;
+  margin-left: 35px;
+  margin-bottom: 20px;
+  font-size: 30px;
+  border-left: 1px solid black;
+
+}
+
+.reviewSortButton:hover .sort-menu {
+  display: block;
+}
