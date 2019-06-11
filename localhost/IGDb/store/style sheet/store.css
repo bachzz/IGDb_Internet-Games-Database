@@ -234,7 +234,7 @@
   z-index: 1;
 }
 
-.sortbyDate {
+.sortby {
   cursor: pointer;
   width: 250px;
   height: 50px;
@@ -243,35 +243,7 @@
   margin: 0px;
 }
 
-.sortbyPop {
-  cursor: pointer;
-  width: 250px;
-  height: 50px;
-  line-height: 50px;
-  text-align: center;
-  margin: 0px;
-}
-
-.sortbyScore {
-  cursor: pointer;
-  width: 250px;
-  height: 50px;
-  line-height: 50px;
-  text-align: center;
-  margin: 0px;
-}
-
-.sortbyDate:hover {
-  background-color: black;
-  color: white;
-}
-
-.sortbyPop:hover {
-  background-color: black;
-  color: white;
-}
-
-.sortbyScore:hover {
+.sortby:hover {
   background-color: black;
   color: white;
 }
