@@ -1,6 +1,6 @@
 ﻿<?php
     session_start();
-    
+
     if ( isset($_GET['game_id']) ){
         include '../shared.php';
         
@@ -15,6 +15,16 @@
             exit(0);
         }
         $item = pg_fetch_array($result, 0);
+
+        function add_game($game_id){
+            //echo '<script>alert("'.$_SESSION['user_id'].'")</script>';
+            $result = pg_query($db_conn, "INSERT INTO igdb.library (user_id, game_id, category) VALUES ('".$_SESSION['user_id']."', '$game_id', 3);");
+            if (!$result){
+                echo "<script>alert('".pg_last_error($db_conn)."')</script>";
+            }
+        }
+        if (isset($_GET['add_game_id']))
+            add_game($_GET['add_game_id']);
         //echo "<script language='javascript'>alert('".$item['title']."')</script>";
     }
     else {
@@ -91,8 +101,7 @@
                                 <tr>
                                     <td width="150px">Recommends:</td>
                                     <td><?php 
-										$result = pg_query("SELECT count(*) from igdb.reviews where recommend = TRUE and game_id = ".$item['game_id']."");
-										
+                                        $result = pg_query("SELECT count(*) from igdb.reviews where recommend = TRUE and game_id = ".$item['game_id']."");
                                         $recommend = pg_fetch_array($result, 0);
                                         $result = pg_query("SELECT count(*) from igdb.reviews where game_id = ".$item['game_id']."");
                                         $reviews_num = pg_fetch_array($result, 0);
@@ -115,7 +124,9 @@
                     <div class="addContainer">
                         <div class="addText">Add this game to your library</div>
                         <div class="addButtonContainer">
-                            <button class="addButton">Add to Library</button>
+                            <?php
+                                echo '<a href="game_page.php?game_id='.$item['game_id'].'&add_game_id='.$item['game_id'].'" class="addButton">Add to Library</a>';
+                            ?>
                         </div>
                     </div>
 
@@ -161,38 +172,37 @@
                         </div>
                         <?php 
                             $result = pg_query($db_conn, "SELECT * FROM igdb.reviews where game_id = ".$item['game_id']." ORDER BY review_id ASC;");
-							
-							$numrows = pg_num_rows($result);
+                            $numrows = pg_num_rows($result);
 
                                 if ($numrows == 0) {
                                     echo 'Game has no reviews!';
-								}
-									else {
-										$arr = pg_fetch_all($result);
-										foreach($arr as $array)
-                            {
-                                $user_id = $array['user_id'];
-                                $result = pg_query($db_conn, "SELECT * FROM igdb.users where user_id = '$user_id'");
-                                $user = pg_fetch_array($result, 0);
-                                echo '<div class="grid-item">
-                                        <span class="userAva">
-                                            <img src='.$user['avatar'].' width="100%" height="100%">
-                                        </span>
-                                        <div class="reviewInfo">
-                                            <div class=reviewTop>
-                                                <div class="userName">'.$user['name'].'</div>
-                                                <div class="reviewRec">'.$array['recommend'].'</div>
-                                                <div class="reviewDate">'.$array['review_date'].'</div>
-                                                <div class="reviewRating">
-                                                <div class="upvote">up</div>
-                                                <div class="downvote">down</div>
-                                            </div>
-                                            </div>
-                                            <div class="reviewText">'.$array['game_review'].'</div>
-                                        </div>
-                                    </div>';
-                            }
-									}
+                                }
+                                else {
+                                    $arr = pg_fetch_all($result);
+                                    foreach($arr as $array)
+                                    {
+                                        $user_id = $array['user_id'];
+                                        $result = pg_query($db_conn, "SELECT * FROM igdb.users where user_id = '$user_id'");
+                                        $user = pg_fetch_array($result, 0);
+                                        echo '<div class="grid-item">
+                                                <span class="userAva">
+                                                    <img src='.$user['avatar'].' width="100%" height="100%">
+                                                </span>
+                                                <div class="reviewInfo">
+                                                    <div class=reviewTop>
+                                                        <div class="userName">'.$user['name'].'</div>
+                                                        <div class="reviewRec">'.$array['recommend'].'</div>
+                                                        <div class="reviewDate">'.$array['review_date'].'</div>
+                                                        <div class="reviewRating">
+                                                        <div class="upvote">up</div>
+                                                        <div class="downvote">down</div>
+                                                    </div>
+                                                    </div>
+                                                    <div class="reviewText">'.$array['game_review'].'</div>
+                                                </div>
+                                            </div>';
+                                    }
+                                }
                             
                         ?>
                         
@@ -204,6 +214,13 @@
         </div>
     </div>
     <script src="javascript/jquery-3.3.1.js"></script>
+    <script src="javascript/game_page.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</body>
+
+</html>></script>
     <script src="javascript/game_page.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
