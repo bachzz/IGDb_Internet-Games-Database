@@ -265,8 +265,8 @@
 
                     <div class=reviewContainer>
 							<?php 
-								$result = pg_query($db_conn, "SELECT 
-								r.review_id, r.game_id, r.user_id, r.game_review FROM igdb.reviews WHERE user_id = '".$_SESSION['user_id']."';");
+								$result = pg_query($db_conn, "SELECT DISTINCT * FROM igdb.reviews r INNER JOIN igdb.games g ON g.game_id = r.game_id INNER JOIN igdb.library l on l.game_id = g.game_id and l.user_id = r.user_id
+															WHERE l.user_id = '".$_SESSION['user_id']."';");
                                 $numrows = pg_num_rows($result);
 
                                 if ($numrows == 0) {
@@ -277,25 +277,40 @@
 									$arr = pg_fetch_all($result);
 									foreach($arr as $array) 
 									{
-										$
+										$title = $array['title'];
+										$status = $array['category'];
+										$img_url = $array['img_url'];
+										$cover = strtok($img_url, ";");
+										if ($status == 1) $statusText = "Playing";
+										else if ($status == 2) $statusText = "Completed";
+										else if ($status == 3) $statusText = "Plan to play";
+										else if ($status == 2) $statusText = "Dropped";
+										$recommend = $array['recommend'];
+										if ($recommend == 't') $recommend = "Recommended";
+										if ($recommend == 'f') $recommend = "Not Recommended";
+										$date = $array['review_date'];
+										$content = $array['game_review'];
+										$up = $array['upvote'];
+										$down = $array['downvote'];
+										$game_id = $array['game_id'];
 										echo '<div class="grid-item">
-								<span class="userAvaReview">
-									<img src="../resources/test/game1.jpg" width="100%" height="100%">
-								</span>
-								<div class="reviewInfo">
-									<div class=reviewTop>
-										<div class="gameNameReview">Game reviewed name</div>
-										<div class="gameStatus">Dropped</div>
-										<div class="reviewRec">Recommended</div>
-										<div class="reviewDate">1/1/2019</div>
-										<div class="reviewRating">
-										<div class="upvote">up</div>
-										<div class="downvote">down</div>
-									</div>
-									</div>
-									<div class="reviewText">good game</div>
-								</div>
-							</div>';
+												<span class="userAvaReview">
+													<img src='.$cover.' width="100%" height="100%">
+												</span>
+												<div class="reviewInfo">
+													<div class=reviewTop>
+														<div class="gameNameReview" onclick="game_onclick(\''.$game_id.'\')">'.$title.'</div>
+														<div class="gameStatus">'.$statusText.'</div>
+														<div class="reviewRec">'.$recommend.'</div>
+														<div class="reviewDate">'.$date.'</div>
+														<div class="reviewRating">
+														<div class="upvote">up: '.$up.' </div>
+														<div class="downvote">down: '.$down.'</div>
+													</div>
+													</div>
+													<div class="reviewText">'.$content.'</div>
+												</div>
+											</div>';
 									}
 								}
 							?>  

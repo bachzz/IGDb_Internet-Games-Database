@@ -117,7 +117,7 @@ CREATE TABLE igdb.users (
 ALTER TABLE igdb.users OWNER TO postgres;
 
 --
--- Name: game_view; Type: View; Schema: -; Owner: postgres
+-- Name: game_view_store; Type: View; Schema: -; Owner: postgres
 --
 CREATE VIEW igdb.game_view_store AS 
 	SELECT g.game_id, g.title,  g.description, g.img_url, g.release_date,
@@ -125,6 +125,7 @@ CREATE VIEW igdb.game_view_store AS
     INNER JOIN igdb.library l ON l.game_id = g.game_id 
 	GROUP BY g.game_id, g.title,  g.description, g.img_url, g.release_date 
 	ORDER BY total DESC;
+
 --
 -- Name: users_ID_seq; Type: SEQUENCE; Schema: igdb; Owner: postgres
 --
@@ -199,7 +200,7 @@ COPY igdb.reviews (user_id, game_id, game_review, recommend, review_date) FROM s
 4	1	I know right?	TRUE	1-15-2019
 5	1	No this game sucks. Boring. Waste my time.	FALSE	1-16-2019
 14	1	I know right?	TRUE	1-15-2019
-14	1	No this game sucks. Boring. Waste my time.	FALSE	1-16-2019
+14	2	No this game sucks. Boring. Waste my time.	FALSE	1-16-2019
 \.
 
 
