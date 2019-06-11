@@ -91,7 +91,8 @@
                                 <tr>
                                     <td width="150px">Recommends:</td>
                                     <td><?php 
-                                        $result = pg_query("SELECT count(*) from igdb.reviews where recommend = TRUE and game_id = ".$item['game_id']."");
+										$result = pg_query("SELECT count(*) from igdb.reviews where recommend = TRUE and game_id = ".$item['game_id']."");
+										
                                         $recommend = pg_fetch_array($result, 0);
                                         $result = pg_query("SELECT count(*) from igdb.reviews where game_id = ".$item['game_id']."");
                                         $reviews_num = pg_fetch_array($result, 0);
@@ -160,8 +161,15 @@
                         </div>
                         <?php 
                             $result = pg_query($db_conn, "SELECT * FROM igdb.reviews where game_id = ".$item['game_id']." ORDER BY review_id ASC;");
-                            $arr = pg_fetch_all($result);
-                            foreach($arr as $array)
+							
+							$numrows = pg_num_rows($result);
+
+                                if ($numrows == 0) {
+                                    echo 'Game has no reviews!';
+								}
+									else {
+										$arr = pg_fetch_all($result);
+										foreach($arr as $array)
                             {
                                 $user_id = $array['user_id'];
                                 $result = pg_query($db_conn, "SELECT * FROM igdb.users where user_id = '$user_id'");
@@ -184,6 +192,8 @@
                                         </div>
                                     </div>';
                             }
+									}
+                            
                         ?>
                         
 
