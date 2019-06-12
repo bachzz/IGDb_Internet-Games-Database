@@ -259,7 +259,7 @@
                         <div class="grid-container">
 						<?php 
 								$gameFilter = isset($_SESSION['gameFilter']) ? $_SESSION['gameFilter'] : '';
-								$gameFilter_query = isset($_SESSION['gameFilter_query']) ? $_SESSION['gameFilter_query'] : game_id;
+								$gameFilter_query = isset($_SESSION['gameFilter_query']) ? $_SESSION['gameFilter_query'] : 'game_id';
 								$result = pg_query($db_conn, "SELECT g.game_id, g.title,  g.description, g.img_url, g.release_date, g.avg_score,
 															count(l.game_id) AS total_added FROM igdb.games g 
 															INNER JOIN igdb.library l ON l.game_id = g.game_id 
@@ -320,7 +320,7 @@
 						<div class="grid-container">
 							<?php 
 								$reviewFilter = isset($_SESSION['reviewFilter']) ? $_SESSION['reviewFilter'] : '';
-								$reviewFilter_query = isset($_SESSION['reviewFilter_query']) ? $_SESSION['reviewFilter_query'] : review_id;
+								$reviewFilter_query = isset($_SESSION['reviewFilter_query']) ? $_SESSION['reviewFilter_query'] : 'review_id';
 								echo '<script> alert('.$reviewFilter_query.') </script>';
 
 								if ($reviewFilter_query == "review_date" || $reviewFilter_query == "review_id") {
