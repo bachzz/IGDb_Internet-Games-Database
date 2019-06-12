@@ -121,11 +121,10 @@ ALTER TABLE igdb.users OWNER TO postgres;
 -- Name: game_view_store; Type: View; Schema: -; Owner: postgres
 --
 CREATE VIEW igdb.game_view_store AS 
-	SELECT g.game_id, g.title,  g.description, g.img_url, g.release_date,
-	count(l.game_id) AS total FROM igdb.games g 
+	SELECT g.game_id, g.title,  g.description, g.img_url, g.release_date, g.avg_score,
+	count(l.game_id) AS total_added FROM igdb.games g 
     INNER JOIN igdb.library l ON l.game_id = g.game_id 
-	GROUP BY g.game_id, g.title,  g.description, g.img_url, g.release_date 
-	ORDER BY total DESC;
+	GROUP BY g.game_id, g.title,  g.description, g.img_url, g.release_date, g.avg_score;
 
 --
 -- Name: users_ID_seq; Type: SEQUENCE; Schema: igdb; Owner: postgres
@@ -168,10 +167,10 @@ COPY igdb.ban_list (user_id) FROM stdin;
 --
 
 COPY igdb.games (title, genre, publisher, release_date, description, img_url) FROM stdin;
-minecraft	adventure	xzy	1-2-2000	creative game for kids	../resources/test/game1.jpg;
-minecraft2	adventure	xzy	1-3-2000	creative game for kids	../resources/test/game2.png;
-minecraft3	adventure	xzy	1-4-2000	creative game for kids	../resources/test/game3.jpg;
-minecraft4	adventure	xzy	1-5-2000	creative game for kids	../resources/test/game1.jpg;
+minecraft	adventure	xzy	5-2-2000	creative game for kids	../resources/test/game1.jpg;
+minecraft2	adventure	xzy	2-3-2000	creative game for kids	../resources/test/game2.png;
+minecraft3	adventure	xzy	4-4-2000	creative game for kids	../resources/test/game3.jpg;
+minecraft4	adventure	xzy	3-5-2000	creative game for kids	../resources/test/game1.jpg;
 minecraft5	adventure	xzy	1-6-2000	creative game for kids	../resources/test/game2.png;
 minecraft6	adventure	xzy	1-7-2000	creative game for kids	../resources/test/game3.jpg;
 \.

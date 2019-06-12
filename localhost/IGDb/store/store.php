@@ -16,9 +16,16 @@
         }
 
         if ( isset($_POST['filter']) ){
-            echo "<script>alert('haha')</script>";
-            // echo "<script>alert(".$_POST['filter'].")</script>";
-            $filter = $_POST['filter'];
+            //echo "<script>alert('".$_POST['filter']."')</script>";
+            if ($_POST['filter'] == "none")
+                $filter = "game_id";
+            if ($_POST['filter'] == "newest")
+                $filter = "release_date";
+            if ($_POST['filter'] == "popular")
+                $filter = "total_added";
+            if ($_POST['filter'] == "rating")
+                $filter = "avg_score";
+            //$filter = $_POST['filter'];
         }
         else
             $filter = "game_id";
@@ -92,10 +99,10 @@
                         <form method="post" id="filter-form" class="storeSortButton">
                             <select name=filter onchange="this.form.submit()" class="filterButton">
                                     <option value="" disabled selected>Filter</option>
-                                    <option class="sortby">None</option>
-                                    <option class="sortby">Newest first</option>
-                                    <option class="sortby">Most popular first</option>
-                                    <option class="sortby">Highest rated first</option>
+                                    <option class="sortby" value="none">None</option>
+                                    <option class="sortby" value="newest">Newest first</option>
+                                    <option class="sortby" value="popular">Most popular first</option>
+                                    <option class="sortby" value="rating">Highest rated first</option>
                             </select>
                         </form>
 
@@ -105,7 +112,7 @@
                         <div class="grid-container">
                             <?php 
                                 //$result = pg_query($db_conn, "SELECT * FROM igdb.games ORDER BY game_id ASC;");
-                                $result = pg_query($db_conn, "SELECT * FROM igdb.games ORDER BY $filter ASC;");
+                                $result = pg_query($db_conn, "SELECT * FROM igdb.game_view_store ORDER BY $filter ASC;");
                                 $numrows = pg_num_rows($result);
                                 
                                 if ($numrows == 0){
