@@ -1,9 +1,9 @@
 <?php
+	header("Cache-Control: no cache");
+	session_cache_limiter("private_no_expire");
     session_start();
-    
     if ( isset($_SESSION['user_id']) ){
         include '../shared.php';
-
         // connect to database
         $db_conn = pg_connect("host=$host port=$port user=$user password=$pass dbname=$dbname") or die('Could not connect: ' . pg_last_error());
 
@@ -13,22 +13,24 @@
         if ($numrows == 0){
             header("Location: ../login/login.php");
             exit(0);
-        }
-
+		}
         if ( isset($_POST['filter']) ){
+			$filter = $_POST['filter'];
+			$_SESSION['filter'] = $filter;
             //echo "<script>alert('".$_POST['filter']."')</script>";
-            if ($_POST['filter'] == "none")
-                $filter = "game_id";
-            if ($_POST['filter'] == "newest")
-                $filter = "release_date";
-            if ($_POST['filter'] == "popular")
-                $filter = "total_added";
-            if ($_POST['filter'] == "rating")
-                $filter = "avg_score";
-            //$filter = $_POST['filter'];
+            if ($filter == "none")
+				$_SESSION['filter_query'] = "game_id";
+            if ($filter == "newest")
+				$_SESSION['filter_query'] = "release_date";
+            if ($filter == "popular")
+				$_SESSION['filter_query'] = "total_added";
+            if ($filter == "rating")
+				$_SESSION['filter_query'] = "avg_score";
+			//$filter = $_POST['filter'];
+			header("Location: ./store.php");
+			return;
         }
-        else
-            $filter = "game_id";
+        
     }
     else {
         header("Location: ../login/login.php");
@@ -110,9 +112,11 @@
                     </div>
                     <div class=gamesContainer>
                         <div class="grid-container">
-                            <?php 
-                                //$result = pg_query($db_conn, "SELECT * FROM igdb.games ORDER BY game_id ASC;");
-                                $result = pg_query($db_conn, "SELECT * FROM igdb.game_view_store ORDER BY $filter ASC;");
+							<?php 
+								$filter = isset($_SESSION['filter']) ? $_SESSION['filter'] : '';
+								$filter_query = isset($_SESSION['filter_query']) ? $_SESSION['filter_query'] : game_id;
+								//$result = pg_query($db_conn, "SELECT * FROM igdb.games ORDER BY game_id ASC;");
+                                $result = pg_query($db_conn, "SELECT * FROM igdb.game_view_store ORDER BY $filter_query DESC;");
                                 $numrows = pg_num_rows($result);
                                 
                                 if ($numrows == 0){

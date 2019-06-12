@@ -121,10 +121,7 @@ ALTER TABLE igdb.users OWNER TO postgres;
 -- Name: game_view_store; Type: View; Schema: -; Owner: postgres
 --
 CREATE VIEW igdb.game_view_store AS 
-	SELECT g.game_id, g.title,  g.description, g.img_url, g.release_date, g.avg_score,
-	count(l.game_id) AS total_added FROM igdb.games g 
-    INNER JOIN igdb.library l ON l.game_id = g.game_id 
-	GROUP BY g.game_id, g.title,  g.description, g.img_url, g.release_date, g.avg_score;
+	SELECT g.*, (SELECT COUNT(*) FROM igdb.library l WHERE l.game_id = g.game_id)  as total_added FROM igdb.games g;
 
 --
 -- Name: users_ID_seq; Type: SEQUENCE; Schema: igdb; Owner: postgres

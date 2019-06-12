@@ -1,6 +1,9 @@
 ﻿<?php
+	header("Cache-Control: no cache");
+	session_cache_limiter("private_no_expire");
     session_start();
-    
+    // header("Cache-Control: no cache");
+	// session_cache_limiter("private_no_expire");
     if ( isset($_SESSION['user_id']) ){
         include '../shared.php';
 
@@ -13,13 +16,46 @@
         if ($numrows == 0){
             header("Location: ../login/login.php");
             exit(0);
-        }
+		}
     }
     else {
         header("Location: ../login/login.php");
         exit(0);
-    }
+	}
 
+	//game filter
+	if ( isset($_POST['gameFilter']) ){
+		$gameFilter = $_POST['gameFilter'];
+		$_SESSION['gameFilter'] = $gameFilter;
+		if ($gameFilter == "none")
+			$_SESSION['gameFilter_query'] = "game_id";
+		if ($gameFilter == "newest")
+			$_SESSION['gameFilter_query'] = "release_date";
+		if ($gameFilter == "popular")
+			$_SESSION['gameFilter_query'] = "total_added";
+		if ($gameFilter == "rating")
+			$_SESSION['gameFilter_query'] = "avg_score";
+		//$gameFilter = $_POST['gameFilter'];
+		header("Location: ./user.php");
+		return;
+	}
+
+	//review filter
+	if ( isset($_POST['reviewFilter']) ){
+		$reviewFilter = $_POST['reviewFilter'];
+		$_SESSION['reviewFilter'] = $reviewFilter;
+		if ($gameFilter == "none")
+			$_SESSION['reviewFilter_query'] = "review_id";
+		if ($gameFilter == "date")
+			$_SESSION['reviewFilter_query'] = "review_date";
+		if ($gameFilter == "pos")
+			$_SESSION['reviewFilter_query'] = "t";
+		if ($gameFilter == "neg")
+			$_SESSION['reviewFilter_query'] = "f";
+		//$gameFilter = $_POST['gameFilter'];
+		header("Location: ./user.php");
+		return;
+	}
 ?>
 
 <!DOCTYPE html>
@@ -217,19 +253,26 @@
                             </div>
                         </div> -->
 						<form method="post" id="filter-form" class="sortButton">
-                            <select name=filter onchange="this.form.submit()" class="justselect">
+                            <select name=gameFilter onchange="this.form.submit()" class="filterButton">
                                     <option value="" disabled selected>Filter</option>
-                                    <option class="sortby" id="sortbyPlaying">Currently playing</option>
-                                    <option class="sortby" id="sortbyPlayed">Completed</option>
-                                    <option class="sortby" id="sortbyWait">Plan to play</option>
-                                    <option class="sortby" id="sortbyDropped">Dropped</option>
+                                    <option class="sortby" value="none">None</option>
+                                    <option class="sortby" value="newest">Newest first</option>
+                                    <option class="sortby" value="popular">Most popular first</option>
+                                    <option class="sortby" value="rating">Highest rated first</option>
                             </select>
                         </form>
                     </div>
                     <div class=gamesContainer>
                         <div class="grid-container">
 						<?php 
-								$result = pg_query($db_conn, "SELECT * FROM igdb.library l INNER JOIN igdb.games g ON l.game_id = g.game_id WHERE l.user_id = '".$_SESSION['user_id']."';");
+								$gameFilter = isset($_SESSION['gameFilter']) ? $_SESSION['gameFilter'] : '';
+								$gameFilter_query = isset($_SESSION['gameFilter_query']) ? $_SESSION['gameFilter_query'] : game_id;
+								$result = pg_query($db_conn, "SELECT g.game_id, g.title,  g.description, g.img_url, g.release_date, g.avg_score,
+															count(l.game_id) AS total_added FROM igdb.games g 
+															INNER JOIN igdb.library l ON l.game_id = g.game_id 
+															WHERE l.user_id = '".$_SESSION['user_id']."'
+															GROUP BY g.game_id, g.title,  g.description, g.img_url, g.release_date, g.avg_score
+															ORDER BY $gameFilter_query DESC;");
                                 $numrows = pg_num_rows($result);
 
                                 if ($numrows == 0) {
@@ -270,11 +313,12 @@
                                     </span>
                                 </div> -->
 								<form method="post" id="filter-form" class="sortButton">
-                            		<select name=filter onchange="this.form.submit()" class="justselect">
+                            		<select name=reviewFilter onchange="this.form.submit()" class="filterButton">
 										<option value="" disabled selected>Filter</option>
-										<option class="sortby" id="sort-review-by-date">Date</option>
-										<option class="sortby" id="sort-review-by-pos">Negative first</option>
-										<option class="sortby" id="sort-review-by-neg">Positive first</option>
+										<option class="sortby" value="none">None</option>
+										<option class="sortby" value="date">Date</option>
+										<option class="sortby" value="pos">Positive only</option>
+										<option class="sortby" value="neg">Negative only</option>
                             		</select>
                         		</form>
                             </div>
@@ -282,8 +326,27 @@
                     <div class=reviewContainer>
 						<div class="grid-container">
 							<?php 
-								$result = pg_query($db_conn, "SELECT DISTINCT * FROM igdb.reviews r INNER JOIN igdb.games g ON g.game_id = r.game_id INNER JOIN igdb.library l on l.game_id = g.game_id and l.user_id = r.user_id
-															WHERE l.user_id = '".$_SESSION['user_id']."';");
+								$reviewFilter = isset($_SESSION['reviewFilter']) ? $_SESSION['reviewFilter'] : '';
+								$reviewFilter_query = isset($_SESSION['reviewFilter_query']) ? $_SESSION['reviewFilter_query'] : review_id;
+								echo '<script> alert('.$reviewFilter_query.') </script>';
+
+								// if ($reviewFilter_query == "review_date" || $reviewFilter_query == "review_id") {
+								// 	$result = pg_query($db_conn, "SELECT DISTINCT * FROM igdb.reviews r 
+								// 					INNER JOIN igdb.games g ON g.game_id = r.game_id 
+								// 					INNER JOIN igdb.library l on l.game_id = g.game_id AND l.user_id = r.user_id
+								// 					WHERE l.user_id = '".$_SESSION['user_id']."' ORDER BY $reviewFilter_query DESC;");
+								// }
+								// if ($reviewFilter_query == "t") {
+								// 	$result = pg_query($db_conn, "SELECT DISTINCT * FROM igdb.reviews r 
+								// 					INNER JOIN igdb.games g ON g.game_id = r.game_id 
+								// 					INNER JOIN igdb.library l on l.game_id = g.game_id AND l.user_id = r.user_id
+								// 					WHERE l.user_id = '".$_SESSION['user_id']."' AND r.recommend = t;");
+								// }
+								
+								$result = pg_query($db_conn, "SELECT DISTINCT * FROM igdb.reviews r 
+								INNER JOIN igdb.games g ON g.game_id = r.game_id 
+								INNER JOIN igdb.library l on l.game_id = g.game_id AND l.user_id = r.user_id
+								WHERE l.user_id = '".$_SESSION['user_id']."' AND r.recommend = '".$reviewFilter_query."';");
                                 $numrows = pg_num_rows($result);
 
                                 if ($numrows == 0) {
