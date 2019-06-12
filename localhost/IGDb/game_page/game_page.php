@@ -16,15 +16,15 @@
         }
         $item = pg_fetch_array($result, 0);
 
-        function add_game($game_id){
-            //echo '<script>alert("'.$_SESSION['user_id'].'")</script>';
-            $result = pg_query($db_conn, "INSERT INTO igdb.library (user_id, game_id, category) VALUES ('".$_SESSION['user_id']."', '$game_id', 3);");
-            if (!$result){
-                echo "<script>alert('".pg_last_error($db_conn)."')</script>";
-            }
+        function add_game($game_id, $conn){
+            $result = pg_query($conn, "INSERT INTO igdb.library (user_id, game_id, category) VALUES ('".$_SESSION['user_id']."', '$game_id', 3);");
+            // if (!$result){
+            //     die("Error in query: " . pg_last_error());
+            //     //echo "<script>alert('".$status."')</script>";
+            // }
         }
         if (isset($_GET['add_game_id']))
-            add_game($_GET['add_game_id']);
+            add_game($_GET['add_game_id'], $db_conn);
         //echo "<script language='javascript'>alert('".$item['title']."')</script>";
     }
     else {
@@ -125,7 +125,12 @@
                         <div class="addText">Add this game to your library</div>
                         <div class="addButtonContainer">
                             <?php
-                                echo '<a href="game_page.php?game_id='.$item['game_id'].'&add_game_id='.$item['game_id'].'" class="addButton">Add to Library</a>';
+                                $result = pg_query("SELECT * from igdb.library where user_id=".$_SESSION['user_id']." and game_id=".$item['game_id']."");
+                                $numrows = pg_num_rows($result);
+
+                                if ($numrows == 0)
+                                    echo '<a href="game_page.php?game_id='.$item['game_id'].'&add_game_id='.$item['game_id'].'" class="addButton">Add to Library</a>';
+                                else echo '<button class="addButton">Added</button>'
                             ?>
                         </div>
                     </div>

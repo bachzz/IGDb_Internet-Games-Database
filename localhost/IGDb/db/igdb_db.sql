@@ -77,7 +77,8 @@ ALTER TABLE igdb.games OWNER TO postgres;
 CREATE TABLE igdb.library (
     user_id integer NOT NULL,
     game_id integer NOT NULL,
-    category integer NOT NULL
+    category integer NOT NULL,
+    unique (user_id, game_id)
 );
 
 
