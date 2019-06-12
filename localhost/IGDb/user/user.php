@@ -28,6 +28,7 @@
 <head>
     <title>IGDb</title>
     <link href="style sheet/user.css" rel="stylesheet" />
+	<link rel="stylesheet" href="style sheet/selectbox.min.css">
 </head>
 
 <body>
@@ -216,7 +217,7 @@
                             </div>
                         </div> -->
 						<form method="post" id="filter-form" class="sortButton">
-                            <select name=filter onchange="this.form.submit()" class="filterButton">
+                            <select name=filter onchange="this.form.submit()" class="justselect">
                                     <option value="" disabled selected>Filter</option>
                                     <option class="sortby" id="sortbyPlaying">Currently playing</option>
                                     <option class="sortby" id="sortbyPlayed">Completed</option>
@@ -269,7 +270,7 @@
                                     </span>
                                 </div> -->
 								<form method="post" id="filter-form" class="sortButton">
-                            		<select name=filter onchange="this.form.submit()" class="filterButton">
+                            		<select name=filter onchange="this.form.submit()" class="justselect">
 										<option value="" disabled selected>Filter</option>
 										<option class="sortby" id="sort-review-by-date">Date</option>
 										<option class="sortby" id="sort-review-by-pos">Negative first</option>
@@ -339,6 +340,7 @@
     </div>
     <script src="javascript/jquery-3.3.1.js"></script>
     <script src="javascript/user.js"></script>
+	<script type="text/javascript" src="javascript/selectbox.min.js"></script>
 </body>
 
 </html>

@@ -266,7 +266,7 @@
   min-height: 80vh;
 }
 
-.filterButton{
+/* .filterButton{
   width: 200px;
   height: 50px;
   font-size:20px;
@@ -284,16 +284,16 @@
   text-align: center;
   margin: 0px;
   font-size:20px;
-}
+} */
 
-.sortby:hover {
+/* .sortby:hover {
   background-color: black;
   color: white;
-}
+} */
 
-.sortButton:hover .sort-menu {
+/* .sortButton:hover .sort-menu {
   display: block;
-}
+} */
 
 
 .grid-container {
@@ -438,7 +438,7 @@
 }
 
 
-.reviewSortButton {
+/* .reviewSortButton {
   float: left;
   margin-left: 35px;
   font-size: 30px;
@@ -448,7 +448,7 @@
 
 .reviewSortButton:hover .sort-menu {
   display: block;
-}
+} */
 
 .gameStatus {
   float: left;
