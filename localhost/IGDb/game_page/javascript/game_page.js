@@ -1,80 +1,18 @@
-var slider = {
-  
-    // Not sure if keeping element collections like this
-    // together is useful or not.
-    el: {
-      slider: $("#slider"),
-      allSlides: $(".slide"),
-      sliderNav: $(".slider-nav"),
-      allNavButtons: $(".slider-nav > a")
+var galleryTop = new Swiper('.gallery-top', {
+    spaceBetween: 10,
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
     },
-    
-    timing: 800,
-    slideWidth: 800, // could measure this
-   
-    // In this simple example, might just move the
-    // binding here to the init function
-    init: function() {
-      this.bindUIEvents();
-    },
-    
-    bindUIEvents: function() {
-      // You can either manually scroll...
-      this.el.slider.on("scroll", function(event) {
-        slider.moveSlidePosition(event);
-      });
-      // ... or click a thing
-      this.el.sliderNav.on("click", "a", function(event) {
-        slider.handleNavClick(event, this);
-      });
-      // What would be cool is if it had touch
-      // events where you could swipe but it
-      // also kinda snapped into place.
-    },
-    
-    moveSlidePosition: function(event) {
-      // Magic Numbers =(
-      this.el.allSlides.css({
-        "background-position": $(event.target).scrollLeft()/6-100+ "px 0"
-      });  
-    },
-    
-    handleNavClick: function(event, el) {
-      event.preventDefault();
-      var position = $(el).attr("href").split("-").pop();
-      
-      this.el.slider.animate({
-        scrollLeft: position * this.slideWidth
-      }, this.timing);
-      
-      this.changeActiveNav(el);
-    },
-    
-    changeActiveNav: function(el) {
-      this.el.allNavButtons.removeClass("active");
-      $(el).addClass("active");
-    }
-    
-  };
-  
-slider.init();
-
-document.getElementById("store").onclick = function () {
-    location.href = "../store/store.php";
-};
-
-document.getElementById("library").onclick = function () {
-    location.href = "../library/library.php";
-};
-
-document.getElementById("user_profile").onclick = function () {
-    location.href = "../user/user.php";
-};
-
-document.getElementById("logout").onclick = function () {
-    location.href = "../login/logout.php";
-};
-
-
+  });
+  var galleryThumbs = new Swiper('.gallery-thumbs', {
+    spaceBetween: 10,
+    centeredSlides: true,
+    slidesPerView: 'auto',
+    touchRatio: 0.2,
+    slideToClickedSlide: true,
+  });
+  galleryTop.controller.control = galleryThumbs;
+  galleryThumbs.controller.control = galleryTop;
 
   
