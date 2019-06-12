@@ -180,7 +180,7 @@
   background-color: rgba(255, 255, 255, 0.8);
   border: 1px solid rgba(0, 0, 0, 0.8);
   padding: 20px;
-  height: 300px;
+  height: 400px;
   font-size: 30px;
   margin: 5px 40px;
   width:1160px;
@@ -190,29 +190,29 @@
 
 
 .userAva {
-
+  background-color: white;
+  border:1px solid black;
   cursor: pointer;
   width: 200px;
   height: 200px;
   float: left;
   overflow: hidden;
-  margin-top: 200px;
+  margin-top:200px;
 }
 .userInfo{
   float: left;
   margin-left: 30px;
-  margin-top: 220px;
+  margin-top: 320px;
   color: white;
-text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
+ text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
 }
 .userStatistic{
   border: 1px solid rgba(0, 0, 0, 0.8);
   border-top:none;
-  padding: 15px;
   font-size: 18px;
   float:left;
   margin-left:40px;
-  width:1170px;
+  width:1200px;
   margin-top:-80px;
   padding-top:85px;
 
@@ -220,6 +220,7 @@ text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
 .numLeftContainer{
   margin-bottom: 10px;
   float:left;
+  margin-left:20px;
 }
 
 .numRightContainer{
@@ -265,21 +266,24 @@ text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
   min-height: 80vh;
 }
 
+.filterButton{
+  width: 200px;
+  height: 50px;
+  font-size:20px;
+  float: right;
+  margin-right:-35px;
 
-.sortButton {
-  float: left;
-  margin-left: 35px;
-  margin-top:20px;
-  display: inline;
 }
+
 
 .sortby {
   cursor: pointer;
-  width: 250px;
+  width: 200px;
   height: 50px;
   line-height: 50px;
   text-align: center;
   margin: 0px;
+  font-size:20px;
 }
 
 .sortby:hover {
@@ -307,6 +311,7 @@ text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
   padding: 20px;
   height: 100px;
   font-size: 30px;
+
 }
 
 .gameText {
@@ -360,7 +365,7 @@ text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
 
 .reviewTop {
   display: inline-block;
-  width: 1040px;
+  width: 1000px;
 }
 
 .gameNameReview {
@@ -412,14 +417,14 @@ text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
 
 .reviewContainer {
   margin: 30px;
-  margin-top: 40px;
+  margin-top:0px;
 }
 
 .reviewMenu {
   display: inline-block;
   width: 1210px;
   height: 50px;
-  margin: 70px 0px 20px 0px;
+  margin: 50px 0px 20px 0px;
 }
 
 .allReview {
@@ -427,23 +432,15 @@ text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
   line-height: 50px;
   font-size: 40px;
   margin-left: 35px;
-  margin-bottom: 20px;
   float: left;
   font-weight: bold;
 
 }
 
-.reviewInput{
-  height:150px;
-  width:1150px;
-  overflow: auto;
-  padding:20px;
-}
 
 .reviewSortButton {
   float: left;
   margin-left: 35px;
-  margin-bottom: 20px;
   font-size: 30px;
   border-left: 1px solid black;
 

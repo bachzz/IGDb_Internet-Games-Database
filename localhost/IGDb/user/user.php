@@ -37,7 +37,7 @@
             <div class="content">
                 <div class="userInfoContainer" style="background-image: url(../resources/test/game2.png); background-size: 1280px 720px;">
                     <span class="userAva">
-                        <img src=pictures/game4.jpg width="200px" height="200px">
+                        <img src='../resources/avatars/default.png' width="200px" height="200px">
                     </span>
                     <div class="userInfo">
 					<?php 
@@ -216,11 +216,11 @@
                             </div>
                         </div> -->
 						<form method="post" id="filter-form" class="sortButton">
-                            <select name=filter onchange="this.form.submit()">
+                            <select name=filter onchange="this.form.submit()" class="filterButton">
                                     <option value="" disabled selected>Filter</option>
                                     <option class="sortby" id="sortbyPlaying">Currently playing</option>
                                     <option class="sortby" id="sortbyPlayed">Completed</option>
-                                    <option class="sortby" id="sortbyWait">PLan to play</option>
+                                    <option class="sortby" id="sortbyWait">Plan to play</option>
                                     <option class="sortby" id="sortbyDropped">Dropped</option>
                             </select>
                         </form>
@@ -269,7 +269,7 @@
                                     </span>
                                 </div> -->
 								<form method="post" id="filter-form" class="sortButton">
-                            		<select name=filter onchange="this.form.submit()">
+                            		<select name=filter onchange="this.form.submit()" class="filterButton">
 										<option value="" disabled selected>Filter</option>
 										<option class="sortby" id="sort-review-by-date">Date</option>
 										<option class="sortby" id="sort-review-by-pos">Negative first</option>
@@ -279,6 +279,7 @@
                             </div>
 
                     <div class=reviewContainer>
+						<div class="grid-container">
 							<?php 
 								$result = pg_query($db_conn, "SELECT DISTINCT * FROM igdb.reviews r INNER JOIN igdb.games g ON g.game_id = r.game_id INNER JOIN igdb.library l on l.game_id = g.game_id and l.user_id = r.user_id
 															WHERE l.user_id = '".$_SESSION['user_id']."';");
@@ -329,7 +330,7 @@
 									}
 								}
 							?>  
-
+							</div>
                     </div>
                     
                 </div>

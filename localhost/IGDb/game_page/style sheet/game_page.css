@@ -214,24 +214,6 @@
   height: 450px;
   margin: 0px auto;
 }
-
-.slider-wrap {
-  width: 800px;
-  height: 432px;
-  margin: 0px auto;
-  float: left;
-  text-align: center;
-  margin-right: 20px;
-}
-
-.slider {
-  overflow-x: scroll;
-}
-
-.holder {
-  width: 400%;
-}
-
 .slide {
   float: left;
   width: 800px;
@@ -240,62 +222,6 @@
   background-position: -100px 0;
 }
 
-#slide-0 {
-  /* background-image: url(../Pictures/game1.jpg);
-  background-size: 1280px 720px; */
-}
-
-#slide-1 {
-  /* background-image: url(../Pictures/game2.png);
-  background-size: 1280px 720px; */
-}
-
-#slide-2 {
-  /* background-image: url(../Pictures/game3.jpg);
-  background-size: 1280px 720px; */
-}
-
-#slide-3 {
-  /* background-image: url(../Pictures/game4.jpg);
-    background-size: 1280px 720px; */
-}
-
-.slide:before {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 40%;
-  background: linear-gradient(transparent, black);
-}
-
-.slider-nav {
-  text-align: center;
-  margin: 10px 0 0 0;
-}
-
-.slider-nav a {
-  width: 10px;
-  height: 10px;
-  display: inline-block;
-  background: #ddd;
-  overflow: hidden;
-  text-indent: -9999px;
-  border-radius: 50%;
-}
-
-.slider-nav a.active {
-  background: #999;
-}
-
-/* .screenshot {
-  width: 800px;
-  height: 450px;
-  float: left;
-  text-align: center;
-  margin-right: 20px;
-} */
 
 .rightInfo {
   width: 375px;
@@ -332,14 +258,23 @@
 }
 
 .addButton {
-  height: 50px;
-  width: 100px;
+  height: 55px;
+  width: 120px;
   background-color: black;
   color: white;
   border: none;
   cursor: pointer;
   float:right;
   margin-top:-25px;
+  font-weight: bold;
+  line-height:55px;
+  font-size:14px;
+  text-align: center;
+}
+
+.addButton:hover{
+  color:white;
+  text-decoration: none;
 }
 
 .formContainer {
@@ -464,81 +399,35 @@
   padding:20px;
 }
 
-.reviewSortButton {
-  float: left;
-  margin-left: 35px;
-  margin-bottom: 20px;
-  font-size: 30px;
-  border-left: 1px solid black;
 
-}
-
-.sortButton {
+.filterButton{
+  width: 200px;
   height: 50px;
-  width: 100px;
-  border: none;
-  cursor: pointer;
-  line-height: 50px;
-  text-align: center;
+  font-size:20px;
+  float: right;
+  margin-right:30px;
 }
 
-.sort-menu {
-  display: none;
-  position: absolute;
-  font-size: 20px;
-  background-color: #f9f9f9;
-  color: black;
-  width: 150px;
-  margin-left: -30px;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  z-index: 1;
-}
 
-.sortbyDate {
+.sortby {
   cursor: pointer;
-  width: 150px;
+  width: 200px;
   height: 50px;
   line-height: 50px;
   text-align: center;
   margin: 0px;
+  font-size:20px;
 }
 
-.sortbyNeg {
-  cursor: pointer;
-  width: 150px;
-  height: 50px;
-  line-height: 50px;
-  text-align: center;
-  margin: 0px;
-}
-
-.sortbyPos {
-  cursor: pointer;
-  width: 150px;
-  height: 50px;
-  line-height: 50px;
-  text-align: center;
-  margin: 0px;
-}
-
-.sortbyDate:hover {
+.sortby:hover {
   background-color: black;
   color: white;
 }
 
-.sortbyPos:hover {
-  background-color: black;
-  color: white;
-}
-
-.sortbyNeg:hover {
-  background-color: black;
-  color: white;
-}
-
-.reviewSortButton:hover .sort-menu {
+.sortButton:hover .sort-menu {
   display: block;
 }
+
 
 .grid-container {
   display: grid;

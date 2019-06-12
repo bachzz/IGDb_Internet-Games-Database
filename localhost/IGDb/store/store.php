@@ -90,7 +90,7 @@
                     <div class=gameText>
                     <div id="allGames">All games</div>
                         <form method="post" id="filter-form" class="storeSortButton">
-                            <select name=filter onchange="this.form.submit()">
+                            <select name=filter onchange="this.form.submit()" class="filterButton">
                                     <option value="" disabled selected>Filter</option>
                                     <option class="sortby">None</option>
                                     <option class="sortby">Newest first</option>

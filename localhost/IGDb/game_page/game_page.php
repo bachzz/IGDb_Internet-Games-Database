@@ -160,16 +160,15 @@
                     <div class=reviewContainer>
                         <div class="reviewMenu">
                             <div class="allReview">All reviews</div>
-                            <div class="reviewSortButton">
-                                <div class="sortButton">Filter
-                                    <span class="sort-menu">
-                                        <p class="sortbyDate">Date</p>
-                                        <p class="sortbyNeg">Negative first</p>
-                                        <p class="sortbyPos">Positive first</p>
-                                    </span>
-                                </div>
+                                 <form method="post" id="filter-form" class="sortButton">
+                            		<select name=filter onchange="this.form.submit()" class="filterButton">
+										<option value="" disabled selected>Filter</option>
+										<option class="sortby" id="sort-review-by-date">Date</option>
+										<option class="sortby" id="sort-review-by-pos">Negative first</option>
+										<option class="sortby" id="sort-review-by-neg">Positive first</option>
+                            		</select>
+                        		</form>
                             </div>
-                        </div>
                         <?php 
                             $result = pg_query($db_conn, "SELECT * FROM igdb.reviews where game_id = ".$item['game_id']." ORDER BY review_id ASC;");
                             $numrows = pg_num_rows($result);
@@ -182,6 +181,8 @@
                                     foreach($arr as $array)
                                     {
                                         $user_id = $array['user_id'];
+                                        $up = $array['upvote'];
+										$down = $array['downvote'];
                                         $result = pg_query($db_conn, "SELECT * FROM igdb.users where user_id = '$user_id'");
                                         $user = pg_fetch_array($result, 0);
                                         echo '<div class="grid-item">
@@ -194,8 +195,8 @@
                                                         <div class="reviewRec">'.$array['recommend'].'</div>
                                                         <div class="reviewDate">'.$array['review_date'].'</div>
                                                         <div class="reviewRating">
-                                                        <div class="upvote">up</div>
-                                                        <div class="downvote">down</div>
+														<div class="upvote">up: '.$up.' </div>
+														<div class="downvote">down: '.$down.'</div>
                                                     </div>
                                                     </div>
                                                     <div class="reviewText">'.$array['game_review'].'</div>
