@@ -24,9 +24,11 @@
 	}
 
 	//game filter
-	if ( isset($_POST['gameFilter']) ){
+	if ( isset($_POST['gameFilter']) || isset($_POST['reviewFilter'])){
 		$gameFilter = $_POST['gameFilter'];
 		$_SESSION['gameFilter'] = $gameFilter;
+		$reviewFilter = $_POST['reviewFilter'];
+		$_SESSION['reviewFilter'] = $reviewFilter;
 		if ($gameFilter == "none")
 			$_SESSION['gameFilter_query'] = "game_id";
 		if ($gameFilter == "newest")
@@ -36,23 +38,14 @@
 		if ($gameFilter == "rating")
 			$_SESSION['gameFilter_query'] = "avg_score";
 		//$gameFilter = $_POST['gameFilter'];
-		header("Location: ./user.php");
-		return;
-	}
-
-	//review filter
-	if ( isset($_POST['reviewFilter']) ){
-		$reviewFilter = $_POST['reviewFilter'];
-		$_SESSION['reviewFilter'] = $reviewFilter;
-		if ($gameFilter == "none")
+		if ($reviewFilter == "none")
 			$_SESSION['reviewFilter_query'] = "review_id";
-		if ($gameFilter == "date")
+		if ($reviewFilter == "date")
 			$_SESSION['reviewFilter_query'] = "review_date";
-		if ($gameFilter == "pos")
+		if ($reviewFilter == "pos")
 			$_SESSION['reviewFilter_query'] = "t";
-		if ($gameFilter == "neg")
+		if ($reviewFilter == "neg")
 			$_SESSION['reviewFilter_query'] = "f";
-		//$gameFilter = $_POST['gameFilter'];
 		header("Location: ./user.php");
 		return;
 	}
@@ -330,23 +323,19 @@
 								$reviewFilter_query = isset($_SESSION['reviewFilter_query']) ? $_SESSION['reviewFilter_query'] : review_id;
 								echo '<script> alert('.$reviewFilter_query.') </script>';
 
-								// if ($reviewFilter_query == "review_date" || $reviewFilter_query == "review_id") {
-								// 	$result = pg_query($db_conn, "SELECT DISTINCT * FROM igdb.reviews r 
-								// 					INNER JOIN igdb.games g ON g.game_id = r.game_id 
-								// 					INNER JOIN igdb.library l on l.game_id = g.game_id AND l.user_id = r.user_id
-								// 					WHERE l.user_id = '".$_SESSION['user_id']."' ORDER BY $reviewFilter_query DESC;");
-								// }
-								// if ($reviewFilter_query == "t") {
-								// 	$result = pg_query($db_conn, "SELECT DISTINCT * FROM igdb.reviews r 
-								// 					INNER JOIN igdb.games g ON g.game_id = r.game_id 
-								// 					INNER JOIN igdb.library l on l.game_id = g.game_id AND l.user_id = r.user_id
-								// 					WHERE l.user_id = '".$_SESSION['user_id']."' AND r.recommend = t;");
-								// }
+								if ($reviewFilter_query == "review_date" || $reviewFilter_query == "review_id") {
+									$result = pg_query($db_conn, "SELECT DISTINCT * FROM igdb.reviews r 
+													INNER JOIN igdb.games g ON g.game_id = r.game_id 
+													INNER JOIN igdb.library l on l.game_id = g.game_id AND l.user_id = r.user_id
+													WHERE l.user_id = '".$_SESSION['user_id']."' ORDER BY $reviewFilter_query DESC;");
+								}
+								if ($reviewFilter_query == "t" || $reviewFilter_query == "f") {
+									$result = pg_query($db_conn, "SELECT DISTINCT * FROM igdb.reviews r 
+													INNER JOIN igdb.games g ON g.game_id = r.game_id 
+													INNER JOIN igdb.library l on l.game_id = g.game_id AND l.user_id = r.user_id
+													WHERE l.user_id = '".$_SESSION['user_id']."' AND r.recommend = '".$reviewFilter_query."';");
+								}
 								
-								$result = pg_query($db_conn, "SELECT DISTINCT * FROM igdb.reviews r 
-								INNER JOIN igdb.games g ON g.game_id = r.game_id 
-								INNER JOIN igdb.library l on l.game_id = g.game_id AND l.user_id = r.user_id
-								WHERE l.user_id = '".$_SESSION['user_id']."' AND r.recommend = '".$reviewFilter_query."';");
                                 $numrows = pg_num_rows($result);
 
                                 if ($numrows == 0) {
