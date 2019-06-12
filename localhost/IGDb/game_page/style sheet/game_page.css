@@ -192,7 +192,37 @@
   border: 1px solid black;
 }
 
-.item {
+.my-carousel{
+  width: 800px;
+  height: 450px;
+  float:left;
+  border-right: 1px solid black;
+  padding-bottom:1px;
+}
+.swiper-slide {
+  background-size: cover;
+  background-position: center;
+}
+.gallery-top {
+  height: 80%;
+}
+.gallery-thumbs {
+  height: 20%;
+  box-sizing: border-box;
+  padding: 10px 0;
+}
+.gallery-thumbs .swiper-slide {
+  width: 25%;
+  height: 100%;
+  opacity: 0.4;
+}
+.gallery-thumbs .swiper-slide-active {
+  opacity: 1;
+}
+
+
+
+/* .item {
   overflow: hidden;
 }
 
@@ -220,7 +250,7 @@
   position: relative;
   background-position: -100px 0;
 }
-
+ */
 
 .rightInfo {
   width: 375px;

@@ -48,43 +48,36 @@
             <div class="content">
                 <div class="gameTitle"><?php echo $item['title']; ?></div>
                 <div class="gameInfo">
-                <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                <!-- carousel start -->
+<div class="my-carousel">
+                <div class="swiper-container gallery-top">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide" style="background-image:url(../resources/test/game2.png)"></div>
+      <div class="swiper-slide" style="background-image:url(../resources/test/bg.png)"></div>
+      <div class="swiper-slide" style="background-image:url(../resources/test/game1.jpg)"></div>
+      <div class="swiper-slide" style="background-image:url(../resources/test/game2.png)"></div>
+      <div class="swiper-slide" style="background-image:url(../resources/test/game3.jpg)"></div>
+
+    </div>
+    <!-- Add Arrows -->
+    <div class="swiper-button-next swiper-button-white"></div>
+    <div class="swiper-button-prev swiper-button-white"></div>
+  </div>
+  <div class="swiper-container gallery-thumbs">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide" style="background-image:url(../resources/test/game2.png)"></div>
+      <div class="swiper-slide" style="background-image:url(../resources/test/bg.png)"></div>
+      <div class="swiper-slide" style="background-image:url(../resources/test/game1.jpg)"></div>
+      <div class="swiper-slide" style="background-image:url(../resources/test/game2.png)"></div>
+      <div class="swiper-slide" style="background-image:url(../resources/test/game3.jpg)"></div>
+
+    </div>
+  </div>
+</div>
 
 
-                <!-- Wrapper for slides -->
-                <div class="carousel-inner">
-                    <div class="item active">
-                    <img src="../resources/test/game2.png">
-                    </div>
 
-                    <div class="item">
-                    <img src="../resources/test/game2.png">
-                    </div>
-
-                    <div class="item">
-                    <img src="../resources/test/game2.png">
-                    </div>
-                    <div class="item">
-                    <img src="../resources/test/game2.png">
-                    </div>
-                    <div class="item">
-                    <img src="../resources/test/game2.png">
-                    </div>
-                    <div class="item">
-                    <img src="../resources/test/game2.png">
-                    </div>
-                </div>
-
-                <!-- Left and right controls -->
-                <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-                    <span class="glyphicon glyphicon-chevron-left"></span>
-                    <span class="sr-only">Previous</span>
-                </a>
-                <a class="right carousel-control" href="#myCarousel" data-slide="next">
-                    <span class="glyphicon glyphicon-chevron-right"></span>
-                    <span class="sr-only">Next</span>
-                </a>
-            </div>
+                 <!-- carousel end -->
                     <div class="rightInfo">
                         <div class="gameCover">
                             <img src=pictures/game2.png width="375px" height="151px">
@@ -224,6 +217,8 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.1.6/js/swiper.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.1.6/css/swiper.min.css">
 </body>
 
 </html>></script>
@@ -231,6 +226,8 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.1.6/js/swiper.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.1.6/css/swiper.min.css">
 </body>
 
 </html>
