@@ -114,7 +114,7 @@
                         <div class="grid-container">
 							<?php 
 								$filter = isset($_SESSION['filter']) ? $_SESSION['filter'] : '';
-								$filter_query = isset($_SESSION['filter_query']) ? $_SESSION['filter_query'] : game_id;
+								$filter_query = isset($_SESSION['filter_query']) ? $_SESSION['filter_query'] : 'game_id';
 								//$result = pg_query($db_conn, "SELECT * FROM igdb.games ORDER BY game_id ASC;");
                                 $result = pg_query($db_conn, "SELECT * FROM igdb.game_view_store ORDER BY $filter_query DESC;");
                                 $numrows = pg_num_rows($result);
