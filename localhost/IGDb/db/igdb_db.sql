@@ -197,10 +197,10 @@ COPY igdb.library (user_id, game_id, category) FROM stdin;
 
 COPY igdb.reviews (user_id, game_id, game_review, recommend, review_date) FROM stdin;
 2	1	this game is so addictive!!	TRUE	1-1-2019
-4	1	I know right?	TRUE	15-1-2019
-5	1	No this game sucks. Boring. Waste my time.	FALSE	16-1-2019
-14	1	I know right?	TRUE	15-1-2019
-14	2	No this game sucks. Boring. Waste my time.	FALSE	16-1-2019
+4	1	I know right?	TRUE	1-15-2019
+5	1	No this game sucks. Boring. Waste my time.	FALSE	1-16-2019
+14	1	I know right?	TRUE	1-15-2019
+14	2	No this game sucks. Boring. Waste my time.	FALSE	1-16-2019
 \.
 
 
@@ -307,4 +307,3 @@ GRANT ALL ON SCHEMA public TO PUBLIC;
 --
 -- PostgreSQL database dump complete
 --
-
