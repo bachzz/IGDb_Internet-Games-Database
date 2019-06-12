@@ -71,7 +71,7 @@
     <link href="style sheet/register.css" rel="stylesheet" />
 </head>
 <body>
-  <div class = "bg">
+  <div class = "bg" style="background-image: url(../resources/test/bg.png);">
       <div class="body">
           <div class="login">
           <div class = "createAccTitleContainer">

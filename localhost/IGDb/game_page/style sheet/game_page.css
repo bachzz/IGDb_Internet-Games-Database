@@ -4,7 +4,6 @@
 
 .bg {
   position: absolute;
-  background-image: url(../pictures/bg.png);
   top: 0;
   bottom: 0;
   left: 0;
@@ -265,7 +264,7 @@
   border: none;
   cursor: pointer;
   float:right;
-  margin-top:-25px;
+  margin-top:-30px;
   font-weight: bold;
   line-height:55px;
   font-size:14px;
