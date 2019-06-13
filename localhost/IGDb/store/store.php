@@ -63,26 +63,28 @@
 
                 <!-- Wrapper for slides -->
                 <div class="carousel-inner">
-                    <div class="item active">
-                    <img src="../resources/test/game1.jpg">
-                    </div>
+                    <?php
+                        $result = pg_query($db_conn, "SELECT * from igdb.games;");
+                        $items = pg_fetch_all($result);
 
-                    <div class="item">
-                    <img src="../resources/test/game2.png">
-                    </div>
+                        $item0 = $items[0];
+                        $img_url0 = $item0['img_url'];
+                        $cover0 = strtok($img_url0, ";"); 
 
-                    <div class="item">
-                    <img src="../resources/test/bg.png">
-                    </div>
-                    <div class="item">
-                    <img src="../resources/test/game2.png">
-                    </div>
-                    <div class="item">
-                    <img src="../resources/test/game3.jpg">
-                    </div>
-                    <div class="item">
-                    <img src="../resources/test/game2.png">
-                    </div>
+                        echo '<div class="item active">
+                                <img src="'.$cover0.'">
+                            </div>';
+
+                        for ($i = 1; $i < count($items); $i++){
+                            $item_i = $items[$i];
+                            $img_url = $item_i['img_url'];
+                            $cover = strtok($img_url, ";");
+                            echo '<div class="item">
+                                <img src="'.$cover.'">
+                            </div>';
+                        }
+
+                    ?>
                 </div>
 
                 <!-- Left and right controls -->
