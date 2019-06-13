@@ -89,7 +89,7 @@
                         <div class=gamesContainer id="normalLib">
                             <div>
                                 <div class="submitButtonContainer">
-                                    <button id="submitButton" onclick="showEdit()" >Edit</button>
+                                    <button id="editButton" onclick="showEdit()" >Edit</button>
                                 </div>
                             </div>
                             <div class="grid-container">
@@ -133,8 +133,11 @@
                                                         <img src='.$cover.' width="200px" height="100px">
                                                     </span>
                                                     <span class="gameInfo">
-                                                        <div class="gameName" onclick="game_onclick(\''.$game_id.'\')">'.$title.'</div>
-                                                        <div class="gameDescription">'.$description.' - '.$status.'</div>
+                                                        <div class="name-status">                                                        
+                                                            <div class="gameName" onclick="game_onclick(\''.$game_id.'\')">'.$title.'</div>
+                                                            <div class="gameStatus">'.$status.'</div>
+                                                        </div>
+                                                        <div class="gameDescription">'.$description.'</div>
                                                     </span>
                                                 </div>';
                                         }
@@ -146,7 +149,7 @@
                         <form method="post" class="gamesContainerEdit" id="normalLibEdit">
                             <div>
                                 <div class="submitButtonContainer">
-                                    <input type="submit" value="Submit">
+                                    <input id="submitButton" type="submit" value="Submit">
                                     <!-- <button id="submitButton" onclick="document.getElement.submit()">Submit</button> -->
                                 </div>
                             </div>
@@ -178,19 +181,24 @@
                                                         <img src='.$cover.' width="200px" height="100px">
                                                     </span>
                                                     <span class="gameInfo">
-                                                        <div class="gameName">'.$title.'</div>
+                                                        <div class="gameNameEdit">'.$title.'</div>
                                                         <div class="gameOption">
-                                                            <input type="radio" name="status'.$game_id.'" id="playing" value="playing">
-                                                            <label for="playing">Playing</label>
+                                                            <input type="radio" " name="status'.$game_id.'" id="playing" value="playing">
+                                                            <label for="playing" style="pointer-events: none;
+                                                            cursor: default;" >Playing</label>
                                                             
                                                             <input type="radio" name="status'.$game_id.'" id="completed" value="completed">
-                                                            <label for="completed">Completed</label>
+                                                            <label for="completed" style="pointer-events: none;
+                                                            cursor: default;" >Completed</label>
+
                                                             
                                                             <input type="radio" name="status'.$game_id.'" id="plan" value="plan">
-                                                            <label for="plan">Plan to play</label>
-                                                            
-                                                            <input type="radio" name="status'.$game_id.'" id="dropped" value="dropped">
-                                                            <label for="dropped">Dropped</label>
+                                                            <label for="plan" style="pointer-events: none;
+                                                            cursor: default;">Plan to play</label>
+
+                                                            <input type="radio" " name="status'.$game_id.'" id="dropped" value="dropped">
+                                                            <label for="dropped" style="pointer-events: none;
+                                                            cursor: default;" >Dropped</label>
                                                         </div>
                                                     </span>
                                                 </div>';

@@ -307,7 +307,7 @@
 
 .sortby {
 	-webkit-appearance: none;
-	-moz-appearance: none
+	-moz-appearance: none;
 	outline:none!important;
 	cursor:pointer;
     padding:5px 10px;

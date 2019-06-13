@@ -14,7 +14,7 @@
 }
 
 .bodyContainer {
-  position: absolute;
+  position: relative;
   width: 1280px;
   left: 50%;
   margin-left: -640px;
@@ -179,6 +179,7 @@
 .gamesDisplay {
   height: 100%;
   min-height: 80vh;
+  bottom:0;
 }
 
 
@@ -213,6 +214,8 @@
 
 .gamesContainer{
   visibility: visible;
+  position: absolute;
+  margin-left: 30px;
 }
 
 
@@ -228,13 +231,15 @@
   background-color: black;
   color: white;
   border: none;
-  cursor: pointer;
+  cursor: pointer; 
+  margin-left: -30px;
 }
 
 
 .gamesContainerEdit{
   visibility: hidden;
-  margin-top:-655px;
+  position: relative;
+  
   
 }
  .submitButtonContainer {
@@ -250,6 +255,7 @@
   color: white;
   border: none;
   cursor: pointer;
+
 }
 
 
@@ -311,80 +317,101 @@
 .gameInfo {
   float: left;
   margin-left: 30px;
- 
+}
+.name-status{
+  height:50px;
+  width:900px;
+  display: inline-block;
 }
 
 .gameName {
   cursor: pointer;
+  width:200px;
+  font-size: 30px;
+  font-weight: bold;
+  float:left;
+}
+
+.gameNameEdit{
+  cursor: pointer;
+  width:200px;
   font-size: 30px;
   font-weight: bold;
 }
 
+.gameStatus{
+  font-size: 25px;
+  float: left;
+  margin-left: 550px;
+  }
+
+  .gameDescription{
+    font-size: 20px;
+
+    }
+  
 .gameOption {
   margin-top:15px;
   font-size: 20px;
 }
-.container {
-  display: block;
-  float:left;
-  position: relative;
-  padding-left: 35px;
-  margin-bottom: 12px;
-  margin-right:12px;
-  cursor: pointer;
-  font-size: 22px;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+
+
+.filterButton{
+	outline:none;
+	width: 200px!important;
+    height: 50px!important;
+    font-size:20px!important;
+    float: right!important;
+    margin-right:-35px!important;
+    box-sizing:border-box;
+    font-family:Helvetica,Arial,sans-serif;
+    font-size:9pt;display:inline-block;
+    margin:2px;
+    background:#fff;
+	position:relative;
+	cursor:pointer;
+    padding:5px 10px;
+    background:#fff;
+    color:#202020;
+    position:relative;
+    display:flex;
+    align-items:center;
+    border-radius:5px;
+    border:1px solid #eee;
+    transition:150ms linear all;
+	box-shadow:1px 1px 10px #eee;
+	outline:none;
 }
 
-/* Hide the browser's default radio button */
-.container input {
-  position: absolute;
-  opacity: 0;
-  cursor: pointer;
+.filterButton:after{
+	content:"";display:inline;
+    border-left:5px solid transparent;
+    border-right:5px solid transparent;
+    border-top:6px solid #202020;
+    position:absolute;
+    right:8px;
+    top:50%;
+    transform:translateY(-50%);
+    transition:150ms linear all
 }
 
-/* Create a custom radio button */
-.checkmark {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 25px;
-  width: 25px;
-  background-color: #eee;
-  border-radius: 50%;
+.sortby {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	outline:none!important;
+	cursor:pointer;
+    padding:5px 10px;
+    background:#fff;
+    color:#202020;
+    position:relative;
+    display:flex;
+    align-items:center;
+    border-radius:5px;
+    border:1px solid #eee;
+    transition:150ms linear all;
+    box-shadow:1px 1px 10px #eee
 }
 
-/* On mouse-over, add a grey background color */
-.container:hover input ~ .checkmark {
-  background-color: #ccc;
-}
-
-/* When the radio button is checked, add a blue background */
-.container input:checked ~ .checkmark {
-  background-color: #2196F3;
-}
-
-/* Create the indicator (the dot/circle - hidden when not checked) */
-.checkmark:after {
-  content: "";
-  position: absolute;
-  display: none;
-}
-
-/* Show the indicator (dot/circle) when checked */
-.container input:checked ~ .checkmark:after {
-  display: block;
-}
-
-/* Style the indicator (dot/circle) */
-.container .checkmark:after {
- 	top: 9px;
-	left: 9px;
-	width: 8px;
-	height: 8px;
-	border-radius: 50%;
-	background: white;
+.filterButton.decorated option:hover {
+    box-shadow: 0 0 10px 100px #1882A8 inset;
 }
