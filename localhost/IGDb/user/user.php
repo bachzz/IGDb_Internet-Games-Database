@@ -65,7 +65,17 @@
         <div class="bodyContainer">
             <?php include '../nav/navigation.php' ?>
             <div class="content">
-                <div class="userInfoContainer" style="background-image: url(../resources/test/game2.png); background-size: 1280px 720px;">
+            	<?php
+            		$result = pg_query("SELECT sum(upvote)-sum(downvote) as votes from igdb.reviews where user_id=".$_SESSION['user_id'].";"); 
+            		$votes = pg_fetch_array($result, 0)['votes'];
+            		if ($votes < 5)
+            			$background = '../resources/tiers/bronze.jpg';
+            		if ($votes >= 5 && $votes < 10)
+            			$background = '../resources/tiers/silver.jpg';
+            		if ($votes >= 10)
+            			$background = '../resources/tiers/gold.jpg';
+            	?>
+                <div class="userInfoContainer" style="background-image: url(<?php echo $background ?>); background-size: 1280px 720px;">
                     <span class="userAva">
                         <img src='../resources/avatars/default.png' width="200px" height="200px">
                     </span>
