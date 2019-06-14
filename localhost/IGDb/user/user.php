@@ -401,7 +401,8 @@
         </div>
     </div>
     <script src="javascript/jquery-3.3.1.js"></script>
-    <script src="javascript/user.js"></script>
+	<script src="javascript/user.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
 	<script type="text/javascript" src="javascript/selectbox.min.js"></script>
 </body>
 

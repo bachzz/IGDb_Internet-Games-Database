@@ -14,7 +14,7 @@
 }
 
 .bodyContainer {
-  position: absolute;
+  position: relative;
   width: 1280px;
   left: 50%;
   margin-left: -640px;
@@ -23,179 +23,30 @@
 
 }
 
-.header {
-  width: 1280px;
-  height: 50px;
-  top: 0;
-  position: fixed;
-  background-color: black;
-  display: inline-block;
-  z-index: 9999;
-}
-
-
-.leftHeader {
-  float: left;
-}
-
-.logo {
-  cursor: pointer;
-  height: 50px;
-  width: 80px;
-  margin-left: 20px;
-  float: left;
-  text-align: center;
-  color: #000;
-  font-weight: bold;
-  margin-right: 20px;
-}
-
-.Store {
-  cursor: pointer;
-  width: 150px;
-  text-align: center;
-  height: 50px;
-  float: left;
-}
-
-.Library {
-  cursor: pointer;
-  width: 150px;
-  height: 50px;
-  float: left;
-  text-align: center;
-
-}
-
-.storeText {
-  color: #fff;
-  font-size: 30px;
-  line-height: 50px;
-  border-left: 1px solid white;
-  border-right: 1px solid white;
-}
-
-.logoText {
-  color: #fff;
-  font-size: 30px;
-  line-height: 50px;
-}
-
-.libText {
-  color: #fff;
-  text-align: center;
-  line-height: 50px;
-  font-size: 30px;
-  border-right: 1px solid white;
-}
-
-.Search {
-  cursor: pointer;
-  width: 150px;
-  height: 50px;
-  float: left;
-  text-align: center;
-
-}
-
-.searchText {
-  color: #fff;
-  text-align: center;
-  line-height: 50px;
-  font-size: 30px;
-  border-right: 1px solid white;
-}
-
-.rightHeader {
-  float: right;
-}
-
-.User {
-  cursor: pointer;
-  width: 150px;
-  height: 50px;
-  float: left;
-  text-align: center;
-  border-left: 1px solid white;
-  border-right: 1px solid white;
-}
-
-.userText {
-  color: #fff;
-  text-align: center;
-  line-height: 50px;
-  font-size: 30px;
-  border-right: 1px solid white;
-}
-
-.user-menu {
-  display: none;
-  position: absolute;
-  background-color: #f9f9f9;
-  width: 150px;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  z-index: 1;
-}
-
-.profile {
-  cursor: pointer;
-  width: 150px;
-  height: 50px;
-  line-height: 50px;
-  text-align: center;
-  margin: 0px;
-}
-
-.logout {
-  cursor: pointer;
-  width: 150px;
-  height: 50px;
-  line-height: 50px;
-  text-align: center;
-  margin: 0px;
-}
-
-.profile:hover {
-  background-color: black;
-  color: white;
-}
-
-.logout:hover {
-  background-color: black;
-  color: white;
-}
-
-.User:hover .user-menu {
-  display: block;
-}
 
 .content {
   width: 1280px;
-  overflow: hidden;
+  overflow: auto;
   background-color: white;
 }
 
 .item {
-
   overflow: hidden;
 }
 
 .carousel-inner {
   width: 1280px;
   height: 600px;
-  margin: 0px auto;
 }
 
 .carousel-slide {
   width: 1280px;
   height: 600px;
-  margin: 0px auto;
 }
 
 #myCarousel {
   width: 1280px;
   height: 600px;
-  margin: 0px auto;
 }
 
 .gamesDisplay {

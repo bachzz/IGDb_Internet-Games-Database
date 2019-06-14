@@ -184,21 +184,21 @@
                                                         <div class="gameNameEdit">'.$title.'</div>
                                                         <div class="gameOption">
                                                             <input type="radio" " name="status'.$game_id.'" id="playing" value="playing">
-                                                            <label for="playing" style="pointer-events: none;
-                                                            cursor: default;" >Playing</label>
+                                                            <span class="option-label" for="playing" style="pointer-events: none;
+                                                            cursor: default;" >Playing</span>
                                                             
                                                             <input type="radio" name="status'.$game_id.'" id="completed" value="completed">
-                                                            <label for="completed" style="pointer-events: none;
-                                                            cursor: default;" >Completed</label>
+                                                            <span class="option-label" for="completed" style="pointer-events: none;
+                                                            cursor: default;" >Completed</span>
 
                                                             
                                                             <input type="radio" name="status'.$game_id.'" id="plan" value="plan">
-                                                            <label for="plan" style="pointer-events: none;
-                                                            cursor: default;">Plan to play</label>
+                                                            <span class="option-label" for="plan" style="pointer-events: none;
+                                                            cursor: default;">Plan to play</span>
 
                                                             <input type="radio" " name="status'.$game_id.'" id="dropped" value="dropped">
-                                                            <label for="dropped" style="pointer-events: none;
-                                                            cursor: default;" >Dropped</label>
+                                                            <span class="option-label" for="dropped" style="pointer-events: none;
+                                                            cursor: default;" >Dropped</span>
                                                         </div>
                                                     </span>
                                                 </div>';
@@ -220,6 +220,8 @@
     </div>
     <script src="javascript/jquery-3.3.1.js"></script>
     <script src="javascript/library.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
 </body>
 
 </html>
