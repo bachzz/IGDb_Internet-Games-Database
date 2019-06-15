@@ -1,8 +1,12 @@
 <?php
-	header("Cache-Control: no cache");
-	session_cache_limiter("private_no_expire");
+	//header("Cache-Control: no cache");
+	//session_cache_limiter("private_no_expire");
     session_start();
     if ( isset($_SESSION['user_id']) ){
+        if (!isset($_GET['search_input']) or !isset($_GET['search_type'])){
+            header("Location: ../store/store.php");
+            return;
+        }
         include '../shared.php';
         // connect to database
         $db_conn = pg_connect("host=$host port=$port user=$user password=$pass dbname=$dbname") or die('Could not connect: ' . pg_last_error());
@@ -30,7 +34,8 @@
 			header("Location: ./search.php");
 			return;
         }
-        
+        $type = $_GET['search_type'] === "name-search" ? 'title' : 'genre';
+
     }
     else {
         header("Location: ../login/login.php");
@@ -60,16 +65,8 @@
                 <div class="gamesDisplay">
                     <div class=gameText>
                     <div id="allGames">Search result for:  </div>
-                    <div class="search-result">   "search result"</div>
-                        <form method="post" id="filter-form" class="storeSortButton">
-                            <select name=filter onchange="this.form.submit()" class="filterButton">
-                                    <option value="" disabled selected>Filter</option>
-                                    <option class="sortby" value="none">None</option>
-                                    <option class="sortby" value="newest">Newest first</option>
-                                    <option class="sortby" value="popular">Most popular first</option>
-                                    <option class="sortby" value="rating">Highest rated first</option>
-                            </select>
-                        </form>
+                    <div class="search-result"> <?php echo $_GET['search_input']; ?></div>
+                        
 
 
                     </div>
@@ -79,11 +76,11 @@
 								$filter = isset($_SESSION['filter']) ? $_SESSION['filter'] : '';
 								$filter_query = isset($_SESSION['filter_query']) ? $_SESSION['filter_query'] : 'game_id';
 								//$result = pg_query($db_conn, "SELECT * FROM igdb.games ORDER BY game_id ASC;");
-                                $result = pg_query($db_conn, "SELECT * FROM igdb.game_view_store ORDER BY $filter_query DESC;");
+                                $result = pg_query($db_conn, "SELECT * FROM igdb.game_view_store where $type = '".$_GET['search_input']."' ORDER BY $filter_query DESC;");
                                 $numrows = pg_num_rows($result);
                                 
                                 if ($numrows == 0){
-                                    echo 'No games added!';
+                                    echo 'No games found!';
                                 }
                                 else {
                                     $arr = pg_fetch_all($result);

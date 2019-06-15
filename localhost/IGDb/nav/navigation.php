@@ -11,12 +11,13 @@
         </div>
         <div class="Search">
             <div class="searchText" onclick="showSearch()">Search</div>
-            <form class="search-container" id="search-container">
-                <span class="search-bar-container"><input class="search-bar" placeholder="Search">
+            <form action="../search/search.php" method="get" class="search-container" id="search-container" >
+                <!-- <input name="searchInput" type="text" placeholder="Search"> -->
+                <span class="search-bar-container"><input class="search-bar" name="search_input" placeholder="Search">
                  </span>
-                <input type="radio" name="search" id="name-search"  value="name-search">
+                <input type="radio" name="search_type" id="name-search"  value="name-search">
                 <span for="name-search" class="search-field">Search by name</span>
-                <input type="radio" name="search" id="genre-search"  value="genre-search">
+                <input type="radio" name="search_type" id="genre-search"  value="genre-search">
                 <span for="genre-search" class="search-field">Search by genre</span>
             </form>
 
@@ -51,7 +52,7 @@ document.getElementById("logout").onclick = function () {
 
 function showSearch() {
   var x = document.getElementById("search-container");
-  if (x.style.visibility === "hidden") {
+  if (x.style.visibility !== "visible") {
     x.style.visibility = "visible";
   } else {
     x.style.visibility = "hidden";
