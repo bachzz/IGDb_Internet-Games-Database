@@ -209,11 +209,6 @@
                                     foreach($arr as $array)
                                     {
                                         $title = $array['title'];
-                                        $status = $array['category'];
-                                        if ($status == 1) $statusText = "Playing";
-                                        else if ($status == 2) $statusText = "Completed";
-                                        else if ($status == 3) $statusText = "Plan to play";
-                                        else if ($status == 4) $statusText = "Dropped";
                                         $recommend = $array['recommend'];
                                         if ($recommend == 't') $recommend = "Recommended";
                                         if ($recommend == 'f') $recommend = "Not Recommended";
@@ -233,7 +228,6 @@
                                                 <div class="reviewInfo">
                                                     <div class=reviewTop>
                                                         <div class="userName">'.$array['name'].'</div>
-                                                        <div class="gameStatus">'.$statusText.'</div>
                                                         <div class="reviewRec">'.$recommend.'</div>
                                                         <div class="reviewDate">'.$array['review_date'].'</div>
                                                         <div class="reviewRating">
@@ -281,6 +275,8 @@
                                                 INNER JOIN igdb.users u on r.user_id = u.user_id
                                                 WHERE r.recommend = '".$reviewFilter_query."' AND g.game_id = '".$item['game_id']."';");
                             }
+                                
+                            $numrows = pg_num_rows($result);
 
 
                             if ($numrows == 0) {
@@ -292,11 +288,6 @@
                                 foreach($arr as $array) 
                                 {
                                     $title = $array['title'];
-                                    $status = $array['category'];
-                                    if ($status == 1) $statusText = "Playing";
-                                    else if ($status == 2) $statusText = "Completed";
-                                    else if ($status == 3) $statusText = "Plan to play";
-                                    else if ($status == 4) $statusText = "Dropped";
                                     $recommend = $array['recommend'];
                                     if ($recommend == 't') $recommend = "Recommended";
                                     if ($recommend == 'f') $recommend = "Not Recommended";
@@ -312,7 +303,6 @@
                                                 <div class="reviewInfo">
                                                     <div class=reviewTop>
                                                         <div class="userName">'.$array['name'].'</div>
-                                                        <div class="gameStatus">'.$statusText.'</div>
                                                         <div class="reviewRec">'.$recommend.'</div>
                                                         <div class="reviewDate">'.$array['review_date'].'</div>
                                                         <div class="reviewRating">
