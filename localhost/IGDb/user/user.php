@@ -362,7 +362,7 @@
 										if ($status == 1) $statusText = "Playing";
 										else if ($status == 2) $statusText = "Completed";
 										else if ($status == 3) $statusText = "Plan to play";
-										else if ($status == 2) $statusText = "Dropped";
+										else if ($status == 4) $statusText = "Dropped";
 										$recommend = $array['recommend'];
 										if ($recommend == 't') $recommend = "Recommended";
 										if ($recommend == 'f') $recommend = "Not Recommended";
