@@ -23,12 +23,14 @@
 
             if ($gameFilter == "none")
                 $_SESSION['gameFilter_query'] = "game_id";
-            if ($gameFilter == "newest")
-                $_SESSION['gameFilter_query'] = "release_date";
-            if ($gameFilter == "popular")
-                $_SESSION['gameFilter_query'] = "total_added";
-            if ($gameFilter == "rating")
-                $_SESSION['gameFilter_query'] = "avg_score";
+            if ($gameFilter == "playing")
+                $_SESSION['gameFilter_query'] = 1;
+            if ($gameFilter == "completed")
+                $_SESSION['gameFilter_query'] = 2;
+            if ($gameFilter == "plan")
+                $_SESSION['gameFilter_query'] = 3;
+            if ($gameFilter == "drop")
+                $_SESSION['gameFilter_query'] = 4;
             header("Location: ./library.php");
             exit(0);
         }
@@ -79,9 +81,10 @@
                                     <select name=gameFilter onchange="this.form.submit()" class="filterButton">
                                             <option value="" disabled selected>Filter</option>
                                             <option class="sortby" value="none">None</option>
-                                            <option class="sortby" value="newest">Newest first</option>
-                                            <option class="sortby" value="popular">Most popular first</option>
-                                            <option class="sortby" value="rating">Highest rated first</option>
+                                            <option class="sortby" value="playing">Playing</option>
+                                            <option class="sortby" value="completed">Completed</option>
+                                            <option class="sortby" value="plan">Plan to play</option>
+                                            <option class="sortby" value="drop">Dropped</option>
                                     </select>
                                 </form>
                             </div>
@@ -96,12 +99,20 @@
                                 <?php 
                                     $gameFilter = isset($_SESSION['gameFilter']) ? $_SESSION['gameFilter'] : '';
                                     $gameFilter_query = isset($_SESSION['gameFilter_query']) ? $_SESSION['gameFilter_query'] : 'game_id';
-                                    $result = pg_query($db_conn, "SELECT g.game_id, g.title,  g.description, g.img_url, g.release_date, g.avg_score,
-                                                                count(l.game_id) AS total_added FROM igdb.games g 
-                                                                INNER JOIN igdb.library l ON l.game_id = g.game_id 
-                                                                WHERE l.user_id = '".$_SESSION['user_id']."'
-                                                                GROUP BY g.game_id, g.title,  g.description, g.img_url, g.release_date, g.avg_score
-                                                                ORDER BY $gameFilter_query DESC;");
+                                    if ($gameFilter_query == "game_id")
+                                        $result = pg_query($db_conn, "SELECT g.game_id, g.title,  g.description, g.img_url, g.release_date, g.avg_score,
+                                                            count(l.game_id) AS total_added FROM igdb.games g 
+                                                            INNER JOIN igdb.library l ON l.game_id = g.game_id 
+                                                            WHERE l.user_id = '".$_SESSION['user_id']."'
+                                                            GROUP BY g.game_id, g.title,  g.description, g.img_url, g.release_date, g.avg_score
+                                                            ORDER BY $gameFilter_query DESC;");
+                                    else 
+                                        $result = pg_query($db_conn, "SELECT g.game_id, g.title,  g.description, g.img_url, g.release_date, g.avg_score,
+                                                            count(l.game_id) AS total_added FROM igdb.games g 
+                                                            INNER JOIN igdb.library l ON l.game_id = g.game_id 
+                                                            WHERE l.user_id = '".$_SESSION['user_id']."' AND l.category = '".$gameFilter_query."'
+                                                            GROUP BY g.game_id, g.title,  g.description, g.img_url, g.release_date, g.avg_score;");
+
                                     $numrows = pg_num_rows($result);
 
                                     if ($numrows == 0) {
