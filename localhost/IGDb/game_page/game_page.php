@@ -1,4 +1,6 @@
 ﻿<?php
+	header("Cache-Control: no cache");
+	session_cache_limiter("private_no_expire");
     session_start();
 
     if ( isset($_GET['game_id']) ){
@@ -23,6 +25,40 @@
             //     //echo "<script>alert('".$status."')</script>";
             // }
         }
+
+        //review submit
+        if (isset($_POST['comment']) && isset($_POST['radio']) && isset($_POST['reviewSubmit'])) {
+            $comment = $_POST['comment'];
+            $radio = $_POST['radio'];
+            date_default_timezone_set('Vietnam/Hanoi');
+            $date = date('Y/m/d'); 
+            if($radio == "rec")
+                $recStatus= "TRUE";
+            if($radio == "notrec")
+                $recStatus = "FALSE";
+            // echo "<script>alert('.$recStatus.')</script>";
+            $result = pg_query($db_conn, "INSERT INTO igdb.reviews (user_id, game_id, game_review, recommend, review_date) 
+                                        VALUES ('".$_SESSION['user_id']."', '".$item['game_id']."', '$comment', '$recStatus', '$date');");
+            header("Location: ./game_page.php?game_id=".$item['game_id']."");
+            exit();
+        }
+
+        //review filter
+        if (isset($_POST['reviewFilter'])){
+            $reviewFilter = $_POST['reviewFilter'];
+            $_SESSION['reviewFilter'] = $reviewFilter;
+            if ($reviewFilter == "none")
+                $_SESSION['reviewFilter_query'] = "review_id";
+            if ($reviewFilter == "date")
+                $_SESSION['reviewFilter_query'] = "review_date";
+            if ($reviewFilter == "pos")
+                $_SESSION['reviewFilter_query'] = "t";
+            if ($reviewFilter == "neg")
+                $_SESSION['reviewFilter_query'] = "f";
+            header("Location: ./game_page.php?game_id=".$item['game_id']."");
+            return;
+        }
+
         if (isset($_GET['add_game_id']))
             add_game($_GET['add_game_id'], $db_conn);
         //echo "<script language='javascript'>alert('".$item['title']."')</script>";
@@ -109,6 +145,10 @@
                                     <td width="150px">Publisher:</td>
                                     <td><?php echo $item['publisher']; ?></td>
                                 </tr>
+                                <tr>
+                                    <td width="150px">Genre:</td>
+                                    <td><?php echo $item['genre']; ?></td>
+                                </tr>
                             </table>
                         </div>
                     </div>
@@ -118,7 +158,7 @@
                         <div class="addText">Add this game to your library</div>
                         <div class="addButtonContainer">
                             <?php
-                                $result = pg_query("SELECT * from igdb.library where user_id=".$_SESSION['user_id']." and game_id=".$item['game_id']."");
+                                $result = pg_query("SELECT * from igdb.library where user_id=".$_SESSION['user_id']." and game_id=".$item['game_id'].";");
                                 $numrows = pg_num_rows($result);
 
                                 if ($numrows == 0)
@@ -128,69 +168,152 @@
                         </div>
                     </div>
 
-                    <div class="formContainer">
-                        <form method="post" name="review">
-                            <label>
-                                <div class="review">Write your review</div>
-                                <textarea name="comment" class="reviewInput"></textarea>
-                            </label>
-                            <label>
-                                <div class="reviewScore">Do you recommend this game? </div>
-                                <label class="checkboxContainer">Recommend
-                                    <input type="radio" checked="checked" name="radio">
-                                    <span class="checkmark"></span>
-                                </label>
-                                <label class="checkboxContainer">Not recommend
-                                    <input type="radio" name="radio">
-                                    <span class="checkmark"></span>
-                                </label>
+                    <?php 
+                        $result = pg_query($db_conn, "SELECT DISTINCT * FROM igdb.reviews r 
+                        INNER JOIN igdb.games g ON g.game_id = r.game_id 
+                        INNER JOIN igdb.users u on r.user_id = u.user_id
+                        where u.user_id=".$_SESSION['user_id']." AND g.game_id = '".$item['game_id']."';");
+                        $numrows = pg_num_rows($result);
 
-                            </label>
-                            <label>
-                                <div>
-                                    <div class="submitButtonContainer">
-                                        <button type="submit" id="submitButton">Submit</button>
-                                    </div>
-                                </div>
-                            </label>
-                        </form>
-                    </div>
+                        if ($numrows == 0) {
+                            echo '<div class="formContainer">
+                                    <form method="post" name="review">
+                                        <label>
+                                            <div class="review">Write your review</div>
+                                            <textarea name="comment" class="reviewInput"></textarea>
+                                        </label>
+                                        <label>
+                                            <div class="reviewScore">Do you recommend this game? </div>
+                                            <label class="checkboxContainer">Recommend
+                                                <input type="radio" checked="checked" name="radio" value="rec" id="rec">
+                                                <span class="checkmark"></span>
+                                            </label>
+                                            <label class="checkboxContainer">Not recommend
+                                                <input type="radio" name="radio" value="notrec" id="notrec">
+                                                <span class="checkmark"></span>
+                                            </label>
+
+                                        </label>
+                                        <label>
+                                            <div>
+                                                <div class="submitButtonContainer">
+                                                    <button type="submit" name="reviewSubmit" id="submitButton">Submit</button>
+                                                </div>
+                                            </div>
+                                        </label>
+                                    </form>
+                                </div>';
+                        }
+                        else {
+                            $arr = pg_fetch_all($result);
+                                    foreach($arr as $array)
+                                    {
+                                        $title = $array['title'];
+                                        $status = $array['category'];
+                                        if ($status == 1) $statusText = "Playing";
+                                        else if ($status == 2) $statusText = "Completed";
+                                        else if ($status == 3) $statusText = "Plan to play";
+                                        else if ($status == 2) $statusText = "Dropped";
+                                        $recommend = $array['recommend'];
+                                        if ($recommend == 't') $recommend = "Recommended";
+                                        if ($recommend == 'f') $recommend = "Not Recommended";
+                                        $date = $array['review_date'];
+                                        $content = $array['game_review'];
+                                        $up = $array['upvote'];
+                                        $down = $array['downvote'];
+                                        $game_id = $array['game_id'];
+                                        echo '<div class=reviewContainer>
+                                                <div class=yourReview> Your review on this game:</div>
+                                                </div>
+                                                <div class=reviewContainer> 
+                                                <div class="grid-item">
+                                                <span class="userAva">
+                                                    <img src='.$array['avatar'].' width="100%" height="100%">
+                                                </span>
+                                                <div class="reviewInfo">
+                                                    <div class=reviewTop>
+                                                        <div class="userName">'.$array['name'].'</div>
+                                                        <div class="gameStatus">'.$statusText.'</div>
+                                                        <div class="reviewRec">'.$recommend.'</div>
+                                                        <div class="reviewDate">'.$array['review_date'].'</div>
+                                                        <div class="reviewRating">
+														<div class="upvote">up: '.$up.' </div>
+														<div class="downvote">down: '.$down.'</div>
+                                                    </div>
+                                                    </div>
+                                                    <div class="reviewText">'.$array['game_review'].'</div>
+                                                </div>
+                                            </div>
+                                            </div>
+                                            </div>';
+                        
+                                    }
+                        }
+                    ?>
+
                     <div class=reviewContainer>
                         <div class="reviewMenu">
                             <div class="allReview">All reviews</div>
-                                 <form method="post" id="filter-form" class="sortButton">
-                            		<select name=filter onchange="this.form.submit()" class="filterButton">
+                                <form method="post" id="filter-form" class="sortButton">
+                            		<select name=reviewFilter onchange="this.form.submit()" class="filterButton">
 										<option value="" disabled selected>Filter</option>
-										<option class="sortby" id="sort-review-by-date">Date</option>
-										<option class="sortby" id="sort-review-by-pos">Negative first</option>
-										<option class="sortby" id="sort-review-by-neg">Positive first</option>
+										<option class="sortby" value="none">None</option>
+										<option class="sortby" value="date">Date</option>
+										<option class="sortby" value="pos">Positive only</option>
+										<option class="sortby" value="neg">Negative only</option>
                             		</select>
                         		</form>
                             </div>
                         <?php 
-                            $result = pg_query($db_conn, "SELECT * FROM igdb.reviews where game_id = ".$item['game_id']." ORDER BY review_id ASC;");
-                            $numrows = pg_num_rows($result);
+                            $reviewFilter = isset($_SESSION['reviewFilter']) ? $_SESSION['reviewFilter'] : '';
+                            $reviewFilter_query = isset($_SESSION['reviewFilter_query']) ? $_SESSION['reviewFilter_query'] : 'review_id';
+                            
+                            if ($reviewFilter_query == "review_date" || $reviewFilter_query == "review_id") {
+                                $result = pg_query($db_conn, "SELECT DISTINCT * FROM igdb.reviews r 
+                                                INNER JOIN igdb.games g ON g.game_id = r.game_id 
+                                                INNER JOIN igdb.users u on r.user_id = u.user_id
+                                                WHERE g.game_id = '".$item['game_id']."'
+                                                ORDER BY $reviewFilter_query DESC;");
+                            }
+                            if ($reviewFilter_query == "t" || $reviewFilter_query == "f") {
+                                $result = pg_query($db_conn, "SELECT DISTINCT * FROM igdb.reviews r 
+                                                INNER JOIN igdb.games g ON g.game_id = r.game_id 
+                                                INNER JOIN igdb.users u on r.user_id = u.user_id
+                                                WHERE r.recommend = '".$reviewFilter_query."' AND g.game_id = '".$item['game_id']."';");
+                            }
 
-                                if ($numrows == 0) {
-                                    echo 'Game has no reviews!';
-                                }
-                                else {
-                                    $arr = pg_fetch_all($result);
-                                    foreach($arr as $array)
-                                    {
-                                        $user_id = $array['user_id'];
-                                        $up = $array['upvote'];
-										$down = $array['downvote'];
-                                        $result = pg_query($db_conn, "SELECT * FROM igdb.users where user_id = '$user_id'");
-                                        $user = pg_fetch_array($result, 0);
+
+                            if ($numrows == 0) {
+                                echo 'User has no reviews!';
+                            }
+                            
+                            else {
+                                $arr = pg_fetch_all($result);
+                                foreach($arr as $array) 
+                                {
+                                    $title = $array['title'];
+                                    $status = $array['category'];
+                                    if ($status == 1) $statusText = "Playing";
+                                    else if ($status == 2) $statusText = "Completed";
+                                    else if ($status == 3) $statusText = "Plan to play";
+                                    else if ($status == 2) $statusText = "Dropped";
+                                    $recommend = $array['recommend'];
+                                    if ($recommend == 't') $recommend = "Recommended";
+                                    if ($recommend == 'f') $recommend = "Not Recommended";
+                                    $date = $array['review_date'];
+                                    $content = $array['game_review'];
+                                    $up = $array['upvote'];
+                                    $down = $array['downvote'];
+                                    $game_id = $array['game_id'];
                                         echo '<div class="grid-item">
                                                 <span class="userAva">
-                                                    <img src='.$user['avatar'].' width="100%" height="100%">
+                                                    <img src='.$array['avatar'].' width="100%" height="100%">
                                                 </span>
                                                 <div class="reviewInfo">
                                                     <div class=reviewTop>
-                                                        <div class="userName">'.$user['name'].'</div>
-                                                        <div class="reviewRec">'.$array['recommend'].'</div>
+                                                        <div class="userName">'.$array['name'].'</div>
+                                                        <div class="gameStatus">'.$statusText.'</div>
+                                                        <div class="reviewRec">'.$recommend.'</div>
                                                         <div class="reviewDate">'.$array['review_date'].'</div>
                                                         <div class="reviewRating">
 														<div class="upvote">up: '.$up.' </div>

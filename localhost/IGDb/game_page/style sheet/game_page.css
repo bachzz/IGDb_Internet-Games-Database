@@ -134,6 +134,14 @@
   font-size: 22px;
 }
 
+.yourReview {
+  margin-left: 35px;
+  font-size: 40px;
+  font-weight: bold;
+  margin-bottom: 0px;
+  line-height: 50px;
+}
+
 .addButtonContainer {
   float: right;
   width:1280px;
@@ -393,6 +401,15 @@
 
 .reviewText {
   font-size: 20px;
+}
+
+.gameStatus {
+  float: left;
+  font-size: 18px;
+  padding: 0px 10px;
+  border-right: 1px solid black;
+  padding-right: 10px;
+  border-right: 1px solid black;
 }
 
 .reviewRec {

@@ -331,7 +331,6 @@
 							<?php 
 								$reviewFilter = isset($_SESSION['reviewFilter']) ? $_SESSION['reviewFilter'] : '';
 								$reviewFilter_query = isset($_SESSION['reviewFilter_query']) ? $_SESSION['reviewFilter_query'] : 'review_id';
-								echo '<script> alert('.$reviewFilter_query.') </script>';
 
 								if ($reviewFilter_query == "review_date" || $reviewFilter_query == "review_id") {
 									$result = pg_query($db_conn, "SELECT DISTINCT * FROM igdb.reviews r 
