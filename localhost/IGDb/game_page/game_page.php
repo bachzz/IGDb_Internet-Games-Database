@@ -88,11 +88,19 @@
 <div class="my-carousel">
                 <div class="swiper-container gallery-top">
     <div class="swiper-wrapper">
-      <div class="swiper-slide" style="background-image:url(../resources/test/game2.png)"></div>
-      <div class="swiper-slide" style="background-image:url(../resources/test/bg.png)"></div>
-      <div class="swiper-slide" style="background-image:url(../resources/test/game1.jpg)"></div>
-      <div class="swiper-slide" style="background-image:url(../resources/test/game2.png)"></div>
-      <div class="swiper-slide" style="background-image:url(../resources/test/game3.jpg)"></div>
+	  <?php
+			$result = pg_query($db_conn, "SELECT * from igdb.games WHERE game_id = '".$item['game_id']."';");
+			$items = pg_fetch_all($result);
+			foreach($items as $item)
+            {
+				$img_url = $item['img_url'];
+				$cover = strtok($img_url, ";");
+				while ($cover !== false) {
+					echo '<div class="swiper-slide" style="background-image:url('.$cover.')"></div>';
+					$cover = strtok(";");
+				}
+			}
+        ?>
 
     </div>
     <!-- Add Arrows -->
@@ -101,22 +109,36 @@
   </div>
   <div class="swiper-container gallery-thumbs">
     <div class="swiper-wrapper">
-      <div class="swiper-slide" style="background-image:url(../resources/test/game2.png)"></div>
-      <div class="swiper-slide" style="background-image:url(../resources/test/bg.png)"></div>
-      <div class="swiper-slide" style="background-image:url(../resources/test/game1.jpg)"></div>
-      <div class="swiper-slide" style="background-image:url(../resources/test/game2.png)"></div>
-      <div class="swiper-slide" style="background-image:url(../resources/test/game3.jpg)"></div>
-
+	<?php
+			$result = pg_query($db_conn, "SELECT * from igdb.games WHERE game_id = '".$item['game_id']."';");
+			$items = pg_fetch_all($result);
+			foreach($items as $item)
+            {
+				$img_url = $item['img_url'];
+				$cover = strtok($img_url, ";");
+				while ($cover !== false) {
+					echo '<div class="swiper-slide" style="background-image:url('.$cover.')"></div>';
+					$cover = strtok(";");
+				}
+			}
+        ?>
     </div>
   </div>
 </div>
 
-
-
                  <!-- carousel end -->
                     <div class="rightInfo">
                         <div class="gameCover">
-                            <img src=pictures/game2.png width="375px" height="151px">
+						<?php
+							$result = pg_query($db_conn, "SELECT * from igdb.games WHERE game_id = '".$item['game_id']."';");
+							$items = pg_fetch_all($result);
+							foreach($items as $item)
+							{
+								$img_url = $item['img_url'];
+								$cover = strtok($img_url, ";");
+									echo '<img src='.$cover.' width="375px" height="151px">	';
+							}
+						?>
                         </div>
                         <div class="gameDescription">
                             <?php echo $item['description']; ?>
@@ -176,7 +198,15 @@
                         $numrows = pg_num_rows($result);
 
                         if ($numrows == 0) {
-                            echo '<div class="formContainer">
+							$result = pg_query($db_conn, "SELECT * from igdb.library where user_id=".$_SESSION['user_id']." and game_id=".$item['game_id'].";");
+							$numrows = pg_num_rows($result);
+							if ($numrows == 0) {
+								echo '<div class=reviewContainer>
+                                                <div class=yourReview> You must add this game to your library before giving review.</div>
+                                                </div></div>';
+							}
+							else {
+								echo '<div class="formContainer">
                                     <form method="post" name="review">
                                         <label>
                                             <div class="review">Write your review</div>
@@ -203,6 +233,7 @@
                                         </label>
                                     </form>
                                 </div>';
+							}
                         }
                         else {
                             $arr = pg_fetch_all($result);
@@ -216,7 +247,8 @@
                                         $content = $array['game_review'];
                                         $up = $array['upvote'];
                                         $down = $array['downvote'];
-                                        $game_id = $array['game_id'];
+										$game_id = $array['game_id'];
+										$review_id = $array['review_id'];
                                         echo '<div class=reviewContainer>
                                                 <div class=yourReview> Your review on this game:</div>
                                                 </div>
@@ -306,8 +338,8 @@
                                                         <div class="reviewRec">'.$recommend.'</div>
                                                         <div class="reviewDate">'.$array['review_date'].'</div>
                                                         <div class="reviewRating">
-														<div class="upvote">up: '.$up.' </div>
-														<div class="downvote">down: '.$down.'</div>
+														<div id='.$review_id.' class="upvote" name="uvote">up: '.$up.' </div>
+														<div  id='.$review_id.' class="downvote" name="dvote">down: '.$down.'</div>
                                                     </div>
                                                     </div>
                                                     <div class="reviewText">'.$array['game_review'].'</div>
@@ -325,8 +357,8 @@
             </div>
         </div>
     </div>
-    <script src="javascript/jquery-3.3.1.js"></script>
-    <script src="javascript/game_page.js"></script>
+    <script src="./javascript/jquery-3.3.1.js"></script>
+    <script src="./javascript/game_page.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
