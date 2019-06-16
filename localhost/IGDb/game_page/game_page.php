@@ -339,8 +339,8 @@
                                                         <div class="reviewRec">'.$recommend.'</div>
                                                         <div class="reviewDate">'.$array['review_date'].'</div>
                                                         <div class="reviewRating">
-														<div id='.$review_id.' class="upvote" name="uvote">up: '.$up.' </div>
-														<div  id='.$review_id.' class="downvote" name="dvote">down: '.$down.'</div>
+														<div id= up_'.$review_id.' class="upvote" name="uvote" onclick="vote('.$review_id.', 1); this.onclick=false;">up: '.$up.' </div>
+														<div id= down_'.$review_id.' class="downvote" name="dvote" onclick="vote('.$review_id.', 0); this.onclick=false;">down: '.$down.'</div>
                                                     </div>
                                                     </div>
                                                     <div class="reviewText">'.$array['game_review'].'</div>

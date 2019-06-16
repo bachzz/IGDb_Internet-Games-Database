@@ -20,19 +20,36 @@ document.getElementsByName("uvote").onClick = function () {
     color = style.setProperty("color", "red", "!important");
 };
 
-$(document).ready(function () {
-$(".downvote").click(function () {
-	the_id = $(this).attr('id');
-	$.ajax({
-		type: "POST",
-		data: "action=downvote&id=" + $(this).attr("id"),
-		url: "vote.php",
-		success: function (msg) {
-			alert("Success");
-		},
-		error: function () {
-			alert("Error");
-		}
-	});
-});
-}); 
+// $(document).ready(function () {
+// $(".downvote").click(function () {
+// 	the_id = $(this).attr('id');
+// 	$.ajax({
+// 		type: "POST",
+// 		data: "action=downvote&id=" + $(this).attr("id"),
+// 		url: "vote.php",
+// 		success: function (msg) {
+// 			alert("Success");
+// 		},
+// 		error: function () {
+// 			alert("Error");
+// 		}
+// 	});
+// });
+// }); 
+
+function vote(review_id, value){
+  var xmlhttp = new XMLHttpRequest();
+  xmlhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+          // alert(game_id + "," + value);
+          if (value == 1){
+            document.getElementById("up_"+review_id).innerHTML = "up: " + this.responseText;
+          }
+          if (value == 0){
+            document.getElementById("down_"+review_id).innerHTML = "down: " + this.responseText;
+          }
+      }
+  };
+  xmlhttp.open("GET", "vote.php?review_id=" + review_id +"&value=" + value, true);
+  xmlhttp.send();
+}
