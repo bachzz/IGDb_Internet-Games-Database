@@ -328,6 +328,7 @@
                                     $up = $array['upvote'];
                                     $down = $array['downvote'];
                                     $game_id = $array['game_id'];
+                                    $review_id = $array['review_id'];
                                         echo '<div class="grid-item">
                                                 <span class="userAva">
                                                     <img src='.$array['avatar'].' width="100%" height="100%">
