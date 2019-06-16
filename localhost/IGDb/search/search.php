@@ -75,8 +75,10 @@
 							<?php 
 								$filter = isset($_SESSION['filter']) ? $_SESSION['filter'] : '';
 								$filter_query = isset($_SESSION['filter_query']) ? $_SESSION['filter_query'] : 'game_id';
-								//$result = pg_query($db_conn, "SELECT * FROM igdb.games ORDER BY game_id ASC;");
-                                $result = pg_query($db_conn, "SELECT * FROM igdb.game_view_store where $type = '".$_GET['search_input']."' ORDER BY $filter_query DESC;");
+                                //$result = pg_query($db_conn, "SELECT * FROM igdb.games ORDER BY game_id ASC;");
+                                $concat = '%';
+                                $search_value = $concat.$_GET['search_input'].$concat;
+                                $result = pg_query($db_conn, "SELECT * FROM igdb.game_view_store where $type LIKE '".$search_value."' ORDER BY $filter_query DESC;");
                                 $numrows = pg_num_rows($result);
                                 
                                 if ($numrows == 0){
@@ -111,6 +113,8 @@
             </div>
         </div>
     </div>
+    <script src="javascript/jquery-3.3.1.js"></script>
+    <script src="javascript/search.js"></script>
 </body>
 
 </html>

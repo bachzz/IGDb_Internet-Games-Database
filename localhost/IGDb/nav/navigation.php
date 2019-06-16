@@ -13,9 +13,9 @@
             <div class="searchText" onclick="showSearch()">Search</div>
             <form action="../search/search.php" method="get" class="search-container" id="search-container" >
                 <!-- <input name="searchInput" type="text" placeholder="Search"> -->
-                <span class="search-bar-container"><input class="search-bar" name="search_input" placeholder="Search">
+                <span class="search-bar-container"><input class="search-bar" name="search_input" placeholder="Search" required>
                  </span>
-                <input type="radio" name="search_type" id="name-search"  value="name-search">
+                <input type="radio" name="search_type" id="name-search"  value="name-search" checked="checked" required >
                 <span for="name-search" class="search-field">Search by name</span>
                 <input type="radio" name="search_type" id="genre-search"  value="genre-search">
                 <span for="genre-search" class="search-field">Search by genre</span>
@@ -62,7 +62,7 @@ function showSearch() {
 </script>
 
 <style>
-    * {
+  * {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   }
 
