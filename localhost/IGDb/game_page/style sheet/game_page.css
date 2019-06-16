@@ -41,7 +41,7 @@
 .gameInfo {
   display: inline-block;
   width: 1220px;
-  height: 450px;
+  /* height: 450px; */
   margin: 30px;
   border: 1px solid black;
 }
@@ -50,7 +50,8 @@
   width: 800px;
   height: 450px;
   float:left;
-  border-right: 1px solid black;
+  border: 1px solid black;
+  border-left:none;
   padding-bottom:1px;
 }
 .swiper-slide {
@@ -108,16 +109,16 @@
 
 .rightInfo {
   width: 375px;
-  height: 450px;
+  /* height: 450px; */
   float: right;
   margin-right: 22px;
   margin-top: 10px;
+  margin-bottom:25px;
 }
 
 .gameDescription {
-  text-align: center;
-  word-break: break-all;
-  margin: 20px 0px;
+  text-align: left;
+  margin: 25px 0px;
 }
 
 .addContainer {
