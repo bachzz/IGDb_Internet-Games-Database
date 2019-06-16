@@ -13,6 +13,8 @@ SELECT pg_catalog.set_config('search_path', '', false);
 SET check_function_bodies = false;
 SET client_min_messages = warning;
 SET row_security = off;
+SET datestyle = "ISO, DMY";
+
 
 --
 -- Name: igdb; Type: SCHEMA; Schema: -; Owner: postgres
@@ -64,7 +66,7 @@ CREATE TABLE igdb.games (
     release_date date,
     description character varying,
     img_url character varying,
-    avg_score integer default 0
+    avg_score float default 0
 );
 
 
@@ -122,6 +124,35 @@ ALTER TABLE igdb.users OWNER TO postgres;
 --
 CREATE VIEW igdb.game_view_store AS 
 	SELECT g.*, (SELECT COUNT(*) FROM igdb.library l WHERE l.game_id = g.game_id)  as total_added FROM igdb.games g;
+
+
+
+
+--trigger for calculating avg_score
+
+CREATE or REPLACE function igdb.tg_af_insert_review() returns trigger as 
+$$
+DECLARE 
+    pos_review float := 0;
+    total_review float := 0;
+BEGIN
+    SELECT INTO pos_review count(*) FROM igdb.reviews
+    WHERE game_id = NEW.game_id and recommend = 'true';
+    SELECT INTO total_review count(*) FROM igdb.reviews WHERE game_id = NEW.game_id;
+    UPDATE igdb.games 
+        SET avg_score = ( 10 * pos_review ) / total_review
+        WHERE game_id = NEW.game_id;
+    RETURN NEW;
+END;
+$$
+language plpgsql;
+
+
+create trigger af_insert_review
+    after insert on igdb.reviews
+    for each row
+    when (NEW.review_id is not null)
+    execute procedure igdb.tg_af_insert_review();
 
 --
 -- Name: users_ID_seq; Type: SEQUENCE; Schema: igdb; Owner: postgres
@@ -194,10 +225,10 @@ COPY igdb.library (user_id, game_id, category) FROM stdin;
 
 COPY igdb.reviews (user_id, game_id, game_review, recommend, review_date) FROM stdin;
 2	1	this game is so addictive!!	TRUE	1-1-2019
-4	1	I know right?	TRUE	1-15-2019
-5	1	No this game sucks. Boring. Waste my time.	FALSE	1-16-2019
-14	1	I know right?	TRUE	1-15-2019
-14	2	No this game sucks. Boring. Waste my time.	FALSE	1-16-2019
+4	1	I know right?	TRUE	15-1-2019
+5	1	No this game sucks. Boring. Waste my time.	FALSE	16-1-2019
+14	1	I know right?	TRUE	15-1-2019
+14	2	No this game sucks. Boring. Waste my time.	FALSE	16-1-2019
 \.
 
 
