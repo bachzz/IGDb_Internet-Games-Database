@@ -152,6 +152,7 @@
 }
 
 .gameInfo {
+  width: 900px;
   float: left;
   margin-left: 30px;
 }

@@ -50,8 +50,6 @@
   width: 800px;
   height: 450px;
   float:left;
-  border: 1px solid black;
-  border-left:none;
   padding-bottom:1px;
 }
 .swiper-slide {
@@ -75,37 +73,6 @@
   opacity: 1;
 }
 
-
-
-/* .item {
-  overflow: hidden;
-}
-
-.carousel-inner {
-  width: 800px;
-  height: 450px;
-  margin: 0px auto;
-}
-
-.carousel-slide {
-  width: 800px;
-  height: 450px;
-  margin: 0px auto;
-}
-
-#myCarousel {
-  width: 800px;
-  height: 450px;
-  margin: 0px auto;
-}
-.slide {
-  float: left;
-  width: 800px;
-  height: 432px;
-  position: relative;
-  background-position: -100px 0;
-}
- */
 
 .rightInfo {
   width: 375px;
@@ -382,6 +349,7 @@
 }
 
 .reviewInfo {
+  width: 1000px;
   float: left;
   margin-left: 30px;
 }

@@ -69,14 +69,15 @@
 </head>
 
 <body>
-    <div class="bg" style="background-image: url(../resources/test/bg.png);">
+    <div class="bg" >
+    <!-- style="background-image: url(../resources/test/bg.png);" -->
         <div class="bodyContainer">
             <?php include '../nav/navigation.php' ?>
             <div class="content">
                     <div class="gamesDisplay">
                             <div class="gameText">
                                 <div id="allGamesName"><?php echo $user['name']; ?></div>
-                                <div id="allGames">'s Library</div>
+                                <div id="allGames">'s library</div>
                                 <form method="post" id="filter-form" class="sortButton">
                                     <select name=gameFilter onchange="this.form.submit()" class="filterButton">
                                             <option value="" disabled selected>Filter</option>

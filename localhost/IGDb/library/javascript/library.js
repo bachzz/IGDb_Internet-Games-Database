@@ -1,6 +1,6 @@
 ﻿function showEdit() {
-  document.getElementById('normalLib').style.visibility = "hidden";
-  document.getElementById('normalLibEdit').style.visibility = "visible";
+  document.getElementById('normalLib').style.display = "none";
+  document.getElementById('normalLibEdit').style.display = "block";
 }
 
 function game_onclick(game_id){

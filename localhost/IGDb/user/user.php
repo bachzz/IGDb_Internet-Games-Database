@@ -75,7 +75,7 @@
             		if ($votes >= 10)
             			$background = '../resources/tiers/gold.jpg';
             	?>
-                <div class="userInfoContainer" style="background-image: url(<?php echo $background ?>);  background-size: contain;background-position: center;background-repeat: no-repeat;">
+                <div class="userInfoContainer" style="background-image: url(<?php echo $background ?>);background-size: 800px 200px;background-position: right;background-repeat: no-repeat;">
                     <span class="userAva">
                         <img src='../resources/avatars/default.png' width="200px" height="200px">
                     </span>

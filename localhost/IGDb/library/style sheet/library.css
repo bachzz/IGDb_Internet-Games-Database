@@ -34,7 +34,6 @@
 .gamesDisplay {
   height: 100%;
   min-height: 80vh;
-  bottom:0;
 }
 
 
@@ -68,9 +67,8 @@
 
 
 .gamesContainer{
-  visibility: visible;
-  position: absolute;
-  margin-left: 30px;
+  display: block;
+  position: relative;
 }
 
 
@@ -87,12 +85,11 @@
   color: white;
   border: none;
   cursor: pointer; 
-  margin-left: -30px;
 }
 
 
 .gamesContainerEdit{
-  visibility: hidden;
+  display:none;
   position: relative;
   
   
@@ -169,6 +166,7 @@
 }
 
 .gameInfo {
+  width:900px;
   float: left;
   margin-left: 30px;
 }
@@ -180,7 +178,6 @@
 
 .gameName {
   cursor: pointer;
-  width:200px;
   font-size: 30px;
   font-weight: bold;
   float:left;
@@ -188,15 +185,13 @@
 
 .gameNameEdit{
   cursor: pointer;
-  width:200px;
   font-size: 30px;
   font-weight: bold;
 }
 
 .gameStatus{
   font-size: 25px;
-  float: left;
-  margin-left: 550px;
+  float: right;
   }
 
   .gameDescription{
