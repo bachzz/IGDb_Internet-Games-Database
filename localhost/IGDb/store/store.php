@@ -72,7 +72,7 @@
                         $cover0 = strtok($img_url0, ";"); 
 
                         echo '<div class="item active">
-                                <img src="'.$cover0.'" style="background-size:auto">
+                                <img src="'.$cover0.'" style="background-size:auto" onclick="game_onclick(\''.$game_id0.'\')">
                             </div>';
 
                         for ($i = 1; $i < count($items); $i++){
