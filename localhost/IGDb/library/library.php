@@ -37,10 +37,12 @@
 
         foreach ($_POST as $key => $value) {
             # code...
-            // echo "{$key} = {$value}\r\n";
+            //echo "{$key} = {$value}\r\n";
             if (strpos($key, 'status') !== false){
-                $gid = substr($key, -1);
-                // echo '<script>alert("'.$value.$gid.'")</script>';
+                $gid = substr($key, 6, strlen($key));
+                //echo '<script>alert("'.$value.$gid.'")</script>';
+                //echo '<script>alert("'.$key.$value.'")</script>';
+
                 if ($value == "playing")
                     $category = "1";
                 if ($value == "completed")
