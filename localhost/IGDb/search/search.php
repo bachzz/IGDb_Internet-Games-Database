@@ -78,7 +78,7 @@
                                 //$result = pg_query($db_conn, "SELECT * FROM igdb.games ORDER BY game_id ASC;");
                                 $concat = '%';
                                 $search_value = $concat.$_GET['search_input'].$concat;
-                                $result = pg_query($db_conn, "SELECT * FROM igdb.game_view_store where $type LIKE '".$search_value."' ORDER BY $filter_query DESC;");
+                                $result = pg_query($db_conn, "SELECT * FROM igdb.game_view_store where LOWER($type) LIKE LOWER('".$search_value."') ORDER BY $filter_query DESC;");
                                 $numrows = pg_num_rows($result);
                                 
                                 if ($numrows == 0){
