@@ -1,0 +1,350 @@
+﻿* {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.bg {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0;
+  background-size: cover;
+  overflow: auto;
+}
+
+.bodyContainer {
+  position: absolute;
+  width: 1280px;
+  left: 50%;
+  margin-left: -640px;
+  margin-top: 50px;
+  background-color: white;
+
+}
+.content {
+
+  width: 1280px;
+  overflow: auto;
+  background-color: white;
+}
+
+.userInfoContainer {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  height: 400px;
+  font-size: 30px;
+  margin: 5px 40px;
+
+}
+
+
+
+.userAva {
+  background-color: white;
+  border:1px solid black;
+  cursor: pointer;
+  width: 200px;
+  height: 200px;
+  float: left;
+  overflow: hidden;
+  margin-top:200px;
+}
+.userInfo{
+  float: left;
+  margin-left: 30px;
+  margin-top: 280px;
+  color: white;
+ text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+.userStatistic{
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  border-top:none;
+  font-size: 18px;
+  float:left;
+  margin-left:40px;
+  width:1200px;
+  margin-top:-80px;
+  padding-top:85px;
+
+}
+.numLeftContainer{
+  margin-bottom: 10px;
+  float:left;
+  margin-left:20px;
+}
+
+.numRightContainer{
+  margin-bottom: 10px;
+  float:right;
+}
+.numGames{
+  float:left;
+  margin-left:5px;
+
+}
+.numGamesText{
+  float:left;
+  font-weight: bold;
+
+}
+
+.numReviews{
+  float:left;
+  margin-left:5px;
+  margin-right:20px;
+
+}
+.numReviewsText{
+  float:left;
+  font-weight: bold;
+}
+.userName {
+  cursor: pointer;
+  float: left;
+  font-size: 40px;
+  font-weight: bold;
+  padding-right: 10px;
+  color:black;
+}
+
+.userEmail {
+  font-size: 20px;
+  color:black;
+  font-weight: bold;
+}
+
+
+.gamesDisplay {
+  height: 100%;
+  min-height: 80vh;
+}
+
+.filterButton{
+	outline:none;
+	width: 200px!important;
+    height: 50px!important;
+    font-size:20px!important;
+    float: right!important;
+    margin-right:-35px!important;
+    box-sizing:border-box;
+    font-family:Helvetica,Arial,sans-serif;
+    font-size:9pt;display:inline-block;
+    margin:2px;
+    background:#fff;
+	position:relative;
+	cursor:pointer;
+    padding:5px 10px;
+    background:#fff;
+    color:#202020;
+    position:relative;
+    display:flex;
+    align-items:center;
+    border-radius:5px;
+    border:1px solid #eee;
+    transition:150ms linear all;
+	box-shadow:1px 1px 10px #eee;
+	outline:none;
+}
+
+.filterButton:after{
+	content:"";display:inline;
+    border-left:5px solid transparent;
+    border-right:5px solid transparent;
+    border-top:6px solid #202020;
+    position:absolute;
+    right:8px;
+    top:50%;
+    transform:translateY(-50%);
+    transition:150ms linear all
+}
+
+.sortby {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	outline:none!important;
+	cursor:pointer;
+    padding:5px 10px;
+    background:#fff;
+    color:#202020;
+    position:relative;
+    display:flex;
+    align-items:center;
+    border-radius:5px;
+    border:1px solid #eee;
+    transition:150ms linear all;
+    box-shadow:1px 1px 10px #eee
+}
+
+.filterButton.decorated option:hover {
+    box-shadow: 0 0 10px 100px #1882A8 inset;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1200px;
+  padding: 10px;
+  align-items: center;
+  justify-content: center;
+  grid-gap: 5px;
+}
+
+.grid-item {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  font-size: 30px;
+
+}
+
+.gameText {
+  display: inline-block;
+  width: 1210px;
+  height: 50px;
+  margin: 70px 0px 20px 0px;
+}
+
+#allGames {
+  height: 50px;
+  line-height: 50px;
+  font-size: 40px;
+  margin-left: 35px;
+  margin-bottom: 20px;
+  float: left;
+  font-weight: bold;
+}
+
+.gameCover {
+  cursor: pointer;
+  width: 200px;
+  height: 100px;
+  float: left;
+  overflow: hidden;
+}
+
+.gameInfo {
+  width:900px;
+  float: left;
+  margin-left: 30px;
+}
+
+.gameDescription{
+  font-size:18px;
+}
+
+.gameName {
+  cursor: pointer;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.userAvaReview {
+  cursor: pointer;
+  width: 200px;
+  height: 100px;
+  float: left;
+  overflow: hidden;
+}
+
+.reviewInfo {
+  width:900px;
+  float: left;
+  margin-left: 30px;
+}
+
+.reviewTop {
+  display: inline-block;
+  width: 900px;
+}
+
+.gameNameReview {
+  cursor: pointer;
+  float: left;
+  font-size: 18px;
+  font-weight: bold;
+  padding-right: 10px;
+  border-right: 1px solid black;
+}
+
+.reviewText {
+  font-size:18px;
+}
+
+.reviewRec {
+  float: left;
+  font-size: 18px;
+  padding: 0px 10px;
+  border-right: 1px solid black;
+}
+
+.reviewDate {
+  font-size: 18px;
+  float: left;
+  margin-left: 10px;
+}
+
+.reviewRating {
+  float: right;
+  font-size: 18px;
+}
+
+.upvote {
+  cursor: pointer;
+  font-size: 18px;
+  float: left;
+  padding: 0px 10px;
+  border-right: 1px solid black;
+}
+
+.downvote {
+  cursor: pointer;
+  font-size: 18px;
+  float: left;
+  padding: 0px 10px;
+}
+
+
+.reviewContainer {
+  margin: 30px;
+  margin-top:0px;
+}
+
+.reviewMenu {
+  display: inline-block;
+  width: 1210px;
+  height: 50px;
+  margin: 50px 0px 20px 0px;
+}
+
+.allReview {
+  height: 50px;
+  line-height: 50px;
+  font-size: 40px;
+  margin-left: 35px;
+  float: left;
+  font-weight: bold;
+
+}
+
+
+/* .reviewSortButton {
+  float: left;
+  margin-left: 35px;
+  font-size: 30px;
+  border-left: 1px solid black;
+
+}
+
+.reviewSortButton:hover .sort-menu {
+  display: block;
+} */
+
+.gameStatus {
+  float: left;
+  font-size: 18px;
+  padding: 0px 10px;
+  border-right: 1px solid black;
+  padding-right: 10px;
+  border-right: 1px solid black;
+}

@@ -1,0 +1,434 @@
+﻿* {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.bg {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0;
+  background-size: cover;
+  overflow: auto;
+}
+
+.bodyContainer {
+  position: relative;
+  width: 1280px;
+  left: 50%;
+  margin-left: -640px;
+  margin-top: 50px;
+  background-color: white;
+
+}
+
+
+.content {
+  width: 1280px;
+  overflow: auto;
+  background-color: white;
+}
+
+.gameTitle {
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 50px;
+  margin-top: 35px;
+  margin-left: 20px;
+}
+
+.gameInfo {
+  display: inline-block;
+  width: 1220px;
+  /* height: 450px; */
+  margin: 30px;
+  border: 1px solid black;
+}
+
+.my-carousel{
+  width: 800px;
+  height: 450px;
+  float:left;
+  padding-bottom:1px;
+}
+.swiper-slide {
+  background-size: cover;
+  background-position: center;
+}
+.gallery-top {
+  height: 80%;
+}
+.gallery-thumbs {
+  height: 20%;
+  box-sizing: border-box;
+  padding: 10px 0;
+}
+.gallery-thumbs .swiper-slide {
+  width: 25%;
+  height: 100%;
+  opacity: 0.4;
+}
+.gallery-thumbs .swiper-slide-active {
+  opacity: 1;
+}
+
+
+.rightInfo {
+  width: 375px;
+  /* height: 450px; */
+  float: right;
+  margin-right: 22px;
+  margin-top: 10px;
+  margin-bottom:25px;
+}
+
+.gameDescription {
+  text-align: left;
+  margin: 25px 0px;
+}
+
+.pub-info-category{
+  font-weight: bold;
+}
+.addContainer {
+  margin: 30px;
+  border: 1px solid black;
+  height: 50px;
+  padding: 0px 35px;
+  margin-bottom: 60px;
+}
+
+.addText {
+  float: left;
+  line-height: 50px;
+  font-size: 22px;
+}
+
+.yourReview {
+  margin-left: 35px;
+  font-size: 40px;
+  font-weight: bold;
+  margin-bottom: 0px;
+  line-height: 50px;
+}
+
+.addButtonContainer {
+  float: right;
+  width:1280px;
+  
+}
+
+.addButton {
+  height: 55px;
+  width: 120px;
+  background-color: black;
+  color: white;
+  border: none;
+  cursor: pointer;
+  float:right;
+  margin-top:-30px;
+  font-weight: bold;
+  line-height:55px;
+  font-size:14px;
+  text-align: center;
+}
+
+.addButton:hover{
+  color:white;
+  text-decoration: none;
+}
+
+.formContainer {
+  margin: 30px;
+  border: 1px solid black;
+  padding: 35px;
+}
+
+.review {
+  font-size: 22px;
+}
+
+.reviewScore {
+  font-size: 22px;
+}
+
+.checkboxContainer {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  margin-top: 12px;
+  cursor: pointer;
+  font-size: 16px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default radio button */
+.checkboxContainer input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Create a custom radio button */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+  border-radius: 50%;
+}
+
+/* On mouse-over, add a grey background color */
+.checkboxContainer:hover input~.checkmark {
+  background-color: #ccc;
+}
+
+/* When the radio button is checked, add a blue background */
+.checkboxContainer input:checked~.checkmark {
+  background-color: black;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.checkboxContainer input:checked~.checkmark:after {
+  display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.checkboxContainer .checkmark:after {
+  top: 9px;
+  left: 9px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: white;
+}
+
+.submitButtonContainer {
+  width:1280px;
+  float:right;
+}
+
+#submitButton {
+  height: 50px;
+  width: 100px;
+  float:right;
+  background-color: black;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.reviewContainer {
+  margin: 30px;
+  margin-top: 40px;
+}
+
+.reviewMenu {
+  display: inline-block;
+  width: 1210px;
+  height: 50px;
+}
+
+.allReview {
+  height: 50px;
+  line-height: 50px;
+  font-size: 40px;
+  margin-left: 35px;
+  margin-bottom: 20px;
+  float: left;
+  font-weight: bold;
+
+}
+
+.reviewInput{
+  height:150px;
+  width:1150px;
+  overflow: auto;
+  padding:20px;
+}
+
+
+
+.filterButton{
+	outline:none;
+	width: 200px!important;
+    height: 50px!important;
+    font-size:20px!important;
+    float: right!important;
+    margin-right:35px!important;
+    box-sizing:border-box;
+    font-family:Helvetica,Arial,sans-serif;
+    font-size:9pt;display:inline-block;
+    margin:2px;
+    background:#fff;
+	position:relative;
+	cursor:pointer;
+    padding:5px 10px;
+    background:#fff;
+    color:#202020;
+    position:relative;
+    display:flex;
+    align-items:center;
+    border-radius:5px;
+    border:1px solid #eee;
+    transition:150ms linear all;
+	box-shadow:1px 1px 10px #eee;
+	outline:none;
+}
+
+.filterButton:after{
+	content:"";display:inline;
+    border-left:5px solid transparent;
+    border-right:5px solid transparent;
+    border-top:6px solid #202020;
+    position:absolute;
+    right:8px;
+    top:50%;
+    transform:translateY(-50%);
+    transition:150ms linear all
+}
+
+.sortby {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	outline:none!important;
+	cursor:pointer;
+    padding:5px 10px;
+    background:#fff;
+    color:#202020;
+    position:relative;
+    display:flex;
+    align-items:center;
+    border-radius:5px;
+    border:1px solid #eee;
+    transition:150ms linear all;
+    box-shadow:1px 1px 10px #eee
+}
+
+.filterButton.decorated option:hover {
+    box-shadow: 0 0 10px 100px #1882A8 inset;
+}
+
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1200px;
+  padding: 10px;
+  align-items: center;
+  justify-content: center;
+  grid-gap: 5px;
+  
+}
+
+.grid-item {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  font-size: 30px;
+  margin: 5px 0px;
+  height:140px;
+}
+
+.userAva {
+  cursor: pointer;
+  width: 100px;
+  height: 100px;
+  float: left;
+  overflow: hidden;
+}
+
+.reviewInfo {
+  width: 1000px;
+  float: left;
+  margin-left: 30px;
+}
+
+.reviewTop {
+  display: inline-block;
+  width: 1040px;
+}
+
+.userName {
+  cursor: pointer;
+  float: left;
+  font-size: 18px;
+  font-weight: bold;
+  padding-right: 10px;
+  border-right: 1px solid black;
+}
+
+.reviewText {
+  font-size: 20px;
+}
+
+.gameStatus {
+  float: left;
+  font-size: 18px;
+  padding: 0px 10px;
+  border-right: 1px solid black;
+  padding-right: 10px;
+  border-right: 1px solid black;
+}
+
+.reviewRec {
+  float: left;
+  font-size: 18px;
+  padding: 0px 10px;
+  border-right: 1px solid black;
+}
+
+.reviewDate {
+  font-size: 18px;
+  float: left;
+  margin-left: 10px;
+}
+
+.reviewRating {
+  float: right;
+  font-size: 18px;
+}
+
+.upvote {
+  cursor: pointer;
+  font-size: 18px;
+  float: left;
+  padding: 0px 10px;
+  border-right: 1px solid black;
+}
+
+.upvoteclick {
+	cursor: pointer;
+	font-size: 18px;
+	float: left;
+	padding: 0px 10px;
+	border-right: 1px solid black;
+  }
+
+.downvote {
+  cursor: pointer;
+  font-size: 18px;
+  float: left;
+  padding: 0px 10px;
+}
+
+.downvoteclick {
+	cursor: pointer;
+	font-size: 18px;
+	color:lightskyblue;
+	float: left;
+	padding: 0px 10px;
+}
