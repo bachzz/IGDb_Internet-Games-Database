@@ -73,8 +73,7 @@
 </head>
 
 <body>
-    <div class="bg" >
-    <!-- style="background-image: url(../resources/test/bg.png);" -->
+    <div class="bg" style="background-image: url(../resources/test/bg.png);">
         <div class="bodyContainer">
             <?php include '../nav/navigation.php' ?>
             <div class="content">

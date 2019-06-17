@@ -3,8 +3,6 @@
 }
 .bg {
     position: absolute;
-    /*background-image: url(../pictures/bgLogin.png);*/
-    background-image: url(../pictures/bg.png);
     top: 0;
     bottom: 0;
     left: 0;
@@ -58,7 +56,6 @@
 }   
 
 .loginbg {
-    background-image: url(../pictures/bgLogin.png);
     background-repeat: no-repeat;
     background-position: bottom left;
     height: 350px;

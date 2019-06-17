@@ -67,7 +67,7 @@
           <div class="logoholder"></div>
       <div class="body">
           <div class="login">
-              <div class="loginbg">
+              <div class="loginbg" style="background-image: url(../resources/test/logo.png);">
               </div>
               <div class="info">
                   <table class="logtable" style="table-layout:fixed;" >
