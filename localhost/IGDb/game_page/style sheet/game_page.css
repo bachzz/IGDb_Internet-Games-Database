@@ -88,6 +88,9 @@
   margin: 25px 0px;
 }
 
+.pub-info-category{
+  font-weight: bold;
+}
 .addContainer {
   margin: 30px;
   border: 1px solid black;

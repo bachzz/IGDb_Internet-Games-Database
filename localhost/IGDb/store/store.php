@@ -66,8 +66,8 @@
                     <?php
                         $result = pg_query($db_conn, "SELECT * from igdb.games;");
                         $items = pg_fetch_all($result);
-
                         $item0 = $items[0];
+                        $game_id0 = $item0['game_id'];
                         $img_url0 = $item0['img_url'];
                         $cover0 = strtok($img_url0, ";"); 
 
@@ -78,8 +78,9 @@
                         for ($i = 1; $i < count($items); $i++){
                             $item_i = $items[$i];
                             $img_url = $item_i['img_url'];
+                            $game_id = $item_i['game_id'];
                             $cover = strtok($img_url, ";");
-                            echo '<div class="item">
+                            echo '<div class="item" onclick="game_onclick(\''.$game_id.'\')">
                                 <img src="'.$cover.'">
                             </div>';
                         }

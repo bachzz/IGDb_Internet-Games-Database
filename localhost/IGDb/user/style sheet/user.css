@@ -241,21 +241,21 @@
 
 .userAvaReview {
   cursor: pointer;
-  width: 100px;
+  width: 200px;
   height: 100px;
   float: left;
   overflow: hidden;
 }
 
 .reviewInfo {
-  width:1000px;
+  width:900px;
   float: left;
   margin-left: 30px;
 }
 
 .reviewTop {
   display: inline-block;
-  width: 1000px;
+  width: 900px;
 }
 
 .gameNameReview {

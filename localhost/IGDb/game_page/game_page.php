@@ -146,11 +146,11 @@
                         <div class="tableContainer">
                             <table class="publisherInfo">
                                 <tr>
-                                    <td width="150px">Average Score:</td>
-                                    <td><?php echo $item['avg_score']?></td> 
+                                    <td width="150px" class="pub-info-category">Average Score:</td>
+                                    <td><?php echo number_format($item['avg_score'],1)?></td> 
                                 </tr>
                                 <tr>
-                                    <td width="150px">Recommends:</td>
+                                    <td width="150px" class="pub-info-category">Recommends:</td>
                                     <td><?php 
                                         $result = pg_query("SELECT count(*) from igdb.reviews where recommend = TRUE and game_id = ".$item['game_id']."");
                                         $recommend = pg_fetch_array($result, 0);
@@ -160,15 +160,15 @@
                                     ?></td>
                                 </tr>
                                 <tr>
-                                    <td width="150px">Release date:</td>
+                                    <td width="150px" class="pub-info-category">Release date:</td>
                                     <td><?php echo $item['release_date']; ?></td>
                                 </tr>
                                 <tr>
-                                    <td width="150px">Publisher:</td>
+                                    <td width="150px" class="pub-info-category">Publisher:</td>
                                     <td><?php echo $item['publisher']; ?></td>
                                 </tr>
                                 <tr>
-                                    <td width="150px">Genre:</td>
+                                    <td width="150px" class="pub-info-category">Genre:</td>
                                     <td><?php echo $item['genre']; ?></td>
                                 </tr>
                             </table>
