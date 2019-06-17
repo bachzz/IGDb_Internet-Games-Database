@@ -1,4 +1,4 @@
-﻿<?php
+<?php
     header("Cache-Control: no cache");
     session_cache_limiter("private_no_expire");
     session_start();
@@ -51,9 +51,9 @@
                     $category = "3";
                 if ($value == "dropped")
                     $category = "4";
-				$result = pg_query($db_conn, "UPDATE igdb.library set category=$category where user_id=".$_SESSION['user_id']." and game_id=$gid;");
-				header("Location: ./library.php");
-            	exit(0);
+                $result = pg_query($db_conn, "UPDATE igdb.library set category=$category where user_id=".$_SESSION['user_id']." and game_id=$gid;");
+                				$result = pg_query($db_conn, "UPDATE igdb.library set category=$category where user_id=".$_SESSION['user_id']." and game_id=$gid;");
+
             }
         }
     }
@@ -73,7 +73,7 @@
 </head>
 
 <body>
-    <div class="bg" style="background-image: url(../resources/test/bg.png);">
+    <div class="bg" style="background-image: url(../resources/test/bg.png);" >
         <div class="bodyContainer">
             <?php include '../nav/navigation.php' ?>
             <div class="content">
