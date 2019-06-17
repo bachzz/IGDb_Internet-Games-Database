@@ -20,3 +20,6 @@
 ## To-do:
 - Users can browse the site without logging in
 - Create a dedicated admin page to control the site (add/remove games, reviews, ban/unban users
+
+## Note:
+- Created for practicing purpose (a perfect target for hackers :v)
