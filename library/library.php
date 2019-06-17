@@ -1,4 +1,4 @@
-<?php
+﻿<?php
     header("Cache-Control: no cache");
     session_cache_limiter("private_no_expire");
     session_start();
@@ -34,28 +34,26 @@
             header("Location: ./library.php");
             exit(0);
         }
-
-        foreach ($_POST as $key => $value) {
-            # code...
-            //echo "{$key} = {$value}\r\n";
-            if (strpos($key, 'status') !== false){
-                $gid = substr($key, 6, strlen($key));
-                //echo '<script>alert("'.$value.$gid.'")</script>';
-                //echo '<script>alert("'.$key.$value.'")</script>';
-
-                if ($value == "playing")
-                    $category = "1";
-                if ($value == "completed")
-                    $category = "2";
-                if ($value == "plan")
-                    $category = "3";
-                if ($value == "dropped")
-                    $category = "4";
-                $result = pg_query($db_conn, "UPDATE igdb.library set category=$category where user_id=".$_SESSION['user_id']." and game_id=$gid;");
-                				$result = pg_query($db_conn, "UPDATE igdb.library set category=$category where user_id=".$_SESSION['user_id']." and game_id=$gid;");
-
-            }
-        }
+	if(isset($_POST['submitEdit'])) {
+		foreach ($_POST as $key => $value) {
+			if (strpos($key, 'status') !== false){
+				$gid = substr($key, 6, strlen($key));
+				if ($value == "playing")
+					$category = "1";
+				if ($value == "completed")
+					$category = "2";
+				if ($value == "plan")
+					$category = "3";
+				if ($value == "dropped")
+					$category = "4";
+				$result = pg_query($db_conn, "UPDATE igdb.library set category=$category where user_id=".$_SESSION['user_id']." and game_id=$gid;");
+				
+			}
+		}
+		header("Location: ./library.php");
+		exit(0);
+	}
+		
     }
     else {
         header("Location: ../login/login.php");
@@ -73,7 +71,7 @@
 </head>
 
 <body>
-    <div class="bg" style="background-image: url(../resources/test/bg.png);" >
+    <div class="bg" style="background-image: url(../resources/test/bg.png);">
         <div class="bodyContainer">
             <?php include '../nav/navigation.php' ?>
             <div class="content">
@@ -120,7 +118,7 @@
                                     $numrows = pg_num_rows($result);
 
                                     if ($numrows == 0) {
-                                        echo 'No games added!';
+                                        echo 'There is nothing here';
                                     }
                                     else {
                                         $arr = pg_fetch_all($result);
@@ -164,7 +162,7 @@
                         <form method="post" class="gamesContainerEdit" id="normalLibEdit">
                             <div>
                                 <div class="submitButtonContainer">
-                                    <input id="submitButton" type="submit" value="Submit">
+                                    <input id="submitButton" name="submitEdit" type="submit" value="Submit">
                                     <!-- <button id="submitButton" onclick="document.getElement.submit()">Submit</button> -->
                                 </div>
                             </div>
@@ -181,7 +179,7 @@
                                     $numrows = pg_num_rows($result);
 
                                     if ($numrows == 0) {
-                                        echo 'No games added!';
+                                        echo 'There is nothing here';
                                     }
                                     else {
                                         $arr = pg_fetch_all($result);

@@ -123,7 +123,7 @@
                                 $numrows = pg_num_rows($result);
                                 
                                 if ($numrows == 0){
-                                    echo 'No games added!';
+                                    echo 'There is nothing here';
                                 }
                                 else {
                                     $arr = pg_fetch_all($result);

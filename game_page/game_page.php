@@ -312,7 +312,7 @@
 
 
                             if ($numrows == 0) {
-                                echo 'User has no reviews!';
+                                echo 'There is nothing here';
                             }
                             
                             else {
