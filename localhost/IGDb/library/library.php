@@ -52,7 +52,7 @@
                 if ($value == "dropped")
                     $category = "4";
 				$result = pg_query($db_conn, "UPDATE igdb.library set category=$category where user_id=".$_SESSION['user_id']." and game_id=$gid;");
-				header("Location: ../login/login.php");
+				header("Location: ./library.php");
             	exit(0);
             }
         }

@@ -215,7 +215,7 @@ Life Is Strange	Visual Novel	Square Enix	31/1/2015	Life is Strange is an award-w
 League of Legends	MOBA	Riot Games	27/10/2009	Whether you're playing Solo or Co-op with friends, League of Legends is a highly competitive, fast paced action-strategy game designed for those who crave a hard fought victory.	https://esports-betting-tips.com/wp-content/uploads/2018/10/League-of-Legends-Image-1200x675.jpg;https://i.imgur.com/ojEg8lY.jpg;https://sfx.thelazy.net/static/media/presetscreenshots/lol2.png;https://sfx.thelazy.net/static/media/medthumb/LeagueReshaded.png;
 Fire Emblem Awakening	RPG	Intelligent Systems	19/4/2012	Two sleeping dragons—one a sacred ally of mankind, the other its sworn destroyer. Two heroes marked with the symbols of the dragons. Their meeting heralds the dragons' awakening—and the world's ending.	https://hb.imgix.net/e7903a82c21e541ec15ddb9fd7508095206b71de.jpg?auto=compress,format&fit=crop&h=353&w=616&s=6ad9c3c822a0382425caf922b273d0db;https://www.nintendo.com/content/dam/noa/en_US/games/3ds/f/fire-emblem-awakening-3ds/screenshot-gallery/3DS_FEA_GemDemo_010813_02.jpg;https://www.nintendo.com/content/dam/noa/en_US/games/3ds/f/fire-emblem-awakening-3ds/screenshot-gallery/3DS_FEA_GemDemo_010813_01.jpg;http://nerdreactor.com/wp-content/uploads/2013/01/fire-emblem-awakening-screenshot-2.jpg;https://cdn2.expertreviews.co.uk/sites/expertreviews/files/images/dir_392/er_photo_196132.png?itok=DxxakVtj;https://i.pinimg.com/originals/bd/d0/89/bdd0899b8f329d0abaff083b96817ea8.jpg;
 Devil May Cry V	Action	Capcom	8/3/2019	The ultimate Devil Hunter is back in style, in the game action fans have been waiting for.	https://steamcdn-a.akamaihd.net/steam/apps/601150/header.jpg?t=1557194314;https://steamcdn-a.akamaihd.net/steam/apps/601150/ss_4410bada2565843dae693b03ac3a50256ff5dd66.600x338.jpg?t=1557194314;https://steamcdn-a.akamaihd.net/steam/apps/601150/ss_4ce180ed8979a51c72de51f985e9e9ba13500508.600x338.jpg?t=1557194314;https://steamcdn-a.akamaihd.net/steam/apps/601150/ss_e2be70565f94a7f6c392cccddce08c67f2f87612.600x338.jpg?t=1557194314;https://steamcdn-a.akamaihd.net/steam/apps/601150/ss_d1e0b403f593f17ad195c5382a7788d71c6f406a.600x338.jpg?t=1557194314;https://steamcdn-a.akamaihd.net/steam/apps/601150/ss_f669d4627db07e61b87728d94d72bc1eabfd0349.600x338.jpg?t=1557194314;
-Super Mario Odyssey	Platformer	Nintendo	27/10/2017	Use amazing new abilities—like the power to capture and control objects, animals, and enemies—to collect Power Moons so you can power up the Odyssey airship and save Princess Peach from Bowser's wedding plans!	https://static.slickdealscdn.com/attachment/3/5/9/4/0/2/8/7930816.attach;https://www.nintendo.com/content/dam/noa/en_US/games/switch/s/super-mario-odyssey-switch/screenshot-gallery/Switch_SuperMarioOdyssey_01.jpg;https://www.nintendo.com/content/dam/noa/en_US/games/switch/s/super-mario-odyssey-switch/screenshot-gallery/Switch_SuperMarioOdyssey_02.jpg;https://i.imgur.com/wL7kij4.jpg;https://cdn.pressstart.com.au/wp-content/uploads/2017/10/Super-Mario-Odyssey.png;
+Super Mario Odyssey	Platformer	Nintendo	27/10/2017	Use amazing new abilities—like the power to capture and control objects, animals, and enemies—to collect Power Moons so you can power up the Odyssey airship and save Princess Peach from Bowser's wedding plans!	https://17kgroup.it/wp-content/uploads/2017/08/H2x1_NSwitch_SuperMarioOdyssey-696x348.jpg;https://www.nintendo.com/content/dam/noa/en_US/games/switch/s/super-mario-odyssey-switch/screenshot-gallery/Switch_SuperMarioOdyssey_01.jpg;https://www.nintendo.com/content/dam/noa/en_US/games/switch/s/super-mario-odyssey-switch/screenshot-gallery/Switch_SuperMarioOdyssey_02.jpg;https://i.imgur.com/wL7kij4.jpg;https://cdn.pressstart.com.au/wp-content/uploads/2017/10/Super-Mario-Odyssey.png;
 Grand Theft Auto V	Action	Rockstars	14/4/2015	Los Santos is a city of bright lights, long nights and dirty secrets, and they don’t come brighter, longer or dirtier than in GTA Online: After Hours. The party starts now.	https://steamcdn-a.akamaihd.net/steam/apps/271590/header.jpg?t=1544815097;https://steamcdn-a.akamaihd.net/steam/apps/271590/ss_32aa18ab3175e3002217862dd5917646d298ab6b.600x338.jpg?t=1544815097;https://steamcdn-a.akamaihd.net/steam/apps/271590/ss_da39c16db175f6973770bae6b91d411251763152.600x338.jpg?t=1544815097;https://steamcdn-a.akamaihd.net/steam/apps/271590/ss_bd5db78286be0a7c6b2c62519099a9e27e6b06f3.600x338.jpg?t=1544815097;https://steamcdn-a.akamaihd.net/steam/apps/271590/ss_b1a1cb7959d6a0e6fcb2d06ebf97a66c9055cef3.600x338.jpg?t=1544815097;https://steamcdn-a.akamaihd.net/steam/apps/271590/ss_bc5fc79d3366c837372327717249a4887aa46d63.600x338.jpg?t=1544815097;https://steamcdn-a.akamaihd.net/steam/apps/271590/ss_bd944debbec9936769f6dfb39ee456ca605615e3.600x338.jpg?t=1544815097;
 The Witcher 3: Wild Hunt	RPG	CD Projekt: RED	18/5/2015	As war rages on throughout the Northern Realms, you take on the greatest contract of your life — tracking down the Child of Prophecy, a living weapon that can alter the shape of the world.	https://steamcdn-a.akamaihd.net/steam/apps/292030/header.jpg?t=1550078557;https://steamcdn-a.akamaihd.net/steam/apps/292030/ss_107600c1337accc09104f7a8aa7f275f23cad096.600x338.jpg?t=1550078557;https://steamcdn-a.akamaihd.net/steam/apps/292030/ss_64eb760f9a2b67f6731a71cce3a8fb684b9af267.600x338.jpg?t=1550078557;https://steamcdn-a.akamaihd.net/steam/apps/292030/ss_eda99e7f705a113d04ab2a7a36068f3e7b343d17.600x338.jpg?t=1550078557;https://steamcdn-a.akamaihd.net/steam/apps/292030/ss_dc33eb233555c13fce939ccaac667bc54e3c4a27.600x338.jpg?t=1550078557;https://steamcdn-a.akamaihd.net/steam/apps/292030/ss_908485cbb1401b1ebf42e3d21a860ddc53517b08.600x338.jpg?t=1550078557;
 Minecraft	Survival	Mojang	17/5/2009	Explore infinite worlds and build everything from the simplest of homes to the grandest of castles. Play in creative mode with unlimited resources or mine deep into the world in survival mode, crafting weapons and armor to fend off dangerous mobs.	https://cdn.gamerant.com/wp-content/uploads/minecraft-movie-release-date-1.jpg.optimal.jpg;http://i.imgur.com/LS1wETl.jpg;https://i.imgur.com/jt3hKqB.jpg;https://i.imgur.com/yKdjGvw.png;https://i.imgur.com/Fd9HB2N.png;https://i.imgur.com/2QGUpt4.png;
@@ -251,28 +251,40 @@ Tekken 7	Fighting	Bandai Namco Entertainment	2/6/2017	Discover the epic conclusi
 -- Data for Name: library; Type: TABLE DATA; Schema: igdb; Owner: postgres
 --
 
--- COPY igdb.library (user_id, game_id, category) FROM stdin;
--- 14	1	1
--- 14	2	3
--- 14	3	3
--- 14	4	2
--- 1	1	1
--- 2	1	2
--- 3	2	2
--- \.
+COPY igdb.library (user_id, game_id, category) FROM stdin;
+14	1	1
+14	2	2
+14	3	3
+14	4	4
+14	30	1
+14	31	2
+14	32	3
+14	33	4
+14	34	1
+14	35	2
+14	36	3
+14	37	4
+\.
 
 
 --
 -- Data for Name: reviews; Type: TABLE DATA; Schema: igdb; Owner: postgres
 --
 
--- COPY igdb.reviews (user_id, game_id, game_review, recommend, review_date) FROM stdin;
--- 2	1	this game is so addictive!!	TRUE	1-1-2019
--- 4	1	I know right?	TRUE	15-1-2019
--- 5	1	No this game sucks. Boring. Waste my time.	FALSE	16-1-2019
--- 14	1	I know right?	TRUE	15-1-2019
--- 14	2	No this game sucks. Boring. Waste my time.	FALSE	16-1-2019
--- \.
+COPY igdb.reviews (user_id, game_id, game_review, recommend, review_date, upvote, downvote) FROM stdin;
+14	1	this game is so addictive!!	TRUE	1-1-2019	30	1
+14	30	I know right?	TRUE	15-1-2019	0	100
+14	31	No this game sucks. Boring. Waste my time.	FALSE	16-1-2019	11	3
+14	32	I know right?	TRUE	15-1-2019	0	7
+14	37	No this game sucks. Boring. Waste my time.	FALSE	16-1-2019	9	3
+1	24	This is the best survival game I have ever played	TRUE	24-2-2018	20	3
+2	24	This game ruined my friendship	FALSE	10-3-2016	90	1
+3	24	Give me back my diadmonds!	FALSE	3-6-2019	1	90
+4	24	I just killed every villager in a village and burned all their houses	TRUE	3-4-2019	0	100
+5	24	Underwater combat sucks	FALSE	4-4-2019	0	60
+6	24	Bow POWER 5 OP AF!	TRUE	5-5-2019	100	0
+7	24	How can I get down from this?? SOYBOY???	FALSE	17-6-2019	0	999
+\.
 
 
 --
