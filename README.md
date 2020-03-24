@@ -1,4 +1,4 @@
-# IGDb---Internet-Games-Database
+# IGDb_Internet-Games-Database
 
 ## Link:
 - https://sheltered-shelf-59790.herokuapp.com/
