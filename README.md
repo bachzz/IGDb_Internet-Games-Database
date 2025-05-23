@@ -1,7 +1,7 @@
 # IGDb_Internet-Games-Database
 
 ## Link:
-- https://sheltered-shelf-59790.herokuapp.com/
+- https://igdb-65cee721d8b8.herokuapp.com/
 
 ## Contributors:
 - [bachng248](https://github.com/bachng248)
